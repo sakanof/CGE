@@ -1,0 +1,126 @@
+----------------------------------------------------------------------------------------------------
+Description: This text presents the code style that will be used in the project. Every convention
+presented must be followed without any change in order to maintain the project's code consistent.
+
+
+----------------------------------------------------------------------------------------------------
+Naming Style:
+	Namespaces:
+		- Uses pascal case notation;
+		Example: 
+			MyNamespaceExample 
+			{
+				// some code here...
+			}
+
+	Interfaces:
+		- Starts with the letter 'I';
+		- Uses pascal case natation;
+		Example: 
+			class IMyInterfaceExample
+			{
+				// some code here...
+			}
+
+	Enumerator:
+		- Uses pascal case notation;
+		Example: 
+			enum class MyEnumeratorExample
+			{ 
+				FirstExample = 1,
+				SecondExample = 2
+			}
+
+	Classes:
+		- Uses pascal case notation;
+		Example: 
+			class MyClassExample
+			{
+				// some code here...
+			}
+
+	Methods:
+		- Uses pascal case notation;
+		Example:
+			class MyClassExample
+			{
+				void MyMethodExample()
+				{
+					// some code here...
+				}
+			}
+
+	Attributes:
+		- Starts with the prefix 'm_';
+		- Uses camel case notation;
+		Example: m_attributeExample
+
+	Globals:
+		- Starts with the prefix 'g_';
+		- Uses camel case notation;
+		Example: g_myGlobalExample
+
+	Contants:
+		- Starts with the prefix 'c_';
+		- Uses camel case notation;
+		Example: c_myConstantExample
+
+----------------------------------------------------------------------------------------------------
+Declaration: 
+	Brackets: 
+		- Must always de declared in the same tabulation level of the namespace, class, method, etc;
+		Example: 
+			MyNamespaceExample
+			{
+				// some code here...
+			}
+
+	Class components: 
+		- The class components declaration must follow the order presented below: 
+			1. Nasted types; 
+			2. Attributes; 
+			3. Methods;
+		Example:
+			class MyClassExample
+			{
+				private:
+					enum class MyPrivateEnum {}
+				protected:
+					enum class MyProtectedEnum {}
+				public:
+					enum class MyPublicEnum {}
+					
+				private:
+					int m_privateAttribute;
+				protected:
+					int m_protectedAttribute;
+				public:
+					int m_publicAttribute;
+
+				private:
+					void MyPrivateMethod() {}
+				protected:
+					void MyProtectedMethod() {}
+				public:
+					void MyPublicMethod() {}
+			}
+
+	Access modifiers: 
+		- Must always follow the private, protected and public sequence for any type of declaration;
+		Example: 
+			class MyClassExample
+			{
+				private:
+					int m_privateAttribute;
+				protected:
+					int m_protectedAttribute;
+				public:
+					int m_publicAttribute;
+
+				private:
+					void MyPrivateMethod() {}
+				protected:
+					void MyProtectedMethod() {}
+				public:
+					void MyPublicMethod() {}
+			}
