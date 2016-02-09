@@ -1,0 +1,6 @@
+- Create a generic project template for the following types of project:
+	1. Component;
+	2. Test;
+	3. Game;
+
+- Automate the process 	of creating a new project;
