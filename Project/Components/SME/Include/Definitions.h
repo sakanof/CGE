@@ -1,10 +1,10 @@
-#ifndef MathEngine_Definitions_H
-#define MathEngine_Definitions_H
+#ifndef SME_Definitions_H
+#define SME_Definitions_H
 
 #include <vector>
 #include <list>
 
-// MathEngine Includes
+// SME Includes
 #include "SimpleMathEngineSetup.h"
 
 namespace SME
@@ -43,4 +43,4 @@ namespace SME
 	class SIMPLE_MATH_ENGINE_API Transform;
 }
 
-#endif // MathEngine_Definitions_H
+#endif // SME_Definitions_H

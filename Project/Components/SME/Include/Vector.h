@@ -1,5 +1,5 @@
-#ifndef MathEngine_Vector_H
-#define MathEngine_Vector_H
+#ifndef SME_Vector_H
+#define SME_Vector_H
 
 #include <vector>
 #include <list>
@@ -184,4 +184,4 @@ namespace SME
 	};
 };
 
-#endif // MathEngine_Vector_H
+#endif // SME_Vector_H

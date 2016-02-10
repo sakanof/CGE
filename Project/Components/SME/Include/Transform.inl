@@ -45,4 +45,4 @@ namespace SME
 	inline void Transform::Rotate(const Vec3& axis, float angle) { Rotate(Quaternion(axis, angle)); }
 	inline void Transform::Rotate(const Quaternion& rotation)	 { this->m_rotation = Quaternion((rotation * this->m_rotation).Normalize()); }
 	inline void Transform::Scale(float scale)					 { this->m_scale += scale; }
-}; // namespace MathEngine
+}; // namespace SME

@@ -556,4 +556,4 @@ namespace SME
 			return str;
 		}
 	};
-}; // namespace MathEngine
+}; // namespace SME

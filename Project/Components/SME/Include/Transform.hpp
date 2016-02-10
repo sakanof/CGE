@@ -1,7 +1,7 @@
 #ifndef SME_Transform_H
 #define SME_Transform_H
 
-// MathEngine Inlcudes
+// SME Inlcudes
 #include "Definitions.h"
 
 namespace SME
@@ -36,7 +36,7 @@ namespace SME
 		inline void Rotate(const Quaternion& rotation);
 		inline void Scale(float scale);
 	};
-}; // namespace MathEngine
+}; // namespace SME
 
 #include "Transform.inl"
 

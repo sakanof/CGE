@@ -1,5 +1,5 @@
-#ifndef MathEngine_Quaternion_H
-#define MathEngine_Quaternion_H
+#ifndef SME_Quaternion_H
+#define SME_Quaternion_H
 
 #include "Vector.h"
 #include "Matrix.h"
@@ -44,4 +44,4 @@ namespace SME
 	};
 };
 
-#endif // MathEngine_Quaternion_H
+#endif // SME_Quaternion_H

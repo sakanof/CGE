@@ -1,5 +1,5 @@
-#ifndef MathEngine_Matrix_H
-#define MathEngine_Matrix_H
+#ifndef SME_Matrix_H
+#define SME_Matrix_H
 
 #include <vector>
 #include <list>
@@ -158,4 +158,4 @@ namespace SME
 	};
 };
 
-#endif // MathEngine_Matrix_H
+#endif // SME_Matrix_H
