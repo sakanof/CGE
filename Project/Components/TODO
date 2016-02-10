@@ -1,2 +1,13 @@
+----------------------------------------------------------------------------------------------------
 - Create test project for the SimpleMethEngine project;
 - Implement the calculations of the SimpleMethEngine's using SIMD; 
+
+
+----------------------------------------------------------------------------------------------------
+Create the components projects
+----------------------------------------------------------------------------------------------------
+- Utilities;
+- Resource Manager;
+- Window System;
+- Render Engine;
+- Collision Detection;
