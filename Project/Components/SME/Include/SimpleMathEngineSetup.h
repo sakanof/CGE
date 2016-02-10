@@ -1,5 +1,5 @@
-#ifndef SME_SimpleMathEngine_H
-#define SME_SimpleMathEngine_H
+#ifndef SME_SimpleMathEngineSetup_H
+#define SME_SimpleMathEngineSetup_H
 
 
 // Simple Math Engine namespace
@@ -18,4 +18,4 @@ namespace SME
 #endif
 };
 
-#endif // SME_SimpleMathEngine_H
+#endif // SME_SimpleMathEngineSetup_H

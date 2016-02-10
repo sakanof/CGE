@@ -92,7 +92,7 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\Include\SimpleMathEngine.h" />
+    <ClInclude Include="..\Include\SimpleMathEngineSetup.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
