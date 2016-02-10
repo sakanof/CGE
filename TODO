@@ -1,4 +1,2 @@
 ----------------------------------------------------------------------------------------------------
-- Define and create the directory structure;
-- Create a Visual Studio Solution for the project;
 - Create a Visual Studio Project Template for each type of project, Component (lib), Test and Game;
