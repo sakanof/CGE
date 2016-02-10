@@ -64,6 +64,13 @@ Naming Style:
 		- Starts with the prefix 'c_';
 		- Uses camel case notation;
 		Example: c_myConstantExample
+	
+	Header Guards:
+		- Must be composed by the entire namespace of the file's source code, with the character '_'
+		separating each namespace and the filename plus '_H' in the end;
+		- Uses pascal case notation;
+		Example: CGE_ResourceEngine_Data_IResourceData_H, the the class 'IResourceData' inside the
+		CGE, ResourceEngine and finaly Data namespaces;
 
 ----------------------------------------------------------------------------------------------------
 Declaration: 
