@@ -16,6 +16,9 @@
     <Filter Include="Classes\Auxiliary">
       <UniqueIdentifier>{37ef8150-d695-45f0-b0d1-9dd1662db79e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Transform">
+      <UniqueIdentifier>{317dd888-fce5-4843-b0de-9e8fcefd716b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\SimpleMathEngineSetup.h">
@@ -39,6 +42,9 @@
     <ClInclude Include="..\Include\Functions.h">
       <Filter>Classes\Auxiliary</Filter>
     </ClInclude>
+    <ClInclude Include="..\Include\Transform.hpp">
+      <Filter>Classes\Transform</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\Matrix.cpp">
@@ -50,5 +56,10 @@
     <ClCompile Include="..\Source\Vector.cpp">
       <Filter>Classes\Vector</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Include\Transform.inl">
+      <Filter>Classes\Transform</Filter>
+    </None>
   </ItemGroup>
 </Project>
