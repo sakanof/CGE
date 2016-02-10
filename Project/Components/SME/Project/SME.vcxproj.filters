@@ -13,6 +13,9 @@
     <Filter Include="Classes\Matrix">
       <UniqueIdentifier>{3e800216-5c06-4882-a7a7-def428cb79fe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Auxiliary">
+      <UniqueIdentifier>{37ef8150-d695-45f0-b0d1-9dd1662db79e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\SimpleMathEngineSetup.h">
@@ -29,6 +32,12 @@
     </ClInclude>
     <ClInclude Include="..\Include\Vector.h">
       <Filter>Classes\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Contants.h">
+      <Filter>Classes\Auxiliary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Functions.h">
+      <Filter>Classes\Auxiliary</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

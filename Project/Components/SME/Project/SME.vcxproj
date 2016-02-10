@@ -92,7 +92,9 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\Include\Contants.h" />
     <ClInclude Include="..\Include\Definitions.h" />
+    <ClInclude Include="..\Include\Functions.h" />
     <ClInclude Include="..\Include\Matrix.h" />
     <ClInclude Include="..\Include\Quaternion.h" />
     <ClInclude Include="..\Include\SimpleMathEngineSetup.h" />
