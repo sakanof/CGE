@@ -4,10 +4,42 @@
     <Filter Include="Classes">
       <UniqueIdentifier>{f5d255d0-e686-495c-847f-da7f86b4ae89}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Vector">
+      <UniqueIdentifier>{ac724ad1-9ffe-4b8b-a441-4fff1eb4c7a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Quaternion">
+      <UniqueIdentifier>{3f6ed33a-505d-4efc-be84-3673323840c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Matrix">
+      <UniqueIdentifier>{3e800216-5c06-4882-a7a7-def428cb79fe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\SimpleMathEngineSetup.h">
       <Filter>Classes</Filter>
     </ClInclude>
+    <ClInclude Include="..\Include\Definitions.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Matrix.h">
+      <Filter>Classes\Matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Quaternion.h">
+      <Filter>Classes\Quaternion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Vector.h">
+      <Filter>Classes\Vector</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Source\Matrix.cpp">
+      <Filter>Classes\Matrix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Quaternion.cpp">
+      <Filter>Classes\Quaternion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Vector.cpp">
+      <Filter>Classes\Vector</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

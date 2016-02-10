@@ -92,7 +92,16 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\Include\Definitions.h" />
+    <ClInclude Include="..\Include\Matrix.h" />
+    <ClInclude Include="..\Include\Quaternion.h" />
     <ClInclude Include="..\Include\SimpleMathEngineSetup.h" />
+    <ClInclude Include="..\Include\Vector.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Source\Matrix.cpp" />
+    <ClCompile Include="..\Source\Quaternion.cpp" />
+    <ClCompile Include="..\Source\Vector.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
