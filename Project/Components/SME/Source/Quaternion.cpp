@@ -1,6 +1,6 @@
 #include "../include/Quaternion.h"
 
-namespace MathEngine
+namespace SME
 {
 	Quaternion::Quaternion(float x, float y, float z, float w) : Vec4(x, y, z, w) {}
 	Quaternion::Quaternion(const Vec4& q) : Vec4(q) {}

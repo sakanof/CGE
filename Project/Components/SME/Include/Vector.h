@@ -8,7 +8,7 @@
 // Math Engine Includes
 #include "Definitions.h"
 
-namespace MathEngine
+namespace SME
 {
 	namespace Vector
 	{

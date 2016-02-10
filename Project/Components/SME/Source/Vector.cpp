@@ -2,7 +2,7 @@
 #include "../include/Matrix.h"
 #include "../include/Quaternion.h"
 
-namespace MathEngine
+namespace SME
 {
 	namespace Vector
 	{

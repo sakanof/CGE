@@ -7,7 +7,7 @@
 // MathEngine Includes
 #include "SimpleMathEngineSetup.h"
 
-namespace MathEngine
+namespace SME
 {
 	using FloatVector	= std::vector<float>;
 	using FloatList		= std::list<float>;
@@ -18,9 +18,9 @@ namespace MathEngine
 		class SIMPLE_MATH_ENGINE_API Vec3;
 		class SIMPLE_MATH_ENGINE_API Vec4;
 	};
-	using Vec2 = MathEngine::Vector::Vec2;
-	using Vec3 = MathEngine::Vector::Vec3;
-	using Vec4 = MathEngine::Vector::Vec4;
+	using Vec2 = SME::Vector::Vec2;
+	using Vec3 = SME::Vector::Vec3;
+	using Vec4 = SME::Vector::Vec4;
 
 	using Point2	= Vector::Vec2;
 	using Point3	= Vector::Vec3;
@@ -35,9 +35,9 @@ namespace MathEngine
 		class SIMPLE_MATH_ENGINE_API Mat3;
 		class SIMPLE_MATH_ENGINE_API Mat4;
 	};
-	using Mat2 = MathEngine::Matrix::Mat2;
-	using Mat3 = MathEngine::Matrix::Mat3;
-	using Mat4 = MathEngine::Matrix::Mat4;
+	using Mat2 = SME::Matrix::Mat2;
+	using Mat3 = SME::Matrix::Mat3;
+	using Mat4 = SME::Matrix::Mat4;
 
 	class SIMPLE_MATH_ENGINE_API Quaternion;
 	class SIMPLE_MATH_ENGINE_API Transform;

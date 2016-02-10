@@ -4,7 +4,7 @@
 #include "Vector.h"
 #include "Matrix.h"
 
-namespace MathEngine
+namespace SME
 {
 	class SIMPLE_MATH_ENGINE_API Quaternion : public Vec4
 	{

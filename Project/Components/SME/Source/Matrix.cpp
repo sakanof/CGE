@@ -1,7 +1,7 @@
 #include "..\include\Matrix.h"
 
 
-namespace MathEngine
+namespace SME
 {
 	namespace Matrix
 	{

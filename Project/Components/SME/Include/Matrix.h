@@ -8,7 +8,7 @@
 // Math Engine Includes
 #include "Vector.h"
 
-namespace MathEngine
+namespace SME
 {
 	namespace Matrix
 	{
