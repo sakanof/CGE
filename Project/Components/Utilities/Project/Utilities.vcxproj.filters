@@ -10,6 +10,9 @@
     <Filter Include="Classes\Memory">
       <UniqueIdentifier>{33c687b5-b8ca-4cda-acdd-5bc6b60f53aa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Exception">
+      <UniqueIdentifier>{d8546e82-82bf-46fb-bc71-57c68e349e60}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\UtilitiesSetup.h">
@@ -21,10 +24,28 @@
     <ClInclude Include="..\Include\Memory.hpp">
       <Filter>Classes\Memory</Filter>
     </ClInclude>
+    <ClInclude Include="..\Include\BaseException.h">
+      <Filter>Classes\Exception</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\FileNotFoundExceptionException.h">
+      <Filter>Classes\Exception</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\MethodNotImplementedException.h">
+      <Filter>Classes\Exception</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\String.cpp">
       <Filter>Classes\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\BaseException.cpp">
+      <Filter>Classes\Exception</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\FileNotFoundExceptionException.cpp">
+      <Filter>Classes\Exception</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\MethodNotImplementedException.cpp">
+      <Filter>Classes\Exception</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

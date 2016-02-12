@@ -92,11 +92,17 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\Include\BaseException.h" />
+    <ClInclude Include="..\Include\FileNotFoundExceptionException.h" />
     <ClInclude Include="..\Include\Memory.hpp" />
+    <ClInclude Include="..\Include\MethodNotImplementedException.h" />
     <ClInclude Include="..\Include\String.h" />
     <ClInclude Include="..\Include\UtilitiesSetup.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Source\BaseException.cpp" />
+    <ClCompile Include="..\Source\FileNotFoundExceptionException.cpp" />
+    <ClCompile Include="..\Source\MethodNotImplementedException.cpp" />
     <ClCompile Include="..\Source\String.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
