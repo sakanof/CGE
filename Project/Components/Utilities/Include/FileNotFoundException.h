@@ -1,5 +1,5 @@
-#ifndef Utilities_Exception_FileNotFoundExceptionException_H
-#define Utilities_Exception_FileNotFoundExceptionException_H
+#ifndef Utilities_Exception_FileNotFoundException_H
+#define Utilities_Exception_FileNotFoundException_H
 
 // Util Includes
 #include "BaseException.h"
@@ -18,4 +18,4 @@ namespace Utilities
 	};
 };
 
-#endif // Utilities_Exception_FileNotFoundExceptionException_H
+#endif // Utilities_Exception_FileNotFoundException_H

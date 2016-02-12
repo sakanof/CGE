@@ -27,10 +27,10 @@
     <ClInclude Include="..\Include\BaseException.h">
       <Filter>Classes\Exception</Filter>
     </ClInclude>
-    <ClInclude Include="..\Include\FileNotFoundExceptionException.h">
+    <ClInclude Include="..\Include\MethodNotImplementedException.h">
       <Filter>Classes\Exception</Filter>
     </ClInclude>
-    <ClInclude Include="..\Include\MethodNotImplementedException.h">
+    <ClInclude Include="..\Include\FileNotFoundException.h">
       <Filter>Classes\Exception</Filter>
     </ClInclude>
   </ItemGroup>
@@ -41,10 +41,10 @@
     <ClCompile Include="..\Source\BaseException.cpp">
       <Filter>Classes\Exception</Filter>
     </ClCompile>
-    <ClCompile Include="..\Source\FileNotFoundExceptionException.cpp">
+    <ClCompile Include="..\Source\MethodNotImplementedException.cpp">
       <Filter>Classes\Exception</Filter>
     </ClCompile>
-    <ClCompile Include="..\Source\MethodNotImplementedException.cpp">
+    <ClCompile Include="..\Source\FileNotFoundException.cpp">
       <Filter>Classes\Exception</Filter>
     </ClCompile>
   </ItemGroup>
