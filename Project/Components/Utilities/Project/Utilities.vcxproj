@@ -92,6 +92,7 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\Include\Memory.hpp" />
     <ClInclude Include="..\Include\String.h" />
     <ClInclude Include="..\Include\UtilitiesSetup.h" />
   </ItemGroup>

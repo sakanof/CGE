@@ -7,6 +7,9 @@
     <Filter Include="Classes\String">
       <UniqueIdentifier>{9790da1b-dc17-4184-963f-2e8a4f1f6065}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Memory">
+      <UniqueIdentifier>{33c687b5-b8ca-4cda-acdd-5bc6b60f53aa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\UtilitiesSetup.h">
@@ -14,6 +17,9 @@
     </ClInclude>
     <ClInclude Include="..\Include\String.h">
       <Filter>Classes\String</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Memory.hpp">
+      <Filter>Classes\Memory</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
