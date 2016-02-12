@@ -4,10 +4,21 @@
     <Filter Include="Classes">
       <UniqueIdentifier>{f5d255d0-e686-495c-847f-da7f86b4ae89}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\String">
+      <UniqueIdentifier>{9790da1b-dc17-4184-963f-2e8a4f1f6065}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\UtilitiesSetup.h">
       <Filter>Classes</Filter>
     </ClInclude>
+    <ClInclude Include="..\Include\String.h">
+      <Filter>Classes\String</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Source\String.cpp">
+      <Filter>Classes\String</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
