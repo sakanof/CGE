@@ -16,6 +16,9 @@
     <Filter Include="Classes\File">
       <UniqueIdentifier>{d9a3ef28-0964-42a6-813d-37c74703d3f7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Timer">
+      <UniqueIdentifier>{2d6ccc77-5aef-4efa-b0c9-476d91c5c627}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\UtilitiesSetup.h">
@@ -39,6 +42,9 @@
     <ClInclude Include="..\Include\File.h">
       <Filter>Classes\File</Filter>
     </ClInclude>
+    <ClInclude Include="..\Include\Timer.h">
+      <Filter>Classes\Timer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\String.cpp">
@@ -55,6 +61,9 @@
     </ClCompile>
     <ClCompile Include="..\Source\File.cpp">
       <Filter>Classes\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Timer.cpp">
+      <Filter>Classes\Timer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

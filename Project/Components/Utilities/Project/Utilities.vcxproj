@@ -98,6 +98,7 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
     <ClInclude Include="..\Include\Memory.hpp" />
     <ClInclude Include="..\Include\MethodNotImplementedException.h" />
     <ClInclude Include="..\Include\String.h" />
+    <ClInclude Include="..\Include\Timer.h" />
     <ClInclude Include="..\Include\UtilitiesSetup.h" />
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +107,7 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
     <ClCompile Include="..\Source\FileNotFoundException.cpp" />
     <ClCompile Include="..\Source\MethodNotImplementedException.cpp" />
     <ClCompile Include="..\Source\String.cpp" />
+    <ClCompile Include="..\Source\Timer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
