@@ -13,6 +13,9 @@
     <Filter Include="Classes\Exception">
       <UniqueIdentifier>{d8546e82-82bf-46fb-bc71-57c68e349e60}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\File">
+      <UniqueIdentifier>{d9a3ef28-0964-42a6-813d-37c74703d3f7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\UtilitiesSetup.h">
@@ -33,6 +36,9 @@
     <ClInclude Include="..\Include\FileNotFoundException.h">
       <Filter>Classes\Exception</Filter>
     </ClInclude>
+    <ClInclude Include="..\Include\File.h">
+      <Filter>Classes\File</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\String.cpp">
@@ -46,6 +52,9 @@
     </ClCompile>
     <ClCompile Include="..\Source\FileNotFoundException.cpp">
       <Filter>Classes\Exception</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\File.cpp">
+      <Filter>Classes\File</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -93,6 +93,7 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\BaseException.h" />
+    <ClInclude Include="..\Include\File.h" />
     <ClInclude Include="..\Include\FileNotFoundException.h" />
     <ClInclude Include="..\Include\Memory.hpp" />
     <ClInclude Include="..\Include\MethodNotImplementedException.h" />
@@ -101,6 +102,7 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\BaseException.cpp" />
+    <ClCompile Include="..\Source\File.cpp" />
     <ClCompile Include="..\Source\FileNotFoundException.cpp" />
     <ClCompile Include="..\Source\MethodNotImplementedException.cpp" />
     <ClCompile Include="..\Source\String.cpp" />
