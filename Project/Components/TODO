@@ -9,3 +9,9 @@ Create the components projects
 - Window System;
 - Render Engine;
 - Collision Detection;
+
+
+----------------------------------------------------------------------------------------------------
+Possible bugs
+----------------------------------------------------------------------------------------------------
+- Solve the problem with explicit exported containers like std::string in multiple components;
