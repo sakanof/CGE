@@ -18,7 +18,18 @@ namespace ResourceEngine
 			virtual ~IResourceData() {}
 
 		public:
+			/**
+			*	\brief Gets the resource data type.
+			*
+			*	\return A string that identifies the type of resource data.
+			**/
 			virtual std::string  Type() const = 0;
+			
+			/**
+			*	\brief Gets the size of the resource data.
+			*
+			*	\return The size of the resource data.
+			**/
 			virtual unsigned int Size() const = 0;
 		};
 	}
