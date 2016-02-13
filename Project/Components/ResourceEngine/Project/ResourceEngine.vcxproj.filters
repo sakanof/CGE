@@ -4,6 +4,9 @@
     <Filter Include="Classes">
       <UniqueIdentifier>{f5d255d0-e686-495c-847f-da7f86b4ae89}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Data">
+      <UniqueIdentifier>{c91f544e-8fc1-45b0-889c-c7739f2affde}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\ResourceEngineSetup.h">
@@ -11,6 +14,9 @@
     </ClInclude>
     <ClInclude Include="..\Include\Resource.h">
       <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\IResourceData.h">
+      <Filter>Classes\Data</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

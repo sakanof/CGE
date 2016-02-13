@@ -95,6 +95,7 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\Resource.h" />
+    <ClInclude Include="..\Include\IResourceData.h" />
     <ClInclude Include="..\Include\ResourceEngineSetup.h" />
   </ItemGroup>
   <ItemGroup>
