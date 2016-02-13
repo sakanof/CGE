@@ -25,6 +25,7 @@ namespace ResourceEngine
 
 	public:
 		std::string GetFileName() const;
+		std::string GetFilePath() const;
 		std::string GetAbsolutePath() const;
 		std::string GetFileExtension() const;
 	};

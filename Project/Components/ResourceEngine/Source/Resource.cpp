@@ -11,6 +11,7 @@ namespace ResourceEngine
 	}
 
 	std::string Resource::GetFileName() const { return this->m_fileName; }
+	std::string Resource::GetFilePath() const { return this->m_filePath; }
 	std::string Resource::GetAbsolutePath() const{ return this->m_filePath; }
 	std::string Resource::GetFileExtension() const{ return this->m_fileExtension;  }
 };
