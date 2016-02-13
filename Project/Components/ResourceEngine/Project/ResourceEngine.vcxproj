@@ -97,9 +97,11 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
     <ClInclude Include="..\Include\Resource.h" />
     <ClInclude Include="..\Include\IResourceData.h" />
     <ClInclude Include="..\Include\ResourceEngineSetup.h" />
+    <ClInclude Include="..\Include\ResourceHandle.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\Resource.cpp" />
+    <ClCompile Include="..\Source\ResourceHandle.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

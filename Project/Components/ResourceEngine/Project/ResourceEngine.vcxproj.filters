@@ -18,9 +18,15 @@
     <ClInclude Include="..\Include\IResourceData.h">
       <Filter>Classes\Data</Filter>
     </ClInclude>
+    <ClInclude Include="..\Include\ResourceHandle.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\Resource.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\ResourceHandle.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
   </ItemGroup>
