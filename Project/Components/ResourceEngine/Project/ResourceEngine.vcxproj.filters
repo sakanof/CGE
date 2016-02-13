@@ -7,6 +7,9 @@
     <Filter Include="Classes\Data">
       <UniqueIdentifier>{c91f544e-8fc1-45b0-889c-c7739f2affde}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Loader">
+      <UniqueIdentifier>{8a961c94-92e5-4259-89be-023932cda414}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\ResourceEngineSetup.h">
@@ -28,6 +31,9 @@
     </ClCompile>
     <ClCompile Include="..\Source\ResourceHandle.cpp">
       <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\IResourceLoader.h">
+      <Filter>Classes\Loader</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
