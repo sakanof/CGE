@@ -9,5 +9,13 @@
     <ClInclude Include="..\Include\ResourceEngineSetup.h">
       <Filter>Classes</Filter>
     </ClInclude>
+    <ClInclude Include="..\Include\Resource.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Source\Resource.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
