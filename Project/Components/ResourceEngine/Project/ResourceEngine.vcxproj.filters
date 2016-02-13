@@ -10,6 +10,21 @@
     <Filter Include="Classes\Loader">
       <UniqueIdentifier>{8a961c94-92e5-4259-89be-023932cda414}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Data\Graphics">
+      <UniqueIdentifier>{b3c37d71-3355-4e33-9230-74d32eaaca16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Data\Graphics\Shader">
+      <UniqueIdentifier>{abbe8678-9370-421e-b091-f56d0efb76b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Loader\Offline">
+      <UniqueIdentifier>{8a435e8b-d161-427a-a2b4-16ad60de0b01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Loader\Offline\Graphics">
+      <UniqueIdentifier>{37d64e4a-aae7-4cee-a5b8-785fe4b1c041}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Loader\Offline\Graphics\Shader">
+      <UniqueIdentifier>{fafc3295-1bb3-45dd-9885-9fe07bc8b493}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\ResourceEngineSetup.h">
@@ -24,16 +39,28 @@
     <ClInclude Include="..\Include\ResourceHandle.h">
       <Filter>Classes</Filter>
     </ClInclude>
+    <ClInclude Include="..\Include\GLSLResourceData.h">
+      <Filter>Classes\Data\Graphics\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GLSLResourceLoader.h">
+      <Filter>Classes\Loader\Offline\Graphics\Shader</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\Resource.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
+    <ClCompile Include="..\Include\IResourceLoader.h">
+      <Filter>Classes\Loader</Filter>
+    </ClCompile>
     <ClCompile Include="..\Source\ResourceHandle.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
-    <ClCompile Include="..\Include\IResourceLoader.h">
-      <Filter>Classes\Loader</Filter>
+    <ClCompile Include="..\Source\GLSLResourceData.cpp">
+      <Filter>Classes\Data\Graphics\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\GLSLResourceLoader.cpp">
+      <Filter>Classes\Loader\Offline\Graphics\Shader</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

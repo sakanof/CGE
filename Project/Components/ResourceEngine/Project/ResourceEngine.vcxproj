@@ -98,11 +98,15 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
     <ClInclude Include="..\Include\IResourceData.h" />
     <ClInclude Include="..\Include\ResourceEngineSetup.h" />
     <ClInclude Include="..\Include\ResourceHandle.h" />
+    <ClInclude Include="..\Include\GLSLResourceData.h" />
+    <ClInclude Include="..\Include\GLSLResourceLoader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Include\IResourceLoader.h" />
     <ClCompile Include="..\Source\Resource.cpp" />
     <ClCompile Include="..\Source\ResourceHandle.cpp" />
+    <ClCompile Include="..\Source\GLSLResourceData.cpp" />
+    <ClCompile Include="..\Source\GLSLResourceLoader.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
