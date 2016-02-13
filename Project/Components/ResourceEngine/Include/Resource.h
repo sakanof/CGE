@@ -17,6 +17,7 @@ namespace ResourceEngine
 	private:
 		std::string m_fileName;
 		std::string m_filePath;
+		std::string m_fileAbsolutePath;
 		std::string m_fileExtension;
 
 	public:
@@ -24,7 +25,7 @@ namespace ResourceEngine
 
 	public:
 		std::string GetFileName() const;
-		std::string GetFilePath() const;
+		std::string GetAbsolutePath() const;
 		std::string GetFileExtension() const;
 	};
 };
