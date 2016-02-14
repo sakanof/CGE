@@ -7,9 +7,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SME", "..\..\..\Components\SME\Project\SME.vcxproj", "{D112E091-DA3D-49CA-8182-8B8241EB8A9F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UTILITIES", "..\..\..\Components\Utilities\Project\Utilities.vcxproj", "{B9551946-9E60-44BB-A517-2D42728429CE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Utilities", "..\..\..\Components\Utilities\Project\Utilities.vcxproj", "{B9551946-9E60-44BB-A517-2D42728429CE}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RESOURCE_ENGINE", "..\..\..\Components\ResourceEngine\Project\ResourceEngine.vcxproj", "{9CB87B5D-EF88-49FE-8464-95B9A7311CDC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ResourceEngine", "..\..\..\Components\ResourceEngine\Project\ResourceEngine.vcxproj", "{9CB87B5D-EF88-49FE-8464-95B9A7311CDC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B9551946-9E60-44BB-A517-2D42728429CE} = {B9551946-9E60-44BB-A517-2D42728429CE}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
