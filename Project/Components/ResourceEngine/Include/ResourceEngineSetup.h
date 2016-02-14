@@ -1,6 +1,8 @@
 #ifndef ResourceEngineSetup_H
 #define ResourceEngineSetup_H
 
+#include <vector>
+
 namespace ResourceEngine
 {
 #if defined(_WIN32) || defined(__WIN32__)
@@ -25,6 +27,7 @@ namespace ResourceEngine
 	|	header files.
 	**********************************************************************/
 	RESOURCE_ENGINE_EXP_TEMPLATE template class RESOURCE_ENGINE_API std::basic_string<char, std::char_traits<char>, std::allocator<char>>;
+	RESOURCE_ENGINE_EXP_TEMPLATE template class RESOURCE_ENGINE_API std::vector < unsigned char > ;
 };
 
 #endif // ResourceEngineSetup_H
