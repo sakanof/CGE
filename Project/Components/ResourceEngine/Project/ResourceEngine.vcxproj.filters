@@ -28,6 +28,9 @@
     <Filter Include="Classes\Data\Graphics\Image">
       <UniqueIdentifier>{4e0acb17-c390-4e68-8373-a47bd6d8107b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Loader\Offline\Graphics\Image">
+      <UniqueIdentifier>{6026ab35-0d7f-4f8a-94cc-9fc52dcdc526}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\ResourceEngineSetup.h">
@@ -51,6 +54,9 @@
     <ClInclude Include="..\Include\ImageResourceData.h">
       <Filter>Classes\Data\Graphics\Image</Filter>
     </ClInclude>
+    <ClInclude Include="..\Include\ImageResourceLoader.h">
+      <Filter>Classes\Loader\Offline\Graphics\Image</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\Resource.cpp">
@@ -70,6 +76,9 @@
     </ClCompile>
     <ClCompile Include="..\Source\ImageResourceData.cpp">
       <Filter>Classes\Data\Graphics\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\ImageResourceLoader.cpp">
+      <Filter>Classes\Loader\Offline\Graphics\Image</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

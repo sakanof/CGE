@@ -95,6 +95,7 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\ImageResourceData.h" />
+    <ClInclude Include="..\Include\ImageResourceLoader.h" />
     <ClInclude Include="..\Include\Resource.h" />
     <ClInclude Include="..\Include\IResourceData.h" />
     <ClInclude Include="..\Include\ResourceEngineSetup.h" />
@@ -105,6 +106,7 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
   <ItemGroup>
     <ClCompile Include="..\Include\IResourceLoader.h" />
     <ClCompile Include="..\Source\ImageResourceData.cpp" />
+    <ClCompile Include="..\Source\ImageResourceLoader.cpp" />
     <ClCompile Include="..\Source\Resource.cpp" />
     <ClCompile Include="..\Source\ResourceHandle.cpp" />
     <ClCompile Include="..\Source\GLSLResourceData.cpp" />
