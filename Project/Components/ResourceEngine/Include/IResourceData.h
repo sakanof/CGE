@@ -5,12 +5,19 @@
 #include <string>
 
 // ResourceEngine Includes
-#include "ResourceEngineSetup.h"
+#include "TypesExport.h"
 
 namespace ResourceEngine
 {
 	namespace Data
 	{
+		#define ExplicitExportDataContainers(DataType)				\
+					ExplicitExportSharedPtr(DataType)				\
+					ExplicitExportVector(DataType*)					\
+					ExplicitExportVector(std::shared_ptr<DataType>)	\
+					ExplicitExportList(DataType*)					\
+					ExplicitExportList(std::shared_ptr<DataType>)	\
+
 		class RESOURCE_ENGINE_API IResourceData
 		{
 		public:
@@ -32,6 +39,11 @@ namespace ResourceEngine
 			**/
 			virtual unsigned int Size() const = 0;
 		};
+		ExplicitExportDataContainers(IResourceData)
+
+		using SharedResourceData = std::shared_ptr < IResourceData >;
+		using ResourceDataVector = std::vector < std::shared_ptr<IResourceData> >;
+		using ResourceDataList   = std::list < std::shared_ptr<IResourceData> >;
 	}
 };
 

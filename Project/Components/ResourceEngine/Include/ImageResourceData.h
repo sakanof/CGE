@@ -49,6 +49,11 @@ namespace ResourceEngine
 
 			ImageData GetImageData() const;
 		};
+		ExplicitExportDataContainers(ImageResourceData)
+
+		using SharedImageResourceData = std::shared_ptr < ImageResourceData >;
+		using ImageResourceDataVector = std::vector < std::shared_ptr<ImageResourceData> >;
+		using ImageResourceDataList   = std::list < std::shared_ptr<ImageResourceData> >;
 	}; 
 }; 
 

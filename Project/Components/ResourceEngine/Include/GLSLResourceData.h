@@ -21,6 +21,11 @@ namespace ResourceEngine
 			unsigned int Size() const;
 			std::string  GetCode() const;
 		};
+		ExplicitExportDataContainers(GLSLResourceData)
+
+		using SharedGLSLResourceData = std::shared_ptr < GLSLResourceData >;
+		using GLSLResourceDataVector = std::vector < std::shared_ptr<GLSLResourceData> >;
+		using GLSLResourceDataList   = std::list < std::shared_ptr<GLSLResourceData> >;
 	};
 }; 
 
