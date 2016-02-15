@@ -17,6 +17,8 @@ namespace ResourceEngine
 					ExplicitExportVector(std::shared_ptr<DataType>)	\
 					ExplicitExportList(DataType*)					\
 					ExplicitExportList(std::shared_ptr<DataType>)	\
+					ExplicitExportMap(std::string, DataType*)		\
+					ExplicitExportMap(std::string, std::shared_ptr<DataType>)
 
 		class RESOURCE_ENGINE_API IResourceData
 		{
