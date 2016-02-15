@@ -21,8 +21,17 @@ namespace ResourceEngine
 		Resource GetResource() const;
 		
 		template<class ResourceDataType>
-		ResourceDataType* GetResourceData() const;
+		ResourceDataType* GetResourceData() const
+		{
+			return dynamic_cast<ResourceDataType*>(this->m_resourceData);
+		}
 	};
+	ExplicitExportDataContainers(ResourceHandle)
+
+	using SharedResourceHandle = std::shared_ptr < ResourceHandle >;
+	using ResourceHandleVector = std::vector < std::shared_ptr<ResourceHandle> >;
+	using ResourceHandleList   = std::list < std::shared_ptr<ResourceHandle> >;
+	using ResourceHandleMap = std::map < std::string, std::shared_ptr<ResourceHandle > >;
 };
 
 #endif // ResourceEngine_HandleResource_H

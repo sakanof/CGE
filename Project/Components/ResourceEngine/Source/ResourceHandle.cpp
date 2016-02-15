@@ -9,10 +9,4 @@ namespace ResourceEngine
 		  m_resourceData(myResourceData) {}
 
 	Resource ResourceHandle::GetResource() const { return this->m_resource; }
-
-	template<class ResourceDataType>
-	ResourceDataType* ResourceHandle::GetResourceData() const
-	{
-		return dynamic_cast<ResourceDataType*>(this->m_resourceData);
-	}
 }
