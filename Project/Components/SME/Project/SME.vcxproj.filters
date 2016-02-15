@@ -45,6 +45,9 @@
     <ClInclude Include="..\Include\Transform.hpp">
       <Filter>Classes\Transform</Filter>
     </ClInclude>
+    <ClInclude Include="..\Include\SME.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\Matrix.cpp">

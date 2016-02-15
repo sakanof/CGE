@@ -98,6 +98,7 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
     <ClInclude Include="..\Include\Matrix.h" />
     <ClInclude Include="..\Include\Quaternion.h" />
     <ClInclude Include="..\Include\SimpleMathEngineSetup.h" />
+    <ClInclude Include="..\Include\SME.h" />
     <ClInclude Include="..\Include\Transform.hpp" />
     <ClInclude Include="..\Include\Vector.h" />
   </ItemGroup>
