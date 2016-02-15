@@ -31,9 +31,6 @@
     <Filter Include="Classes\Loader\Offline\Graphics\Image">
       <UniqueIdentifier>{6026ab35-0d7f-4f8a-94cc-9fc52dcdc526}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\Data\Graphics\Material">
-      <UniqueIdentifier>{948f24ac-322e-4864-b558-9cfdb798e312}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\ResourceEngineSetup.h">
@@ -63,9 +60,6 @@
     <ClInclude Include="..\Include\TypesExport.h">
       <Filter>Classes</Filter>
     </ClInclude>
-    <ClInclude Include="..\Include\MaterialResourceData.h">
-      <Filter>Classes\Data\Graphics\Material</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\Resource.cpp">
@@ -88,9 +82,6 @@
     </ClCompile>
     <ClCompile Include="..\Source\ImageResourceLoader.cpp">
       <Filter>Classes\Loader\Offline\Graphics\Image</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Source\MaterialResourceData.cpp">
-      <Filter>Classes\Data\Graphics\Material</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
