@@ -1,5 +1,5 @@
-#ifndef ResourceEngine_Parser_GLSLResourceParser_H
-#define ResourceEngine_Parser_GLSLResourceParser_H
+#ifndef ResourceEngine_Parser_GLSLResourceLoader_H
+#define ResourceEngine_Parser_GLSLResourceLoader_H
 
 // Standard Includes
 #include <memory>
@@ -18,20 +18,20 @@ namespace ResourceEngine
 	{
 		namespace Offline
 		{
-			class RESOURCE_ENGINE_API GLSLResourceParser : public IResourceLoader
+			class RESOURCE_ENGINE_API GLSLResourceLoader : public IResourceLoader
 			{
 				using IResourceData = Data::IResourceData;
 			public:
-				GLSLResourceParser(void);
-				~GLSLResourceParser(void);
+				GLSLResourceLoader(void);
+				~GLSLResourceLoader(void);
 
-				std::string		GetPattern() const;
+				std::string		Pattern() const;
 				bool			IsPatternAccepted(const std::string pattern) const;
 				__int64			GetRawResourceSize(const Resource& resource) const;
-				IResourceData*	Load(const Resource& resource);
+				IResourceData*	Load(const Resource& resource) const;
 			};
 		}
 	};
 };
 
-#endif // ResourceEngine_Parser_GLSLResourceParser_H
+#endif // ResourceEngine_Parser_GLSLResourceLoader_H

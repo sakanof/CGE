@@ -8,17 +8,17 @@ namespace ResourceEngine
 	{
 		namespace Offline
 		{
-			GLSLResourceParser::GLSLResourceParser(void) {}
-			GLSLResourceParser::~GLSLResourceParser(void) {}
-			std::string		GLSLResourceParser::GetPattern() const { return ".glsl .vs .fs .gs .tcs .tes .vert .frag"; }
-			bool			GLSLResourceParser::IsPatternAccepted(const std::string pattern) const
+			GLSLResourceLoader::GLSLResourceLoader(void) {}
+			GLSLResourceLoader::~GLSLResourceLoader(void) {}
+			std::string		GLSLResourceLoader::Pattern() const { return ".glsl .vs .fs .gs .tcs .tes .vert .frag"; }
+			bool			GLSLResourceLoader::IsPatternAccepted(const std::string pattern) const
 			{
 				auto temp = pattern;
 				std::transform(temp.begin(), temp.end(), temp.begin(), ::tolower);
-				return GetPattern().find(temp) != std::string::npos;
+				return Pattern().find(temp) != std::string::npos;
 			}
-			__int64			GLSLResourceParser::GetRawResourceSize(const Resource& resource) const { return Utilities::File::GetFileSize(resource.GetFilePath()); }
-			IResourceData*	GLSLResourceParser::Load(const Resource& resource)
+			__int64			GLSLResourceLoader::GetRawResourceSize(const Resource& resource) const { return Utilities::File::GetFileSize(resource.GetFilePath()); }
+			IResourceData*	GLSLResourceLoader::Load(const Resource& resource) const
 			{
 				std::string GLSLData = Utilities::File::LoadFile(resource.GetFilePath());
 				bool stop = false;
