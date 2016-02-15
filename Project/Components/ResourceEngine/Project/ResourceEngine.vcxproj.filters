@@ -57,6 +57,9 @@
     <ClInclude Include="..\Include\ImageResourceLoader.h">
       <Filter>Classes\Loader\Offline\Graphics\Image</Filter>
     </ClInclude>
+    <ClInclude Include="..\Include\TypesExport.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\Resource.cpp">

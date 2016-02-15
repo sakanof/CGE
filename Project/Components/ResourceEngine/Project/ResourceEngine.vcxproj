@@ -102,6 +102,7 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
     <ClInclude Include="..\Include\ResourceHandle.h" />
     <ClInclude Include="..\Include\GLSLResourceData.h" />
     <ClInclude Include="..\Include\GLSLResourceLoader.h" />
+    <ClInclude Include="..\Include\TypesExport.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Include\IResourceLoader.h" />
