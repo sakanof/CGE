@@ -75,6 +75,9 @@
     <ClInclude Include="..\Include\MeshResourceData.h">
       <Filter>Classes\Data\Graphics\Mesh</Filter>
     </ClInclude>
+    <ClInclude Include="..\Include\GraphicModelResourceData.h">
+      <Filter>Classes\Data\Graphics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\Resource.cpp">
@@ -106,6 +109,9 @@
     </ClCompile>
     <ClCompile Include="..\Source\MeshResourceData.cpp">
       <Filter>Classes\Data\Graphics\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\GraphicModelResourceData.cpp">
+      <Filter>Classes\Data\Graphics</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

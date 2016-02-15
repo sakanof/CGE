@@ -98,6 +98,7 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\Include\GraphicModelResourceData.h" />
     <ClInclude Include="..\Include\ImageResourceData.h" />
     <ClInclude Include="..\Include\ImageResourceLoader.h" />
     <ClInclude Include="..\Include\MaterialResourceData.h" />
@@ -113,6 +114,7 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Include\IResourceLoader.h" />
+    <ClCompile Include="..\Source\GraphicModelResourceData.cpp" />
     <ClCompile Include="..\Source\ImageResourceData.cpp" />
     <ClCompile Include="..\Source\ImageResourceLoader.cpp" />
     <ClCompile Include="..\Source\MaterialResourceData.cpp" />
