@@ -97,6 +97,8 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
     <ClInclude Include="..\Include\ImageResourceData.h" />
     <ClInclude Include="..\Include\ImageResourceLoader.h" />
     <ClInclude Include="..\Include\MaterialResourceData.h" />
+    <ClInclude Include="..\Include\MeshNodeResourceData.h" />
+    <ClInclude Include="..\Include\MeshResourceData.h" />
     <ClInclude Include="..\Include\Resource.h" />
     <ClInclude Include="..\Include\IResourceData.h" />
     <ClInclude Include="..\Include\ResourceEngineSetup.h" />
@@ -110,6 +112,8 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
     <ClCompile Include="..\Source\ImageResourceData.cpp" />
     <ClCompile Include="..\Source\ImageResourceLoader.cpp" />
     <ClCompile Include="..\Source\MaterialResourceData.cpp" />
+    <ClCompile Include="..\Source\MeshNodeResourceData.cpp" />
+    <ClCompile Include="..\Source\MeshResourceData.cpp" />
     <ClCompile Include="..\Source\Resource.cpp" />
     <ClCompile Include="..\Source\ResourceHandle.cpp" />
     <ClCompile Include="..\Source\GLSLResourceData.cpp" />

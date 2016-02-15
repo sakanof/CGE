@@ -34,6 +34,9 @@
     <Filter Include="Classes\Data\Graphics\Material">
       <UniqueIdentifier>{33b5ce55-0de4-4798-a9cd-4b5ebdf1f5f2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Data\Graphics\Mesh">
+      <UniqueIdentifier>{ab5e3402-7387-4ea5-814a-26c4845faf8d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\ResourceEngineSetup.h">
@@ -66,6 +69,12 @@
     <ClInclude Include="..\Include\MaterialResourceData.h">
       <Filter>Classes\Data\Graphics\Material</Filter>
     </ClInclude>
+    <ClInclude Include="..\Include\MeshNodeResourceData.h">
+      <Filter>Classes\Data\Graphics\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\MeshResourceData.h">
+      <Filter>Classes\Data\Graphics\Mesh</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\Resource.cpp">
@@ -91,6 +100,12 @@
     </ClCompile>
     <ClCompile Include="..\Source\MaterialResourceData.cpp">
       <Filter>Classes\Data\Graphics\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\MeshNodeResourceData.cpp">
+      <Filter>Classes\Data\Graphics\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\MeshResourceData.cpp">
+      <Filter>Classes\Data\Graphics\Mesh</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
