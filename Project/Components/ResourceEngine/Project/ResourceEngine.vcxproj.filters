@@ -37,6 +37,9 @@
     <Filter Include="Classes\Data\Graphics\Mesh">
       <UniqueIdentifier>{ab5e3402-7387-4ea5-814a-26c4845faf8d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Loader\Offline\Graphics\GraphicModel">
+      <UniqueIdentifier>{be1904e3-c882-493b-bb19-c6bb4a4062da}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\ResourceEngineSetup.h">
@@ -78,6 +81,9 @@
     <ClInclude Include="..\Include\GraphicModelResourceData.h">
       <Filter>Classes\Data\Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="..\Include\GraphicModelResourceLoader.h">
+      <Filter>Classes\Loader\Offline\Graphics\GraphicModel</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\Resource.cpp">
@@ -112,6 +118,9 @@
     </ClCompile>
     <ClCompile Include="..\Source\GraphicModelResourceData.cpp">
       <Filter>Classes\Data\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\GraphicModelResourceLoader.cpp">
+      <Filter>Classes\Loader\Offline\Graphics\GraphicModel</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
