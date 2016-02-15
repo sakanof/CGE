@@ -74,7 +74,7 @@ namespace ResourceEngine
 				Mat4 GetAssimNodeTransformation(aiNode* node) const;
 
 			public:
-				std::string  Pattern() const = 0;
+				std::string  Pattern() const;
 
 				bool IsPatternAccepted(const std::string pattern) const;
 
