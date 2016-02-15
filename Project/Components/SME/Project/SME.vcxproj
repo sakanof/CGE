@@ -107,9 +107,6 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
     <ClCompile Include="..\Source\Quaternion.cpp" />
     <ClCompile Include="..\Source\Vector.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="..\Include\Transform.inl" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

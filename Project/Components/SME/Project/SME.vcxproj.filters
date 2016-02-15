@@ -60,9 +60,4 @@
       <Filter>Classes\Vector</Filter>
     </ClCompile>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="..\Include\Transform.inl">
-      <Filter>Classes\Transform</Filter>
-    </None>
-  </ItemGroup>
 </Project>
