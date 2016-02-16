@@ -3,6 +3,7 @@
 
 // ResourceEngine Includes
 #include "Resource.h"
+#include "IResourceObserver.h"
 #include "IResourceData.h"
 
 namespace ResourceEngine
@@ -11,12 +12,13 @@ namespace ResourceEngine
 	{
 		using IResourceData = ResourceEngine::Data::IResourceData;
 	private:
-		Resource       m_resource;
-		IResourceData* m_resourceData;
+		Resource			m_resource;
+		IResourceData*		m_resourceData;
+		IResourceObserver*	m_observer;
 
 	public:
-		ResourceHandle(const Resource& myResource, IResourceData* myResourceData);
-
+		ResourceHandle(const Resource& myResource, IResourceData* myResourceData, IResourceObserver*);
+		~ResourceHandle();
 	public:
 		Resource GetResource() const;
 		
