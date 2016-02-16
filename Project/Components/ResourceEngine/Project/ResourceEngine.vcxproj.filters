@@ -149,5 +149,8 @@
     <ClCompile Include="..\Source\ResourceCacheOutOfMemoryException.cpp">
       <Filter>Classes\Exception</Filter>
     </ClCompile>
+    <ClCompile Include="..\Source\ResourceCache.cpp">
+      <Filter>Classes\Cache</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

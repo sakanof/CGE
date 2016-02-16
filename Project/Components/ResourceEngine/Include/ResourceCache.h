@@ -6,6 +6,11 @@
 #include "IResourceData.h"
 #include "ResourceHandle.h"
 #include "IResourceLoader.h"
+#include "GraphicModelResourceLoader.h"
+#include "GLSLResourceLoader.h"
+#include "ImageResourceLoader.h"
+#include "ResourceLoaderNotFoundException.h"
+#include "ResourceCacheOutOfMemoryException.h"
 
 namespace ResourceEngine
 {

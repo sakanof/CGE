@@ -127,6 +127,7 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
     <ClCompile Include="..\Source\MeshNodeResourceData.cpp" />
     <ClCompile Include="..\Source\MeshResourceData.cpp" />
     <ClCompile Include="..\Source\Resource.cpp" />
+    <ClCompile Include="..\Source\ResourceCache.cpp" />
     <ClCompile Include="..\Source\ResourceHandle.cpp" />
     <ClCompile Include="..\Source\GLSLResourceData.cpp" />
     <ClCompile Include="..\Source\GLSLResourceLoader.cpp" />
