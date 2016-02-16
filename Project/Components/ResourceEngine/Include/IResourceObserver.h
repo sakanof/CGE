@@ -19,7 +19,7 @@ namespace ResourceEngine
 		*
 		*	\param size The size of the resource that has been deleted.
 		**/
-		void MemoryHasBeenFreed(__int64 deleteResourceSize);
+		virtual void MemoryHasBeenFreed(__int64 deleteResourceSize) = 0;
 	};
 };
 
