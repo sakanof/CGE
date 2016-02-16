@@ -46,6 +46,9 @@
     <Filter Include="Classes\Cache">
       <UniqueIdentifier>{814be147-5de2-4253-9a6e-1fce2a1ee720}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Exception">
+      <UniqueIdentifier>{6650fb41-31ea-4268-9137-3cd7a1fc33d0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\ResourceEngineSetup.h">
@@ -96,6 +99,12 @@
     <ClInclude Include="..\Include\ResourceCache.h">
       <Filter>Classes\Cache</Filter>
     </ClInclude>
+    <ClInclude Include="..\Include\ResourceLoaderNotFoundException.h">
+      <Filter>Classes\Exception</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\ResourceCacheOutOfMemoryException.h">
+      <Filter>Classes\Exception</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Include\IResourceLoader.h">
@@ -133,6 +142,12 @@
     </ClCompile>
     <ClCompile Include="..\Source\Resource.cpp">
       <Filter>Classes\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\ResourceLoaderNotFoundException.cpp">
+      <Filter>Classes\Exception</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\ResourceCacheOutOfMemoryException.cpp">
+      <Filter>Classes\Exception</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

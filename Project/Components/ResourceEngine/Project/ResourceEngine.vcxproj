@@ -113,6 +113,8 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
     <ClInclude Include="..\Include\ResourceHandle.h" />
     <ClInclude Include="..\Include\GLSLResourceData.h" />
     <ClInclude Include="..\Include\GLSLResourceLoader.h" />
+    <ClInclude Include="..\Include\ResourceCacheOutOfMemoryException.h" />
+    <ClInclude Include="..\Include\ResourceLoaderNotFoundException.h" />
     <ClInclude Include="..\Include\TypesExport.h" />
   </ItemGroup>
   <ItemGroup>
@@ -128,6 +130,8 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
     <ClCompile Include="..\Source\ResourceHandle.cpp" />
     <ClCompile Include="..\Source\GLSLResourceData.cpp" />
     <ClCompile Include="..\Source\GLSLResourceLoader.cpp" />
+    <ClCompile Include="..\Source\ResourceCacheOutOfMemoryException.cpp" />
+    <ClCompile Include="..\Source\ResourceLoaderNotFoundException.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
