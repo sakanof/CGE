@@ -108,6 +108,7 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
     <ClInclude Include="..\Include\MeshResourceData.h" />
     <ClInclude Include="..\Include\Resource.h" />
     <ClInclude Include="..\Include\IResourceData.h" />
+    <ClInclude Include="..\Include\ResourceCache.h" />
     <ClInclude Include="..\Include\ResourceEngineSetup.h" />
     <ClInclude Include="..\Include\ResourceHandle.h" />
     <ClInclude Include="..\Include\GLSLResourceData.h" />
