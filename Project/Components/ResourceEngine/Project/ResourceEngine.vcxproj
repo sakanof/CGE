@@ -102,6 +102,7 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
     <ClInclude Include="..\Include\GraphicModelResourceLoader.h" />
     <ClInclude Include="..\Include\ImageResourceData.h" />
     <ClInclude Include="..\Include\ImageResourceLoader.h" />
+    <ClInclude Include="..\Include\IResourceObserver.h" />
     <ClInclude Include="..\Include\MaterialResourceData.h" />
     <ClInclude Include="..\Include\MeshNodeResourceData.h" />
     <ClInclude Include="..\Include\MeshResourceData.h" />
