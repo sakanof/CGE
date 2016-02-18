@@ -63,7 +63,7 @@
       <AdditionalLibraryDirectories>$(ProjectDir)\..\..\..\..\Bin\Libs\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir "$(ProjectDir)\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\"
+      <Command>If Not Exist "$(ProjectDir)\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\" mkdir "$(ProjectDir)\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\"
 
 copy "$(ProjectDir)\$(Configuration)\$(ProjectName).dll" "$(ProjectDir)\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\"
 copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\"</Command>
@@ -89,7 +89,7 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
       <AdditionalLibraryDirectories>$(ProjectDir)\..\..\..\..\Bin\Libs\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir "$(ProjectDir)\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\"
+      <Command>If Not Exist "$(ProjectDir)\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\" mkdir "$(ProjectDir)\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\"
 
 copy "$(ProjectDir)\$(Configuration)\$(ProjectName).dll" "$(ProjectDir)\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\"
 copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\"</Command>
