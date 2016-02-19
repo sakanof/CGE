@@ -2,16 +2,12 @@
 
 namespace ResourceEngine
 {
-	using IResourceData = ResourceEngine::Data::IResourceData;
+	using SharedResourceData = ResourceEngine::Data::SharedResourceData;
 
-	ResourceHandle::ResourceHandle(const Resource& myResource, IResourceData* myResourceData, IResourceObserver* observer)
+	ResourceHandle::ResourceHandle(const Resource& myResource, IResourceData* myResourceData)
 		: m_resource(myResource),
-		  m_resourceData(myResourceData), 
-		  m_observer(observer) {}
-	ResourceHandle::~ResourceHandle()
-	{
-		this->m_observer->MemoryHasBeenFreed(this->m_resourceData->Size());
-	}
+		  m_resourceData(std::shared_ptr<IResourceData>(myResourceData)) {}
+	ResourceHandle::~ResourceHandle() {}
 
 	Resource ResourceHandle::GetResource() const { return this->m_resource; }
 }

@@ -3,7 +3,6 @@
 
 // ResourceEngine Includes
 #include "Resource.h"
-#include "IResourceObserver.h"
 #include "IResourceData.h"
 
 namespace ResourceEngine
@@ -11,21 +10,21 @@ namespace ResourceEngine
 	class RESOURCE_ENGINE_API ResourceHandle
 	{
 		using IResourceData = ResourceEngine::Data::IResourceData;
+		using SharedResourceData = ResourceEngine::Data::SharedResourceData;
 	private:
 		Resource			m_resource;
-		IResourceData*		m_resourceData;
-		IResourceObserver*	m_observer;
-
+		SharedResourceData	m_resourceData;
+		
 	public:
-		ResourceHandle(const Resource& myResource, IResourceData* myResourceData, IResourceObserver*);
+		ResourceHandle(const Resource& myResource, IResourceData* myResourceData);
 		~ResourceHandle();
 	public:
 		Resource GetResource() const;
 		
 		template<class ResourceDataType>
-		ResourceDataType* GetResourceData() const
+		std::shared_ptr<ResourceDataType> GetResourceData() const
 		{
-			return dynamic_cast<ResourceDataType*>(this->m_resourceData);
+			return  std::dynamic_pointer_cast<ResourceDataType>(this->m_resourceData);
 		}
 	};
 	ExplicitExportDataContainers(ResourceHandle)
