@@ -22,7 +22,7 @@ namespace ResourceEngine
 			{
 				using IResourceData = Data::IResourceData;
 			public:
-				GLSLResourceLoader(void);
+				GLSLResourceLoader(IResourceObserver* resourceObserver);
 				~GLSLResourceLoader(void);
 
 				std::string		Pattern() const;

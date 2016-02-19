@@ -4,7 +4,7 @@ namespace ResourceEngine
 {
 	namespace Data
 	{
-		MeshNodeResourceData::MeshNodeResourceData() {}
+		MeshNodeResourceData::MeshNodeResourceData(IResourceObserver* observer) : IResourceData(observer) {}
 		MeshNodeResourceData::~MeshNodeResourceData() 
 		{
 			this->m_meshList.clear();

@@ -4,8 +4,9 @@ namespace ResourceEngine
 {
 	namespace Data
 	{
-		ImageResourceData::ImageResourceData(ImageData imageData)
-			: m_imageData(imageData) {}
+		ImageResourceData::ImageResourceData(IResourceObserver* observer, ImageData imageData)
+			: IResourceData(observer),
+			  m_imageData(imageData) {}
 		ImageResourceData::~ImageResourceData() {}
 		unsigned int  ImageResourceData::Size() const 
 		{ 

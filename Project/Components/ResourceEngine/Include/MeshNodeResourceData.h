@@ -33,7 +33,7 @@ namespace ResourceEngine
 			SME::Mat4					m_transformation;
 
 		public:
-			MeshNodeResourceData();
+			MeshNodeResourceData(IResourceObserver* observer);
 			~MeshNodeResourceData();
 
 		public:

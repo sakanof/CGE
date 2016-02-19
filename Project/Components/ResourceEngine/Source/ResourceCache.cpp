@@ -48,7 +48,7 @@ namespace ResourceEngine
 		}
 		auto resourceData      = loader->Load(resource);
 		this->m_allocatedSize += resourceData->Size();
-		auto resourceHandle    = std::make_shared<ResourceHandle>(resource, resourceData, this);
+		auto resourceHandle    = std::make_shared<ResourceHandle>(resource, std::move(resourceData));
 
 		this->m_leastRecentlyUsed.push_front(resourceHandle);
 		this->m_resourcesMap[resource.GetFilePath()] = resourceHandle;
@@ -149,9 +149,9 @@ namespace ResourceEngine
 	
 	void ResourceCache::InitializeDefaultLoaders() 
 	{
-		this->m_resourceLoaders.push_back(new Loader::Offline::GLSLResourceLoader());
-		this->m_resourceLoaders.push_back(new Loader::Offline::ImageResourceLoader());
-		this->m_resourceLoaders.push_back(new Loader::Offline::GraphicModelResourceLoader());
+		this->m_resourceLoaders.push_back(new Loader::Offline::GLSLResourceLoader(this));
+		this->m_resourceLoaders.push_back(new Loader::Offline::ImageResourceLoader(this));
+		this->m_resourceLoaders.push_back(new Loader::Offline::GraphicModelResourceLoader(this));
 	}
 	
 	void ResourceCache::RegisterLoader(IResourceLoader* loader) { this->m_resourceLoaders.push_back(loader); }

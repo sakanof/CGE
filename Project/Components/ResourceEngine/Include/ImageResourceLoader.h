@@ -26,7 +26,7 @@ namespace ResourceEngine
 			{
 				using IResourceData = Data::IResourceData;
 			public:
-				ImageResourceLoader(void);
+				ImageResourceLoader(IResourceObserver* resourceObserver);
 				~ImageResourceLoader(void);
 
 				std::string  Pattern() const;

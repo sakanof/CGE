@@ -9,7 +9,7 @@ namespace ResourceEngine
 			using ImageResourceData = Data::ImageResourceData;
 			using IResourceData = Data::IResourceData;
 
-			ImageResourceLoader::ImageResourceLoader(void) {}
+			ImageResourceLoader::ImageResourceLoader(IResourceObserver* resourceObserver) : IResourceLoader(resourceObserver) {}
 			ImageResourceLoader::~ImageResourceLoader(void) {}
 
 			std::string ImageResourceLoader::Pattern() const { return ".bmp .jpg .png .dds .tga .hdr .tif"; }
@@ -55,7 +55,7 @@ namespace ResourceEngine
 				FreeImage_Unload(convertedImage);
 				pixels = nullptr;
 
-				return new ImageResourceData(std::move(myImageDataResult));
+				return new ImageResourceData(this->m_resourceObserver, std::move(myImageDataResult));
 			}
 		};
 	}; 

@@ -14,7 +14,7 @@ namespace ResourceEngine
 			std::string m_code;
 
 		public:
-			GLSLResourceData(const std::string& code);
+			GLSLResourceData(IResourceObserver* observer, const std::string& code);
 			~GLSLResourceData();
 
 			std::string  Type() const;

@@ -56,7 +56,7 @@ namespace ResourceEngine
 			SharedMaterialResourceData	m_material;
 
 		public:
-			MeshResourceData();
+			MeshResourceData(IResourceObserver* observer);
 			~MeshResourceData();
 
 		public:

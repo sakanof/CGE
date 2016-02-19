@@ -7,6 +7,7 @@
 // ResourceEngine Includes
 #include "Resource.h"
 #include "IResourceData.h"
+#include "IResourceObserver.h"
 
 namespace ResourceEngine
 {
@@ -15,8 +16,10 @@ namespace ResourceEngine
 		class RESOURCE_ENGINE_API IResourceLoader
 		{
 			using IResourceData = Data::IResourceData;
+		protected:
+			IResourceObserver* m_resourceObserver;
 		public:
-			IResourceLoader() {}
+			IResourceLoader(IResourceObserver* resourceObserve) : m_resourceObserver(resourceObserve) {}
 			virtual ~IResourceLoader() {}
 
 		public:

@@ -43,7 +43,7 @@ namespace ResourceEngine
 			ImageResourceDataVector	m_stencilDecalTexture;
 
 		public:
-			MaterialResourceData(const std::string& name = "Unknown", Color3 ka = Color3(1.0f, 1.0f, 1.0f), Color3 kd = Color3(1.0f, 1.0f, 1.0f), Color3 ks = Color3(1.0f, 1.0f, 1.0f));
+			MaterialResourceData(IResourceObserver* observer, const std::string& name = "Unknown", Color3 ka = Color3(1.0f, 1.0f, 1.0f), Color3 kd = Color3(1.0f, 1.0f, 1.0f), Color3 ks = Color3(1.0f, 1.0f, 1.0f));
 			~MaterialResourceData();
 		private:
 			// Metodo de inicializacao dos atributos do material

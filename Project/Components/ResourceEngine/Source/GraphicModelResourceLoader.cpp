@@ -27,12 +27,12 @@ namespace ResourceEngine
 			using MeshResourceDataVector = ResourceEngine::Data::MeshResourceDataVector;
 			using MeshNodeResourceDataVector = ResourceEngine::Data::MeshNodeResourceDataVector;
 
-			GraphicModelResourceLoader::GraphicModelResourceLoader(void) {}
+			GraphicModelResourceLoader::GraphicModelResourceLoader(IResourceObserver* resourceObserver) : IResourceLoader(resourceObserver) {}
 			GraphicModelResourceLoader::~GraphicModelResourceLoader(void) {}
 
 			void GraphicModelResourceLoader::ProcessoObjects(aiNode* node, const aiScene* assimpScene, unsigned int* index, SharedMeshNodeResourceData myRootNode, MaterialResourceDataVector materialList) const
 			{
-				SharedMeshNodeResourceData myNode = std::make_shared<MeshNodeResourceData>(MeshNodeResourceData());
+				SharedMeshNodeResourceData myNode = std::make_shared<MeshNodeResourceData>(MeshNodeResourceData(this->m_resourceObserver));
 
 				myNode->SetTransformation(GetAssimNodeTransformation(node));
 
@@ -58,7 +58,7 @@ namespace ResourceEngine
 			{
 				try
 				{
-					SharedMeshResourceData  myMesh = std::make_shared<MeshResourceData>(MeshResourceData());
+					SharedMeshResourceData  myMesh = std::make_shared<MeshResourceData>(MeshResourceData(this->m_resourceObserver));
 					
 					std::vector<float>				vertices;
 					std::vector<float>				normals;
@@ -172,7 +172,7 @@ namespace ResourceEngine
 					unsigned short				textureIndex = 0;
 					aiString					texturePath = aiString("");
 					aiString					myMaterialName = aiString("");;
-					SharedMaterialResourceData	myResultMaterial = std::make_shared<MaterialResourceData>(MaterialResourceData());
+					SharedMaterialResourceData	myResultMaterial = std::make_shared<MaterialResourceData>(MaterialResourceData(this->m_resourceObserver));
 					aiColor4D					ambientColor;
 					aiColor4D					difuseColor;
 					aiColor4D					specularColor;
@@ -219,7 +219,7 @@ namespace ResourceEngine
 			
 			SharedImageResourceData GraphicModelResourceLoader::GetImageResourceData(const std::string& path) const
 			{
-				throw std::exception("Method GraphicModelResourceLoader::GetImageResourceData not implemented.");
+				return ResourceCache::GetInstance()->GetHandle(Resource(path))->GetResourceData<ImageResourceData>();
 			}
 			
 			ImageResourceDataVector GraphicModelResourceLoader::ExtractMaterialTextures(aiMaterial* material, aiTextureType textureType) const
@@ -233,7 +233,7 @@ namespace ResourceEngine
 				for (textureIndex = 0; textureIndex < textureCount; ++textureIndex)
 				{
 					material->GetTexture(textureType, textureIndex, &texturePath);
-					textureList.push_back(GetImageResourceData(texturePath.C_Str()));
+					textureList.push_back(std::shared_ptr<ImageResourceData>(GetImageResourceData(texturePath.C_Str())));
 				}
 
 				return textureList;
@@ -289,10 +289,10 @@ namespace ResourceEngine
 				ProcessMaterials(assimpScene, materialList);
 
 				unsigned int index = 0;
-				SharedMeshNodeResourceData rootNode = std::make_shared<MeshNodeResourceData>(MeshNodeResourceData());
+				SharedMeshNodeResourceData rootNode = std::make_shared<MeshNodeResourceData>(MeshNodeResourceData(this->m_resourceObserver));
 				ProcessoObjects(assimpScene->mRootNode, assimpScene, &index, rootNode, materialList);
 
-				return new GraphicModelResourceData(rootNode, materialList);
+				return new GraphicModelResourceData(this->m_resourceObserver, rootNode, materialList);
 			};
 		};
 	};

@@ -6,7 +6,8 @@ namespace ResourceEngine
 	{
 		using Color3 = SME::Color3;
 
-		MaterialResourceData::MaterialResourceData(const std::string& name, Color3 ka, Color3 kd, Color3 ks)
+		MaterialResourceData::MaterialResourceData(IResourceObserver* observer, const std::string& name, Color3 ka, Color3 kd, Color3 ks)
+			: IResourceData(observer)
 		{
 			Initialize(name, ka, ka, ks);
 		}

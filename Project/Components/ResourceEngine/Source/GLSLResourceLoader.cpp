@@ -8,8 +8,9 @@ namespace ResourceEngine
 	{
 		namespace Offline
 		{
-			GLSLResourceLoader::GLSLResourceLoader(void) {}
+			GLSLResourceLoader::GLSLResourceLoader(IResourceObserver* resourceObserver) : IResourceLoader(resourceObserver) {}
 			GLSLResourceLoader::~GLSLResourceLoader(void) {}
+
 			std::string		GLSLResourceLoader::Pattern() const { return ".glsl .vs .fs .gs .tcs .tes .vert .frag"; }
 			bool			GLSLResourceLoader::IsPatternAccepted(const std::string pattern) const
 			{
@@ -45,7 +46,7 @@ namespace ResourceEngine
 						stop = true;
 				} while (!stop);
 
-				return new Data::GLSLResourceData(GLSLData);
+				return new Data::GLSLResourceData(this->m_resourceObserver, GLSLData);
 			}
 		};
 	};

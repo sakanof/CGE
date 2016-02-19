@@ -20,7 +20,7 @@ namespace ResourceEngine
 			MaterialResourceDataVector m_materialList;
 
 		public:
-			GraphicModelResourceData(SharedMeshNodeResourceData m_meshNode, MaterialResourceDataVector m_materialList);
+			GraphicModelResourceData(IResourceObserver* observer, SharedMeshNodeResourceData m_meshNode, MaterialResourceDataVector m_materialList);
 			~GraphicModelResourceData();
 
 		public:

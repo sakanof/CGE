@@ -40,7 +40,7 @@ namespace ResourceEngine
 			ImageData m_imageData;
 
 		public:
-			ImageResourceData(ImageData imageData);
+			ImageResourceData(IResourceObserver* observer, ImageData imageData);
 			~ImageResourceData();
 
 		public:

@@ -4,8 +4,9 @@ namespace ResourceEngine
 {
 	namespace Data
 	{
-		GraphicModelResourceData::GraphicModelResourceData(SharedMeshNodeResourceData meshNode, MaterialResourceDataVector materialList)
-			: m_meshNode(meshNode), 
+		GraphicModelResourceData::GraphicModelResourceData(IResourceObserver* observer, SharedMeshNodeResourceData meshNode, MaterialResourceDataVector materialList)
+			: IResourceData(observer), 
+			  m_meshNode(meshNode),
 			  m_materialList(materialList) {}
 		GraphicModelResourceData::~GraphicModelResourceData() { this->m_materialList.clear(); }
 

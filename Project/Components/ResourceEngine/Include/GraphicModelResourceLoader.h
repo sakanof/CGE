@@ -22,6 +22,7 @@
 #include "MaterialResourceData.h"
 #include "ImageResourceData.h"
 #include "MeshNodeResourceData.h"
+#include "ResourceCache.h"
 
 namespace ResourceEngine
 {
@@ -55,7 +56,7 @@ namespace ResourceEngine
 				std::string m_currentAbsolutePath;
 
 			public:
-				GraphicModelResourceLoader(void);
+				GraphicModelResourceLoader(IResourceObserver* resourceObserver);
 				~GraphicModelResourceLoader(void);
 
 			private:

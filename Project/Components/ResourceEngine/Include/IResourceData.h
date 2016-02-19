@@ -6,6 +6,7 @@
 
 // ResourceEngine Includes
 #include "TypesExport.h"
+#include "IResourceObserver.h"
 
 namespace ResourceEngine
 {
@@ -22,9 +23,14 @@ namespace ResourceEngine
 
 		class RESOURCE_ENGINE_API IResourceData
 		{
+		protected:
+			IResourceObserver* m_observer;
 		public:
-			IResourceData() {}
-			virtual ~IResourceData() {}
+			IResourceData(IResourceObserver* observer) : m_observer(observer) {}
+			virtual ~IResourceData() 
+			{
+				this->m_observer->MemoryHasBeenFreed(Size());
+			}
 
 		public:
 			/**
@@ -39,7 +45,7 @@ namespace ResourceEngine
 			*
 			*	\return The size of the resource data.
 			**/
-			virtual unsigned int Size() const = 0;
+			virtual unsigned int Size() const { return 0; };
 		};
 		ExplicitExportDataContainers(IResourceData)
 

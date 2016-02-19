@@ -4,7 +4,7 @@ namespace ResourceEngine
 {
 	namespace Data
 	{
-		MeshResourceData::MeshResourceData() {}
+		MeshResourceData::MeshResourceData(IResourceObserver* observer) : IResourceData(observer) {}
 		MeshResourceData::~MeshResourceData() 
 		{
 			this->m_vertices.clear();
