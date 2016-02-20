@@ -209,11 +209,12 @@ namespace ResourceEngine
 
 					return myResultMaterial;
 				}
-				catch (std::exception ex)
+				catch (std::exception exception)
 				{
-					std::string msg = "Erro durante a extracao das informacoes do material do modelo. \nMensagem: ";
-					msg += ex.what();
-					throw std::exception(msg.c_str());
+					std::string errorMessage = "Error during material information extraction. ";
+					errorMessage += exception.what();
+
+					throw Utilities::Exception::BaseException(__FILE__, __LINE__, errorMessage);
 				}
 			}
 			

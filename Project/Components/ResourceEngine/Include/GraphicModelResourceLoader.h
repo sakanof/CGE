@@ -13,6 +13,7 @@
 
 // Util Includes
 #include <Utilities\include\File.h>
+#include <Utilities\Include\BaseException.h>
 
 // GameEngine Includes
 #include "Resource.h"
