@@ -233,7 +233,7 @@ namespace ResourceEngine
 				for (textureIndex = 0; textureIndex < textureCount; ++textureIndex)
 				{
 					material->GetTexture(textureType, textureIndex, &texturePath);
-					textureList.push_back(std::shared_ptr<ImageResourceData>(GetImageResourceData(texturePath.C_Str())));
+					textureList.push_back(GetImageResourceData(texturePath.C_Str()));
 				}
 
 				return textureList;
