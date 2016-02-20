@@ -26,5 +26,20 @@ namespace ResourceEngine
 
 		SharedMeshNodeResourceData GraphicModelResourceData::GetMeshNode(void) const { return this->m_meshNode; }
 		MaterialResourceDataVector GraphicModelResourceData::GetMaterialList(void) const { return this->m_materialList; }
+		SharedMaterialResourceData GraphicModelResourceData::GetMaterialByName(const std::string& materialName) const
+		{
+			SharedMaterialResourceData resultMaterial(nullptr);
+
+			auto myMaterialIterator = this->m_materialList.begin();
+			auto myMaterialEnd      = this->m_materialList.end();
+
+			for (; myMaterialIterator != myMaterialEnd && !resultMaterial; ++myMaterialIterator)
+			{
+				if ((*myMaterialIterator)->GetName() == materialName)
+					resultMaterial = (*myMaterialIterator);
+			}
+
+			return resultMaterial;
+		}
 	};
 }; 
