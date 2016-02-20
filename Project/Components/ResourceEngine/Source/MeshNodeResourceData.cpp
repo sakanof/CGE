@@ -34,7 +34,7 @@ namespace ResourceEngine
 		
 		MeshNodeResourceDataVector MeshNodeResourceData::GetChildren() const { return this->m_children; }
 
-		SharedMeshNodeResourceData MeshNodeResourceData::GetChildByName(const std::string& childName) const
+		SharedMeshNodeResourceData MeshNodeResourceData::GetNodeByName(const std::string& childName) const
 		{
 			SharedMeshNodeResourceData child(nullptr);
 
@@ -50,7 +50,7 @@ namespace ResourceEngine
 			{
 				myChildIterator = this->m_children.begin();
 				for (; myChildIterator != myChildEnd && !child; ++myChildIterator)
-					child = (*myChildIterator)->GetChildByName(childName);
+					child = (*myChildIterator)->GetNodeByName(childName);
 			}
 
 			return child;
