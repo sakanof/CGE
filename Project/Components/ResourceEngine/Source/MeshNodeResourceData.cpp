@@ -46,6 +46,13 @@ namespace ResourceEngine
 					child = (*myChildIterator);
 			}
 
+			if (!child)
+			{
+				myChildIterator = this->m_children.begin();
+				for (; myChildIterator != myChildEnd && !child; ++myChildIterator)
+					child = (*myChildIterator)->GetChildByName(childName);
+			}
+
 			return child;
 		}
 
