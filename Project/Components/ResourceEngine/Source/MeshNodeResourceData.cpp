@@ -33,7 +33,48 @@ namespace ResourceEngine
 		SharedMeshNodeResourceData MeshNodeResourceData::GetParent() const { return this->m_parent; }
 		
 		MeshNodeResourceDataVector MeshNodeResourceData::GetChildren() const { return this->m_children; }
-		
+
+		SharedMeshNodeResourceData MeshNodeResourceData::GetChildByName(const std::string& childName) const
+		{
+			SharedMeshNodeResourceData child(nullptr);
+
+			auto myChildIterator = this->m_children.begin();
+			auto myChildEnd      = this->m_children.begin();
+			for (; myChildIterator != myChildEnd && !child; ++myChildIterator)
+			{
+				if ((*myChildIterator)->GetName() == childName)
+					child = (*myChildIterator);
+			}
+
+			return child;
+		}
+
+		SharedMeshResourceData MeshNodeResourceData::GetMeshByName(const std::string& meshName) const
+		{
+			SharedMeshResourceData mesh(nullptr);
+
+			auto myMeshListIterator = this->m_meshList.begin();
+			auto myMeshListEnd = this->m_meshList.end();
+
+			for (; myMeshListIterator != myMeshListEnd && !mesh; ++myMeshListIterator)
+			{
+				if ((*myMeshListIterator)->GetName() == meshName)
+					mesh = (*myMeshListIterator);
+			}
+
+			if (!mesh)
+			{
+				auto myChildIterator = this->m_children.begin();
+				auto myChildEnd = this->m_children.begin();
+				for (; myChildIterator != myChildEnd; ++myChildIterator)
+				{
+					mesh = (*myChildIterator)->GetMeshByName(meshName);
+				}
+			}
+
+			return mesh;
+		}
+
 		SME::Mat4 MeshNodeResourceData::GetTransformation() const { return this->m_transformation; }
 
 		void MeshNodeResourceData::SetName(std::string name) { this->m_name = name; }

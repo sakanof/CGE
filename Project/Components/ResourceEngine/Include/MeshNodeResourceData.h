@@ -48,6 +48,10 @@ namespace ResourceEngine
 			
 			MeshNodeResourceDataVector GetChildren() const;
 			
+			SharedMeshNodeResourceData GetChildByName(const std::string& childName) const;
+
+			SharedMeshResourceData GetMeshByName(const std::string& meshName) const;
+
 			SME::Mat4 GetTransformation() const;
 
 			void SetName(std::string name);
