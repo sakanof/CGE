@@ -60,7 +60,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)\..\..\..\..\Bin\Libs\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
       <Command>If Not Exist "$(ProjectDir)\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\" mkdir "$(ProjectDir)\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\"
@@ -86,7 +86,7 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(ProjectDir)\..\..\..\..\Bin\Libs\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
       <Command>If Not Exist "$(ProjectDir)\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\" mkdir "$(ProjectDir)\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\"
