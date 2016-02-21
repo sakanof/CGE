@@ -98,7 +98,13 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
     <ClInclude Include="..\Include\IInputEvent.h" />
     <ClInclude Include="..\Include\IInputEventArgument.h" />
     <ClInclude Include="..\Include\IInputListener.h" />
+    <ClInclude Include="..\Include\IMouseInputDeviceImplementation.h" />
+    <ClInclude Include="..\Include\MouseButton.h" />
+    <ClInclude Include="..\Include\MouseInputDevice.h" />
     <ClInclude Include="..\Include\WindowSystemSetup.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Source\MouseInputDevice.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

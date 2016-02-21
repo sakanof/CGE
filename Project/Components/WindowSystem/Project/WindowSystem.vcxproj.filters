@@ -10,6 +10,9 @@
     <Filter Include="Source\Input">
       <UniqueIdentifier>{c7cc16b3-ac75-43af-b87f-dfa335fc35d6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Input\Mouse">
+      <UniqueIdentifier>{15cc6bea-efa3-40d1-a631-8c482112a10e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\WindowSystemSetup.h" />
@@ -25,5 +28,19 @@
     <ClInclude Include="..\Include\IInputEventArgument.h">
       <Filter>Source\Input</Filter>
     </ClInclude>
+    <ClInclude Include="..\Include\MouseInputDevice.h">
+      <Filter>Source\Input\Mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\IMouseInputDeviceImplementation.h">
+      <Filter>Source\Input\Mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\MouseButton.h">
+      <Filter>Source\Input\Mouse</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Source\MouseInputDevice.cpp">
+      <Filter>Source\Input\Mouse</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
