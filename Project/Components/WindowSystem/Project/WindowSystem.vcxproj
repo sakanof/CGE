@@ -94,6 +94,10 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\Include\IInputDevice.h" />
+    <ClInclude Include="..\Include\IInputEvent.h" />
+    <ClInclude Include="..\Include\IInputEventArgument.h" />
+    <ClInclude Include="..\Include\IInputListener.h" />
     <ClInclude Include="..\Include\WindowSystemSetup.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
