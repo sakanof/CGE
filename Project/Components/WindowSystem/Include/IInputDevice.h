@@ -4,11 +4,14 @@
 // Standard Includes
 #include <string>
 
+// WindowSystem Includes
+#include "WindowSystemSetup.h"
+
 namespace WindowSystem
 {
 	namespace Input
 	{
-		class IInputDevice
+		class WINDOW_SYSTEM_API IInputDevice
 		{
 		public:
 			IInputDevice() {}
