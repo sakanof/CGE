@@ -53,7 +53,7 @@ namespace ResourceEngine
 			
 			UnsignedIntVector			m_indices;
 			
-			SharedMaterialResourceData	m_material;
+			WeakMaterialResourceData	m_material;
 
 		public:
 			MeshResourceData(IResourceObserver* observer);
@@ -79,7 +79,7 @@ namespace ResourceEngine
 			
 			UnsignedIntVector GetIndices(void) const;
 			
-			SharedMaterialResourceData GetMaterial(void) const;
+			WeakMaterialResourceData GetMaterial(void) const;
 
 			void SetName(const std::string& name);
 			void SetPolygonMode(PolygonMode polygonMode);
@@ -93,7 +93,7 @@ namespace ResourceEngine
 			void SetUVs(VectorOfFloatVector uvs);
 			void AddUV(FloatVector uv);
 			void SetIndices(UnsignedIntVector indices);
-			void SetMaterial(SharedMaterialResourceData material);
+			void SetMaterial(WeakMaterialResourceData material);
 		};
 		ExplicitExportDataContainers(MeshResourceData)
 

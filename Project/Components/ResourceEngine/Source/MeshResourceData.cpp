@@ -55,7 +55,7 @@ namespace ResourceEngine
 		
 		UnsignedIntVector MeshResourceData::GetIndices(void) const { return this->m_indices; };
 		
-		SharedMaterialResourceData MeshResourceData::GetMaterial(void) const { return this->m_material; }
+		WeakMaterialResourceData MeshResourceData::GetMaterial(void) const { return this->m_material; }
 
 		void MeshResourceData::SetName(const std::string& name){ this->m_name = name; };
 		void MeshResourceData::SetPolygonMode(PolygonMode polygonMode) { this->m_polygonMode = polygonMode; }
@@ -69,6 +69,6 @@ namespace ResourceEngine
 		void MeshResourceData::SetUVs(VectorOfFloatVector uvs) { this->m_uvs = uvs; };
 		void MeshResourceData::AddUV(FloatVector uv) { this->m_uvs.push_back(uv); };
 		void MeshResourceData::SetIndices(UnsignedIntVector indices) { this->m_indices = indices; };
-		void MeshResourceData::SetMaterial(SharedMaterialResourceData material) { this->m_material = material; }
+		void MeshResourceData::SetMaterial(WeakMaterialResourceData material) { this->m_material = material; }
 	};
 };

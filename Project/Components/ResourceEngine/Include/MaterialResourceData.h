@@ -119,8 +119,9 @@ namespace ResourceEngine
 		ExplicitExportDataContainers(MaterialResourceData)
 
 		using SharedMaterialResourceData = std::shared_ptr < MaterialResourceData >;
-		using MaterialResourceDataVector = std::vector < std::shared_ptr<MaterialResourceData> >;
-		using MaterialResourceDataList   = std::list < std::shared_ptr<MaterialResourceData> >;
+		using WeakMaterialResourceData   = std::weak_ptr < MaterialResourceData >;
+		using MaterialResourceDataVector = std::vector < std::weak_ptr<MaterialResourceData> >;
+		using MaterialResourceDataList   = std::list < std::weak_ptr<MaterialResourceData> >;
 	};
 };
 

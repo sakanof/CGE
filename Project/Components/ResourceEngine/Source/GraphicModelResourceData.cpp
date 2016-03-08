@@ -18,7 +18,10 @@ namespace ResourceEngine
 
 			unsigned int materialIndex;
 			for (materialIndex = 0; materialIndex < this->m_materialList.size(); ++materialIndex)
-				mySize += this->m_materialList[materialIndex]->Size();
+			{
+				if (auto material = this->m_materialList[materialIndex].lock())
+				mySize += material->Size();
+			}
 
 			return mySize;
 		}
@@ -26,17 +29,18 @@ namespace ResourceEngine
 
 		SharedMeshNodeResourceData GraphicModelResourceData::GetMeshNode(void) const { return this->m_meshNode; }
 		MaterialResourceDataVector GraphicModelResourceData::GetMaterialList(void) const { return this->m_materialList; }
-		SharedMaterialResourceData GraphicModelResourceData::GetMaterialByName(const std::string& materialName) const
+		WeakMaterialResourceData GraphicModelResourceData::GetMaterialByName(const std::string& materialName) const
 		{
-			SharedMaterialResourceData resultMaterial(nullptr);
+			WeakMaterialResourceData resultMaterial;
 
-			auto myMaterialIterator = this->m_materialList.begin();
-			auto myMaterialEnd      = this->m_materialList.end();
-
-			for (; myMaterialIterator != myMaterialEnd && !resultMaterial; ++myMaterialIterator)
+			unsigned int materialIndex;
+			for (materialIndex = 0; materialIndex < this->m_materialList.size(); ++materialIndex)
 			{
-				if ((*myMaterialIterator)->GetName() == materialName)
-					resultMaterial = (*myMaterialIterator);
+				if (auto currentMaterial = this->m_materialList[materialIndex].lock())
+				{
+					if (currentMaterial->GetName() == materialName)
+						resultMaterial = currentMaterial;
+				}
 			}
 
 			return resultMaterial;

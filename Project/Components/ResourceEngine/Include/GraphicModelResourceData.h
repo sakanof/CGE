@@ -29,7 +29,7 @@ namespace ResourceEngine
 
 			SharedMeshNodeResourceData GetMeshNode(void) const;
 			MaterialResourceDataVector GetMaterialList(void) const;
-			SharedMaterialResourceData GetMaterialByName(const std::string& materialName) const;
+			WeakMaterialResourceData GetMaterialByName(const std::string& materialName) const;
 		};
 		ExplicitExportDataContainers(GraphicModelResourceData)
 
