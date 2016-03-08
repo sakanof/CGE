@@ -66,15 +66,15 @@ namespace ResourceEngine
 			float GetOpacity(void) const;
 			float GetOpticalDensity(void) const;
 			
-			SharedImageResourceData	GetAmbientTexture(unsigned int index) const;
-			SharedImageResourceData	GetDifuseTexture(unsigned int index) const;
-			SharedImageResourceData	GetSpecularTexture(unsigned int index) const;
-			SharedImageResourceData	GetShininessTexture(unsigned int index) const;
-			SharedImageResourceData	GetOpacityTexture(unsigned int index) const;
-			SharedImageResourceData	GetNormalTexture(unsigned int index) const;
-			SharedImageResourceData	GetHeightMapTexture(unsigned int index) const;
-			SharedImageResourceData	GetDisplacementMapTexture(unsigned int index) const;
-			SharedImageResourceData	GetStenceilDecalTexture(unsigned int index) const;
+			WeakImageResourceData GetAmbientTexture(unsigned int index) const;
+			WeakImageResourceData GetDifuseTexture(unsigned int index) const;
+			WeakImageResourceData GetSpecularTexture(unsigned int index) const;
+			WeakImageResourceData GetShininessTexture(unsigned int index) const;
+			WeakImageResourceData GetOpacityTexture(unsigned int index) const;
+			WeakImageResourceData GetNormalTexture(unsigned int index) const;
+			WeakImageResourceData GetHeightMapTexture(unsigned int index) const;
+			WeakImageResourceData GetDisplacementMapTexture(unsigned int index) const;
+			WeakImageResourceData GetStenceilDecalTexture(unsigned int index) const;
 
 			bool HasAmbientTexture(void) const;
 			bool HasDifuseTexture(void) const;
@@ -96,15 +96,15 @@ namespace ResourceEngine
 			void SetName(const std::string& name);
 			void SetOpticalDensity(float opticalDensity);
 			
-			void AddAmbientTexture(SharedImageResourceData ambientTexture);
-			void AddDifuseTexture(SharedImageResourceData difuseTexture);
-			void AddSpecularTexture(SharedImageResourceData specularTexture);
-			void AddShininessTexture(SharedImageResourceData specularHighlight);
-			void AddOpacityTexture(SharedImageResourceData alphaTexture);
-			void AddHeightMapTexture(SharedImageResourceData heightMap);
-			void AddNormalTexture(SharedImageResourceData bumpmap);
-			void AddDisplacementMapTexture(SharedImageResourceData displacementMap);
-			void AddStencilDecalTexture(SharedImageResourceData stencilDecal);
+			void AddAmbientTexture(WeakImageResourceData ambientTexture);
+			void AddDifuseTexture(WeakImageResourceData difuseTexture);
+			void AddSpecularTexture(WeakImageResourceData specularTexture);
+			void AddShininessTexture(WeakImageResourceData specularHighlight);
+			void AddOpacityTexture(WeakImageResourceData alphaTexture);
+			void AddHeightMapTexture(WeakImageResourceData heightMap);
+			void AddNormalTexture(WeakImageResourceData bumpmap);
+			void AddDisplacementMapTexture(WeakImageResourceData displacementMap);
+			void AddStencilDecalTexture(WeakImageResourceData stencilDecal);
 		
 			void AddAmbientTexture(ImageResourceDataVector ambientTextureList);
 			void AddDifuseTexture(ImageResourceDataVector difuseTextureList);

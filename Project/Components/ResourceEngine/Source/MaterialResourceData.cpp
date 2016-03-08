@@ -41,7 +41,10 @@ namespace ResourceEngine
 			unsigned short index       = 0;
 	
 			for (index = 0; index < list.size(); ++index)
-				sizeInBytes += list[index]->Size();
+			{
+				if(auto imageResourceData = list[index].lock())
+					sizeInBytes += imageResourceData->Size();
+			}
 
 			return sizeInBytes;
 		}
@@ -60,7 +63,7 @@ namespace ResourceEngine
 			sizeInBytes += GetImageResourceDataSizeInBytes(this->m_heightMapTexture);
 			sizeInBytes += GetImageResourceDataSizeInBytes(this->m_normalTexture);
 			sizeInBytes += GetImageResourceDataSizeInBytes(this->m_displacementMapTexture);
-			sizeInBytes += GetImageResourceDataSizeInBytes(this->m_stencilDecalTexture);
+			//sizeInBytes += GetImageResourceDataSizeInBytes(this->m_stencilDecalTexture);
 
 			return sizeInBytes;
 		}
@@ -78,15 +81,15 @@ namespace ResourceEngine
 		float MaterialResourceData::GetOpacity(void) const { return this->m_opacity; }
 		float MaterialResourceData::GetOpticalDensity(void) const { return this->m_opticalDensity; }
 			
-		SharedImageResourceData	MaterialResourceData::GetAmbientTexture(unsigned int index) const { return this->m_ambientTexture[index]; }
-		SharedImageResourceData	MaterialResourceData::GetDifuseTexture(unsigned int index) const { return this->m_difuseTexture[index]; }
-		SharedImageResourceData	MaterialResourceData::GetSpecularTexture(unsigned int index) const { return this->m_specularTexture[index]; }
-		SharedImageResourceData	MaterialResourceData::GetShininessTexture(unsigned int index) const { return this->m_shininessTexture[index]; }
-		SharedImageResourceData	MaterialResourceData::GetOpacityTexture(unsigned int index) const { return this->m_opacityTexture[index]; }
-		SharedImageResourceData	MaterialResourceData::GetHeightMapTexture(unsigned int index) const { return this->m_heightMapTexture[index]; }
-		SharedImageResourceData	MaterialResourceData::GetNormalTexture(unsigned int index) const { return this->m_normalTexture[index]; }
-		SharedImageResourceData	MaterialResourceData::GetDisplacementMapTexture(unsigned int index) const { return this->m_displacementMapTexture[index]; }
-		SharedImageResourceData	MaterialResourceData::GetStenceilDecalTexture(unsigned int index) const { return this->m_stencilDecalTexture[index]; }
+		WeakImageResourceData MaterialResourceData::GetAmbientTexture(unsigned int index) const { return this->m_ambientTexture[index]; }
+		WeakImageResourceData MaterialResourceData::GetDifuseTexture(unsigned int index) const { return this->m_difuseTexture[index]; }
+		WeakImageResourceData MaterialResourceData::GetSpecularTexture(unsigned int index) const { return this->m_specularTexture[index]; }
+		WeakImageResourceData MaterialResourceData::GetShininessTexture(unsigned int index) const { return this->m_shininessTexture[index]; }
+		WeakImageResourceData MaterialResourceData::GetOpacityTexture(unsigned int index) const { return this->m_opacityTexture[index]; }
+		WeakImageResourceData MaterialResourceData::GetHeightMapTexture(unsigned int index) const { return this->m_heightMapTexture[index]; }
+		WeakImageResourceData MaterialResourceData::GetNormalTexture(unsigned int index) const { return this->m_normalTexture[index]; }
+		WeakImageResourceData MaterialResourceData::GetDisplacementMapTexture(unsigned int index) const { return this->m_displacementMapTexture[index]; }
+		WeakImageResourceData MaterialResourceData::GetStenceilDecalTexture(unsigned int index) const { return this->m_stencilDecalTexture[index]; }
 			
 		bool MaterialResourceData::HasAmbientTexture(void) const { return this->m_ambientTexture.size() > 0; }
 		bool MaterialResourceData::HasDifuseTexture(void) const { return this->m_difuseTexture.size() > 0; }
@@ -108,15 +111,51 @@ namespace ResourceEngine
 		void MaterialResourceData::SetOpticalDensity(float opticalDensity) { this->m_opticalDensity = opticalDensity; }
 		void MaterialResourceData::SetName(const std::string& name) { this->m_name = std::string(name); }
 			 
-		void MaterialResourceData::AddAmbientTexture(SharedImageResourceData ambientTexture) { this->m_ambientTexture.push_back(ambientTexture); }
-		void MaterialResourceData::AddDifuseTexture(SharedImageResourceData difuseTexture) { this->m_difuseTexture.push_back(difuseTexture); }
-		void MaterialResourceData::AddSpecularTexture(SharedImageResourceData specularTexture) { this->m_specularTexture.push_back(specularTexture); }
-		void MaterialResourceData::AddShininessTexture(SharedImageResourceData specularHighlight) { this->m_shininessTexture.push_back(specularHighlight); }
-		void MaterialResourceData::AddOpacityTexture(SharedImageResourceData alphaTexture) { this->m_opacityTexture.push_back(alphaTexture); }
-		void MaterialResourceData::AddHeightMapTexture(SharedImageResourceData heightMap) { this->m_heightMapTexture.push_back(heightMap); }
-		void MaterialResourceData::AddNormalTexture(SharedImageResourceData bumpmap) { this->m_normalTexture.push_back(bumpmap); }
-		void MaterialResourceData::AddDisplacementMapTexture(SharedImageResourceData displacementMap){ this->m_displacementMapTexture.push_back(displacementMap); }
-		void MaterialResourceData::AddStencilDecalTexture(SharedImageResourceData stencilDecal) { this->m_stencilDecalTexture.push_back(stencilDecal); }
+		void MaterialResourceData::AddAmbientTexture(WeakImageResourceData ambientTexture) 
+		{ 
+			if (auto texture = ambientTexture.lock())
+				this->m_ambientTexture.push_back(ambientTexture); 
+		}
+		void MaterialResourceData::AddDifuseTexture(WeakImageResourceData difuseTexture) 
+		{ 
+			if (auto texture = difuseTexture.lock())
+				this->m_difuseTexture.push_back(difuseTexture); 
+		}
+		void MaterialResourceData::AddSpecularTexture(WeakImageResourceData specularTexture) 
+		{ 
+			if (auto texture = specularTexture.lock())
+				this->m_specularTexture.push_back(specularTexture);
+		}
+		void MaterialResourceData::AddShininessTexture(WeakImageResourceData specularHighlight) 
+		{ 
+			if (auto texture = specularHighlight.lock())
+				this->m_shininessTexture.push_back(specularHighlight);
+		}
+		void MaterialResourceData::AddOpacityTexture(WeakImageResourceData alphaTexture) 
+		{ 
+			if (auto texture = alphaTexture.lock())
+				this->m_opacityTexture.push_back(alphaTexture);
+		}
+		void MaterialResourceData::AddHeightMapTexture(WeakImageResourceData heightMap) 
+		{ 
+			if (auto texture = heightMap.lock())
+				this->m_heightMapTexture.push_back(heightMap);
+		}
+		void MaterialResourceData::AddNormalTexture(WeakImageResourceData bumpmap) 
+		{ 
+			if (auto texture = bumpmap.lock())
+				this->m_normalTexture.push_back(bumpmap);
+		}
+		void MaterialResourceData::AddDisplacementMapTexture(WeakImageResourceData displacementMap)
+		{ 
+			if (auto texture = displacementMap.lock())
+				this->m_displacementMapTexture.push_back(displacementMap);
+		}
+		void MaterialResourceData::AddStencilDecalTexture(WeakImageResourceData stencilDecal) 
+		{ 
+			if (auto texture = stencilDecal.lock())
+				this->m_stencilDecalTexture.push_back(stencilDecal);
+		}
 			 
 		void MaterialResourceData::AddAmbientTexture(ImageResourceDataVector ambientTextureList) { this->m_ambientTexture.insert(this->m_ambientTexture.end(), ambientTextureList.begin(), ambientTextureList.end()); }
 		void MaterialResourceData::AddDifuseTexture(ImageResourceDataVector difuseTextureList) { this->m_difuseTexture.insert(this->m_difuseTexture.end(), difuseTextureList.begin(), difuseTextureList.end()); }
