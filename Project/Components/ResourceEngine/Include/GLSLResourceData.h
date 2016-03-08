@@ -24,8 +24,9 @@ namespace ResourceEngine
 		ExplicitExportDataContainers(GLSLResourceData)
 
 		using SharedGLSLResourceData = std::shared_ptr < GLSLResourceData >;
-		using GLSLResourceDataVector = std::vector < std::shared_ptr<GLSLResourceData> >;
-		using GLSLResourceDataList   = std::list < std::shared_ptr<GLSLResourceData> >;
+		using WeakGLSLResourceData   = std::weak_ptr < GLSLResourceData >;
+		using GLSLResourceDataVector = std::vector < std::weak_ptr<GLSLResourceData> >;
+		using GLSLResourceDataList   = std::list < std::weak_ptr<GLSLResourceData> >;
 	};
 }; 
 
