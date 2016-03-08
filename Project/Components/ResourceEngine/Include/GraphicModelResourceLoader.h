@@ -45,7 +45,7 @@ namespace ResourceEngine
 				using MeshNodeResourceData = ResourceEngine::Data::MeshNodeResourceData;
 				using SharedGraphicModelResourceData = ResourceEngine::Data::SharedGraphicModelResourceData;
 				using SharedMaterialResourceData = ResourceEngine::Data::SharedMaterialResourceData;
-				using SharedImageResourceData = ResourceEngine::Data::SharedImageResourceData;
+				using WeakImageResourceData = ResourceEngine::Data::WeakImageResourceData;
 				using SharedMeshResourceData = ResourceEngine::Data::SharedMeshResourceData;
 				using SharedMeshNodeResourceData = ResourceEngine::Data::SharedMeshNodeResourceData;
 				using GraphicModelResourceDataVector = ResourceEngine::Data::GraphicModelResourceDataVector;
@@ -69,7 +69,7 @@ namespace ResourceEngine
 				
 				SharedMeshResourceData ExtracMesh(aiMesh* assimpMesh, const std::string& name, const aiScene* assimpScene, MaterialResourceDataVector materialList) const;
 				
-				SharedImageResourceData GetImageResourceData(const std::string& path) const;
+				WeakImageResourceData GetImageResourceData(const std::string& path) const;
 				
 				ImageResourceDataVector ExtractMaterialTextures(aiMaterial* material, aiTextureType textureType) const;
 

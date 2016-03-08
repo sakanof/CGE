@@ -18,7 +18,7 @@ namespace ResourceEngine
 			using MeshNodeResourceData = ResourceEngine::Data::MeshNodeResourceData;
 			using SharedGraphicModelResourceData = ResourceEngine::Data::SharedGraphicModelResourceData;
 			using SharedMaterialResourceData = ResourceEngine::Data::SharedMaterialResourceData;
-			using SharedImageResourceData = ResourceEngine::Data::SharedImageResourceData;
+			using WeakImageResourceData = ResourceEngine::Data::WeakImageResourceData;
 			using SharedMeshResourceData = ResourceEngine::Data::SharedMeshResourceData;
 			using SharedMeshNodeResourceData = ResourceEngine::Data::SharedMeshNodeResourceData;
 			using GraphicModelResourceDataVector = ResourceEngine::Data::GraphicModelResourceDataVector;
@@ -218,7 +218,7 @@ namespace ResourceEngine
 				}
 			}
 			
-			SharedImageResourceData GraphicModelResourceLoader::GetImageResourceData(const std::string& path) const
+			WeakImageResourceData GraphicModelResourceLoader::GetImageResourceData(const std::string& path) const
 			{
 				return ResourceCache::GetInstance()->GetHandle(Resource(path))->GetResourceData<ImageResourceData>();
 			}
