@@ -22,17 +22,21 @@ namespace ResourceEngine
 		Resource GetResource() const;
 		
 		template<class ResourceDataType>
-		std::shared_ptr<ResourceDataType> GetResourceData() const
+		std::weak_ptr<ResourceDataType> GetResourceData() const
 		{
-			return  std::dynamic_pointer_cast<ResourceDataType>(this->m_resourceData);
+			return  std::weak_ptr<ResourceDataType>(std::dynamic_pointer_cast<ResourceDataType>(this->m_resourceData));
 		}
 	};
 	ExplicitExportDataContainers(ResourceHandle)
 
-	using SharedResourceHandle = std::shared_ptr < ResourceHandle >;
-	using ResourceHandleVector = std::vector < std::shared_ptr<ResourceHandle> >;
-	using ResourceHandleList   = std::list < std::shared_ptr<ResourceHandle> >;
-	using ResourceHandleMap = std::map < std::string, std::shared_ptr<ResourceHandle > >;
+	using SharedResourceHandle       = std::shared_ptr < ResourceHandle >;
+	using WeakResourceHandle         = std::weak_ptr < ResourceHandle >;
+	using ResourceHandleStrongVector = std::vector < std::shared_ptr<ResourceHandle> >;
+	using ResourceHandleWeakVector   = std::vector < std::weak_ptr<ResourceHandle> >;
+	using ResourceHandleStrongList   = std::list < std::shared_ptr<ResourceHandle> >;
+	using ResourceHandleWeakList     = std::list < std::weak_ptr<ResourceHandle> >;
+	using ResourceHandleStrongMap    = std::map < std::string, std::shared_ptr<ResourceHandle > >;
+	using ResourceHandleWeakMap      = std::map < std::string, std::weak_ptr<ResourceHandle > >;
 };
 
 #endif // ResourceEngine_HandleResource_H

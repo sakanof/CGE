@@ -16,7 +16,7 @@ namespace ResourceEngine
 	{
 		SharedResourceHandle result(nullptr);
 
-		ResourceHandleMap::iterator it = this->m_resourcesMap.find(resource.GetFilePath());
+		ResourceHandleStrongMap::iterator it = this->m_resourcesMap.find(resource.GetFilePath());
 		if (it != this->m_resourcesMap.end())
 			result = it->second;
 
@@ -94,10 +94,10 @@ namespace ResourceEngine
 	{
 		SharedResourceHandle resourceHandleToDelete = *(--this->m_leastRecentlyUsed.end());
 		bool foundResourceToBeFreed					= false;
-		auto resourceHandleListReverseEnd			= this->m_leastRecentlyUsed.rend();
+		auto ResourceHandleStrongListReverseEnd			= this->m_leastRecentlyUsed.rend();
 		
 		// Searches for the least recently used resource that have the least reference count to it.
-		for (auto handleIterator = this->m_leastRecentlyUsed.rbegin(); handleIterator != resourceHandleListReverseEnd && !foundResourceToBeFreed; ++handleIterator)
+		for (auto handleIterator = this->m_leastRecentlyUsed.rbegin(); handleIterator != ResourceHandleStrongListReverseEnd && !foundResourceToBeFreed; ++handleIterator)
 		{
 			if (handleIterator->unique())
 			{

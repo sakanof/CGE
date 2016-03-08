@@ -25,8 +25,8 @@ namespace ResourceEngine
 	protected:
 		__int64		   	      m_cacheSize;			/** < The cache size in bytes. */
 		__int64			      m_allocatedSize;		/** < The amount of the cache that has been allocated. */
-		ResourceHandleList    m_leastRecentlyUsed;	/** < Track which resources are less frequently used the others. */
-		ResourceHandleMap 	  m_resourcesMap;		/** < Map used to quickly finds resources by their name. */
+		ResourceHandleStrongList    m_leastRecentlyUsed;	/** < Track which resources are less frequently used the others. */
+		ResourceHandleStrongMap 	  m_resourcesMap;		/** < Map used to quickly finds resources by their name. */
 		ResourceLoaderVector  m_resourceLoaders;	/** < List of the registered resource loaders. */
 
 	protected:

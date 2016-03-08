@@ -53,8 +53,9 @@ namespace ResourceEngine
 		ExplicitExportDataContainers(IResourceData)
 
 		using SharedResourceData = std::shared_ptr < IResourceData >;
-		using ResourceDataVector = std::vector < std::shared_ptr<IResourceData> >;
-		using ResourceDataList   = std::list < std::shared_ptr<IResourceData> >;
+		using WeakResourceData   = std::weak_ptr < IResourceData >;
+		using ResourceDataVector = std::vector < std::weak_ptr<IResourceData> >;
+		using ResourceDataList   = std::list < std::weak_ptr<IResourceData> >;
 	}
 };
 
