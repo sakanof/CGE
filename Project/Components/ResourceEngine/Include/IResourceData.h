@@ -12,14 +12,17 @@ namespace ResourceEngine
 {
 	namespace Data
 	{
-		#define ExplicitExportDataContainers(DataType)				\
-					ExplicitExportSharedPtr(DataType)				\
-					ExplicitExportVector(DataType*)					\
-					ExplicitExportVector(std::shared_ptr<DataType>)	\
-					ExplicitExportList(DataType*)					\
-					ExplicitExportList(std::shared_ptr<DataType>)	\
-					ExplicitExportMap(std::string, DataType*)		\
-					ExplicitExportMap(std::string, std::shared_ptr<DataType>)
+		#define ExplicitExportDataContainers(DataType)							\
+					ExplicitExportSharedPtr(DataType)							\
+					ExplicitExportWeakPtr(DataType)								\
+					ExplicitExportVector(DataType*)								\
+					ExplicitExportVector(std::shared_ptr<DataType>)				\
+					ExplicitExportVector(std::weak_ptr<DataType>)				\
+					ExplicitExportList(DataType*)								\
+					ExplicitExportList(std::shared_ptr<DataType>)				\
+					ExplicitExportMap(std::string, DataType*)					\
+					ExplicitExportMap(std::string, std::shared_ptr<DataType>)	\
+					ExplicitExportMap(std::string, std::weak_ptr<DataType>)
 
 		class RESOURCE_ENGINE_API IResourceData
 		{
