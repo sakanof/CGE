@@ -27,6 +27,7 @@ namespace ResourceEngine
 	#define ExpliticExportType(Type) RESOURCE_ENGINE_EXP_TEMPLATE template class RESOURCE_ENGINE_API Type;
 
 	#define ExplicitExportSharedPtr(Type) ExpliticExportType(std::shared_ptr<Type>)
+	#define ExplicitExportWeakPtr(Type) ExpliticExportType(std::weak_ptr<Type>)
 	#define ExplicitExportVector(VectorType) ExpliticExportType(std::vector<VectorType>)
 	#define ExplicitExportList(ListType) ExpliticExportType(std::list<ListType>)
 	#define ExplicitExportMap(MapKeyType, MapType) RESOURCE_ENGINE_EXP_TEMPLATE template class RESOURCE_ENGINE_API std::map<MapKeyType, MapType>;
