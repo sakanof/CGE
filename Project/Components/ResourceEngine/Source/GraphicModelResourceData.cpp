@@ -4,7 +4,7 @@ namespace ResourceEngine
 {
 	namespace Data
 	{
-		GraphicModelResourceData::GraphicModelResourceData(IResourceObserver* observer, SharedMeshNodeResourceData meshNode, MaterialResourceDataVector materialList)
+		GraphicModelResourceData::GraphicModelResourceData(IResourceObserver* observer, SharedMeshNodeResourceData meshNode, WeakMaterialResourceDataVector materialList)
 			: IResourceData(observer), 
 			  m_meshNode(meshNode),
 			  m_materialList(materialList) {}
@@ -28,7 +28,7 @@ namespace ResourceEngine
 		std::string GraphicModelResourceData::Type() const { return std::string("GraphicModelResourceData"); }
 
 		SharedMeshNodeResourceData GraphicModelResourceData::GetMeshNode(void) const { return this->m_meshNode; }
-		MaterialResourceDataVector GraphicModelResourceData::GetMaterialList(void) const { return this->m_materialList; }
+		WeakMaterialResourceDataVector GraphicModelResourceData::GetMaterialList(void) const { return this->m_materialList; }
 		WeakMaterialResourceData GraphicModelResourceData::GetMaterialByName(const std::string& materialName) const
 		{
 			WeakMaterialResourceData resultMaterial;

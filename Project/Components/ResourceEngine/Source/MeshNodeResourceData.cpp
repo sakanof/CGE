@@ -34,11 +34,11 @@ namespace ResourceEngine
 
 		std::string MeshNodeResourceData::GetName() const { return this->m_name; }
 		
-		MeshResourceDataVector MeshNodeResourceData::GetMeshList() const { return this->m_meshList; }
+		WeakMeshResourceDataVector MeshNodeResourceData::GetMeshList() const { return this->m_meshList; }
 		
 		WeakMeshNodeResourceData MeshNodeResourceData::GetParent() const { return this->m_parent; }
 		
-		MeshNodeResourceDataVector MeshNodeResourceData::GetChildren() const { return this->m_children; }
+		WeakMeshNodeResourceDataVector MeshNodeResourceData::GetChildren() const { return this->m_children; }
 
 		WeakMeshNodeResourceData MeshNodeResourceData::GetNodeByName(const std::string& childName) const
 		{

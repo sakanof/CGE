@@ -35,7 +35,7 @@ namespace ResourceEngine
 			SetOpticalDensity(1.0f);
 			SetIndexOfRefraction(1.0f);
 		}
-		unsigned int MaterialResourceData::GetImageResourceDataSizeInBytes(ImageResourceDataVector list) const
+		unsigned int MaterialResourceData::GetImageResourceDataSizeInBytes(WeakImageResourceDataVector list) const
 		{
 			unsigned int   sizeInBytes = 0;
 			unsigned short index       = 0;
@@ -157,14 +157,14 @@ namespace ResourceEngine
 				this->m_stencilDecalTexture.push_back(stencilDecal);
 		}
 			 
-		void MaterialResourceData::AddAmbientTexture(ImageResourceDataVector ambientTextureList) { this->m_ambientTexture.insert(this->m_ambientTexture.end(), ambientTextureList.begin(), ambientTextureList.end()); }
-		void MaterialResourceData::AddDifuseTexture(ImageResourceDataVector difuseTextureList) { this->m_difuseTexture.insert(this->m_difuseTexture.end(), difuseTextureList.begin(), difuseTextureList.end()); }
-		void MaterialResourceData::AddSpecularTexture(ImageResourceDataVector specularTextureList) { this->m_specularTexture.insert(this->m_specularTexture.end(), specularTextureList.begin(), specularTextureList.end()); }
-		void MaterialResourceData::AddShininessTexture(ImageResourceDataVector specularHighlightList) { this->m_shininessTexture.insert(this->m_shininessTexture.end(), specularHighlightList.begin(), specularHighlightList.end()); }
-		void MaterialResourceData::AddOpacityTexture(ImageResourceDataVector alphaTextureList) { this->m_opacityTexture.insert(this->m_opacityTexture.end(), alphaTextureList.begin(), alphaTextureList.end()); }
-		void MaterialResourceData::AddHeightMapTexture(ImageResourceDataVector heightMapList) { this->m_heightMapTexture.insert(this->m_heightMapTexture.end(), heightMapList.begin(), heightMapList.end()); }
-		void MaterialResourceData::AddNormalTexture(ImageResourceDataVector bumpmapList) { this->m_normalTexture.insert(this->m_normalTexture.end(), bumpmapList.begin(), bumpmapList.end()); }
-		void MaterialResourceData::AddDisplacementMapTexture(ImageResourceDataVector displacementMapList) { this->m_displacementMapTexture.insert(this->m_displacementMapTexture.end(), displacementMapList.begin(), displacementMapList.end()); }
-		void MaterialResourceData::AddStencilDecalTexture(ImageResourceDataVector stencilDecalList) { this->m_stencilDecalTexture.insert(this->m_stencilDecalTexture.end(), stencilDecalList.begin(), stencilDecalList.end()); }
+		void MaterialResourceData::AddAmbientTexture(WeakImageResourceDataVector ambientTextureList) { this->m_ambientTexture.insert(this->m_ambientTexture.end(), ambientTextureList.begin(), ambientTextureList.end()); }
+		void MaterialResourceData::AddDifuseTexture(WeakImageResourceDataVector difuseTextureList) { this->m_difuseTexture.insert(this->m_difuseTexture.end(), difuseTextureList.begin(), difuseTextureList.end()); }
+		void MaterialResourceData::AddSpecularTexture(WeakImageResourceDataVector specularTextureList) { this->m_specularTexture.insert(this->m_specularTexture.end(), specularTextureList.begin(), specularTextureList.end()); }
+		void MaterialResourceData::AddShininessTexture(WeakImageResourceDataVector specularHighlightList) { this->m_shininessTexture.insert(this->m_shininessTexture.end(), specularHighlightList.begin(), specularHighlightList.end()); }
+		void MaterialResourceData::AddOpacityTexture(WeakImageResourceDataVector alphaTextureList) { this->m_opacityTexture.insert(this->m_opacityTexture.end(), alphaTextureList.begin(), alphaTextureList.end()); }
+		void MaterialResourceData::AddHeightMapTexture(WeakImageResourceDataVector heightMapList) { this->m_heightMapTexture.insert(this->m_heightMapTexture.end(), heightMapList.begin(), heightMapList.end()); }
+		void MaterialResourceData::AddNormalTexture(WeakImageResourceDataVector bumpmapList) { this->m_normalTexture.insert(this->m_normalTexture.end(), bumpmapList.begin(), bumpmapList.end()); }
+		void MaterialResourceData::AddDisplacementMapTexture(WeakImageResourceDataVector displacementMapList) { this->m_displacementMapTexture.insert(this->m_displacementMapTexture.end(), displacementMapList.begin(), displacementMapList.end()); }
+		void MaterialResourceData::AddStencilDecalTexture(WeakImageResourceDataVector stencilDecalList) { this->m_stencilDecalTexture.insert(this->m_stencilDecalTexture.end(), stencilDecalList.begin(), stencilDecalList.end()); }
 	};
 };

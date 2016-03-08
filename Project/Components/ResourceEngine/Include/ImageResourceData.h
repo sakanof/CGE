@@ -51,11 +51,13 @@ namespace ResourceEngine
 		};
 		ExplicitExportDataContainers(ImageResourceData)
 
-		using SharedImageResourceData = std::shared_ptr < ImageResourceData >;
-		using WeakImageResourceData   = std::weak_ptr < ImageResourceData >;
-		using ImageResourceDataVector = std::vector < std::weak_ptr<ImageResourceData> >;
-		using ImageResourceDataList   = std::list < std::weak_ptr<ImageResourceData> >;
-	}; 
+		using SharedImageResourceData       = std::shared_ptr < ImageResourceData >;
+		using WeakImageResourceData         = std::weak_ptr < ImageResourceData >;
+		using SharedImageResourceDataVector = std::vector < std::shared_ptr<ImageResourceData> >;
+		using WeakImageResourceDataVector   = std::vector < std::weak_ptr<ImageResourceData> >;
+		using SharedImageResourceDataList   = std::list < std::shared_ptr<ImageResourceData> >;
+		using WeakImageResourceDataList     = std::list < std::weak_ptr<ImageResourceData> >;
+	};
 }; 
 
 #endif // ResourceEngine_Data_ImageResourceData_H

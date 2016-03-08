@@ -21,16 +21,16 @@ namespace ResourceEngine
 			using WeakImageResourceData = ResourceEngine::Data::WeakImageResourceData;
 			using SharedMeshResourceData = ResourceEngine::Data::SharedMeshResourceData;
 			using SharedMeshNodeResourceData = ResourceEngine::Data::SharedMeshNodeResourceData;
-			using GraphicModelResourceDataVector = ResourceEngine::Data::GraphicModelResourceDataVector;
-			using MaterialResourceDataVector = ResourceEngine::Data::MaterialResourceDataVector;
-			using ImageResourceDataVector = ResourceEngine::Data::ImageResourceDataVector;
-			using MeshResourceDataVector = ResourceEngine::Data::MeshResourceDataVector;
-			using MeshNodeResourceDataVector = ResourceEngine::Data::MeshNodeResourceDataVector;
+			using WeakGraphicModelResourceDataVector = ResourceEngine::Data::WeakGraphicModelResourceDataVector;
+			using WeakMaterialResourceDataVector = ResourceEngine::Data::WeakMaterialResourceDataVector;
+			using WeakImageResourceDataVector = ResourceEngine::Data::WeakImageResourceDataVector;
+			using WeakMeshResourceDataVector = ResourceEngine::Data::WeakMeshResourceDataVector;
+			using WeakMeshNodeResourceDataVector = ResourceEngine::Data::WeakMeshNodeResourceDataVector;
 
 			GraphicModelResourceLoader::GraphicModelResourceLoader(IResourceObserver* resourceObserver) : IResourceLoader(resourceObserver) {}
 			GraphicModelResourceLoader::~GraphicModelResourceLoader(void) {}
 
-			void GraphicModelResourceLoader::ProcessoObjects(aiNode* node, const aiScene* assimpScene, unsigned int* index, SharedMeshNodeResourceData myRootNode, MaterialResourceDataVector materialList) const
+			void GraphicModelResourceLoader::ProcessoObjects(aiNode* node, const aiScene* assimpScene, unsigned int* index, SharedMeshNodeResourceData myRootNode, WeakMaterialResourceDataVector materialList) const
 			{
 				SharedMeshNodeResourceData myNode = std::make_shared<MeshNodeResourceData>(MeshNodeResourceData(this->m_resourceObserver));
 
@@ -47,14 +47,14 @@ namespace ResourceEngine
 				myRootNode->AddChild(myNode);
 			}
 			
-			void GraphicModelResourceLoader::ProcessMaterials(const aiScene* assimpScene, MaterialResourceDataVector materialList) const
+			void GraphicModelResourceLoader::ProcessMaterials(const aiScene* assimpScene, WeakMaterialResourceDataVector materialList) const
 			{
 				unsigned int materialIndex;
 				for (materialIndex = 0; materialIndex < assimpScene->mNumMaterials; ++materialIndex)
 					materialList.push_back(ExtractMaterialFrom(assimpScene->mMaterials[materialIndex]));
 			}
 			
-			SharedMeshResourceData GraphicModelResourceLoader::ExtracMesh(aiMesh* assimpMesh, const std::string& name, const aiScene* assimpScene, MaterialResourceDataVector materialList) const
+			SharedMeshResourceData GraphicModelResourceLoader::ExtracMesh(aiMesh* assimpMesh, const std::string& name, const aiScene* assimpScene, WeakMaterialResourceDataVector materialList) const
 			{
 				try
 				{
@@ -223,12 +223,12 @@ namespace ResourceEngine
 				return ResourceCache::GetInstance()->GetHandle(Resource(path))->GetResourceData<ImageResourceData>();
 			}
 			
-			ImageResourceDataVector GraphicModelResourceLoader::ExtractMaterialTextures(aiMaterial* material, aiTextureType textureType) const
+			WeakImageResourceDataVector GraphicModelResourceLoader::ExtractMaterialTextures(aiMaterial* material, aiTextureType textureType) const
 			{
 				unsigned short			textureIndex = 0;
 				unsigned short			textureCount = 0;
 				aiString				texturePath = aiString("");
-				ImageResourceDataVector	textureList;
+				WeakImageResourceDataVector	textureList;
 
 				textureCount = material->GetTextureCount(textureType);
 				for (textureIndex = 0; textureIndex < textureCount; ++textureIndex)
@@ -286,7 +286,7 @@ namespace ResourceEngine
 				if (assimpScene == nullptr /*|| assimpScene->mFlags != AI_SCENE_FLAGS_INCOMPLETE */ || assimpScene->mRootNode == nullptr)
 					throw Utilities::Exception::FileNotFoundException(__FILE__, __LINE__, "Error during file '" + resource.GetFilePath() + "' parsing.");
 
-				MaterialResourceDataVector materialList;
+				WeakMaterialResourceDataVector materialList;
 				ProcessMaterials(assimpScene, materialList);
 
 				unsigned int index = 0;

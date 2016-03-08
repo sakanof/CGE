@@ -17,10 +17,10 @@ namespace ResourceEngine
 		{
 		private:
 			SharedMeshNodeResourceData m_meshNode;
-			MaterialResourceDataVector m_materialList;
+			WeakMaterialResourceDataVector m_materialList;
 
 		public:
-			GraphicModelResourceData(IResourceObserver* observer, SharedMeshNodeResourceData m_meshNode, MaterialResourceDataVector m_materialList);
+			GraphicModelResourceData(IResourceObserver* observer, SharedMeshNodeResourceData m_meshNode, WeakMaterialResourceDataVector m_materialList);
 			~GraphicModelResourceData();
 
 		public:
@@ -28,16 +28,18 @@ namespace ResourceEngine
 			std::string  Type() const;
 
 			SharedMeshNodeResourceData GetMeshNode(void) const;
-			MaterialResourceDataVector GetMaterialList(void) const;
+			WeakMaterialResourceDataVector GetMaterialList(void) const;
 			WeakMaterialResourceData GetMaterialByName(const std::string& materialName) const;
 		};
 		ExplicitExportDataContainers(GraphicModelResourceData)
 
-		using SharedGraphicModelResourceData = std::shared_ptr < GraphicModelResourceData >;
-		using WeakGraphicModelResourceData   = std::weak_ptr < GraphicModelResourceData >;
-		using GraphicModelResourceDataVector = std::vector < std::weak_ptr<GraphicModelResourceData> >;
-		using GraphicModelResourceDataList   = std::list < std::weak_ptr<GraphicModelResourceData> >;
-	}; 
+		using SharedGraphicModelResourceData       = std::shared_ptr < GraphicModelResourceData >;
+		using WeakGraphicModelResourceData         = std::weak_ptr < GraphicModelResourceData >;
+		using SharedGraphicModelResourceDataVector = std::vector < std::shared_ptr<GraphicModelResourceData> >;
+		using WeakGraphicModelResourceDataVector   = std::vector < std::weak_ptr<GraphicModelResourceData> >;
+		using SharedGraphicModelResourceDataList   = std::list < std::shared_ptr<GraphicModelResourceData> >;
+		using WeakGraphicModelResourceDataList     = std::list < std::weak_ptr<GraphicModelResourceData> >;
+	};
 }; 
 
 #endif // ResourceEngine_Data_GraphicModelResourceData_H

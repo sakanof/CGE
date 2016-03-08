@@ -48,11 +48,11 @@ namespace ResourceEngine
 				using WeakImageResourceData = ResourceEngine::Data::WeakImageResourceData;
 				using SharedMeshResourceData = ResourceEngine::Data::SharedMeshResourceData;
 				using SharedMeshNodeResourceData = ResourceEngine::Data::SharedMeshNodeResourceData;
-				using GraphicModelResourceDataVector = ResourceEngine::Data::GraphicModelResourceDataVector;
-				using MaterialResourceDataVector = ResourceEngine::Data::MaterialResourceDataVector;
-				using ImageResourceDataVector = ResourceEngine::Data::ImageResourceDataVector;
-				using MeshResourceDataVector = ResourceEngine::Data::MeshResourceDataVector;
-				using MeshNodeResourceDataVector = ResourceEngine::Data::MeshNodeResourceDataVector;
+				using WeakGraphicModelResourceDataVector = ResourceEngine::Data::WeakGraphicModelResourceDataVector;
+				using WeakMaterialResourceDataVector = ResourceEngine::Data::WeakMaterialResourceDataVector;
+				using WeakImageResourceDataVector = ResourceEngine::Data::WeakImageResourceDataVector;
+				using WeakMeshResourceDataVector = ResourceEngine::Data::WeakMeshResourceDataVector;
+				using WeakMeshNodeResourceDataVector = ResourceEngine::Data::WeakMeshNodeResourceDataVector;
 			private:
 				std::string m_currentAbsolutePath;
 
@@ -61,17 +61,17 @@ namespace ResourceEngine
 				~GraphicModelResourceLoader(void);
 
 			private:
-				void ProcessoObjects(aiNode* node, const aiScene* assimpScene, unsigned int* index, SharedMeshNodeResourceData myRootNode, MaterialResourceDataVector materialList) const;
+				void ProcessoObjects(aiNode* node, const aiScene* assimpScene, unsigned int* index, SharedMeshNodeResourceData myRootNode, WeakMaterialResourceDataVector materialList) const;
 				
-				void ProcessMaterials(const aiScene* assimpScene, MaterialResourceDataVector materialList) const;
+				void ProcessMaterials(const aiScene* assimpScene, WeakMaterialResourceDataVector materialList) const;
 				
 				SharedMaterialResourceData ExtractMaterialFrom(aiMaterial* material) const;
 				
-				SharedMeshResourceData ExtracMesh(aiMesh* assimpMesh, const std::string& name, const aiScene* assimpScene, MaterialResourceDataVector materialList) const;
+				SharedMeshResourceData ExtracMesh(aiMesh* assimpMesh, const std::string& name, const aiScene* assimpScene, WeakMaterialResourceDataVector materialList) const;
 				
 				WeakImageResourceData GetImageResourceData(const std::string& path) const;
 				
-				ImageResourceDataVector ExtractMaterialTextures(aiMaterial* material, aiTextureType textureType) const;
+				WeakImageResourceDataVector ExtractMaterialTextures(aiMaterial* material, aiTextureType textureType) const;
 
 				Mat4 GetAssimNodeTransformation(aiNode* node) const;
 

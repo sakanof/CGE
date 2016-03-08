@@ -32,15 +32,15 @@ namespace ResourceEngine
 			float m_opacity;
 			float m_opticalDensity; // The amount of refraction is based on optical density
 
-			ImageResourceDataVector	m_ambientTexture;
-			ImageResourceDataVector	m_difuseTexture;
-			ImageResourceDataVector	m_specularTexture;
-			ImageResourceDataVector	m_shininessTexture;  // specular Highlight Component
-			ImageResourceDataVector	m_opacityTexture;
-			ImageResourceDataVector	m_heightMapTexture;
-			ImageResourceDataVector	m_normalTexture;
-			ImageResourceDataVector	m_displacementMapTexture;
-			ImageResourceDataVector	m_stencilDecalTexture;
+			WeakImageResourceDataVector	m_ambientTexture;
+			WeakImageResourceDataVector	m_difuseTexture;
+			WeakImageResourceDataVector	m_specularTexture;
+			WeakImageResourceDataVector	m_shininessTexture;  // specular Highlight Component
+			WeakImageResourceDataVector	m_opacityTexture;
+			WeakImageResourceDataVector	m_heightMapTexture;
+			WeakImageResourceDataVector	m_normalTexture;
+			WeakImageResourceDataVector	m_displacementMapTexture;
+			WeakImageResourceDataVector	m_stencilDecalTexture;
 
 		public:
 			MaterialResourceData(IResourceObserver* observer, const std::string& name = "Unknown", Color3 ka = Color3(1.0f, 1.0f, 1.0f), Color3 kd = Color3(1.0f, 1.0f, 1.0f), Color3 ks = Color3(1.0f, 1.0f, 1.0f));
@@ -48,7 +48,7 @@ namespace ResourceEngine
 		private:
 			// Metodo de inicializacao dos atributos do material
 			void Initialize(const std::string& name, Color3 ka, Color3 kd, Color3 ks);
-			unsigned int GetImageResourceDataSizeInBytes(ImageResourceDataVector list) const;
+			unsigned int GetImageResourceDataSizeInBytes(WeakImageResourceDataVector list) const;
 
 		public:
 			unsigned int Size() const;
@@ -106,22 +106,24 @@ namespace ResourceEngine
 			void AddDisplacementMapTexture(WeakImageResourceData displacementMap);
 			void AddStencilDecalTexture(WeakImageResourceData stencilDecal);
 		
-			void AddAmbientTexture(ImageResourceDataVector ambientTextureList);
-			void AddDifuseTexture(ImageResourceDataVector difuseTextureList);
-			void AddSpecularTexture(ImageResourceDataVector specularTextureList);
-			void AddShininessTexture(ImageResourceDataVector specularHighlightList);
-			void AddOpacityTexture(ImageResourceDataVector alphaTextureList);
-			void AddHeightMapTexture(ImageResourceDataVector heightMapList);
-			void AddNormalTexture(ImageResourceDataVector bumpmapList);
-			void AddDisplacementMapTexture(ImageResourceDataVector displacementMapList);
-			void AddStencilDecalTexture(ImageResourceDataVector stencilDecalList);
+			void AddAmbientTexture(WeakImageResourceDataVector ambientTextureList);
+			void AddDifuseTexture(WeakImageResourceDataVector difuseTextureList);
+			void AddSpecularTexture(WeakImageResourceDataVector specularTextureList);
+			void AddShininessTexture(WeakImageResourceDataVector specularHighlightList);
+			void AddOpacityTexture(WeakImageResourceDataVector alphaTextureList);
+			void AddHeightMapTexture(WeakImageResourceDataVector heightMapList);
+			void AddNormalTexture(WeakImageResourceDataVector bumpmapList);
+			void AddDisplacementMapTexture(WeakImageResourceDataVector displacementMapList);
+			void AddStencilDecalTexture(WeakImageResourceDataVector stencilDecalList);
 		};
 		ExplicitExportDataContainers(MaterialResourceData)
 
-		using SharedMaterialResourceData = std::shared_ptr < MaterialResourceData >;
-		using WeakMaterialResourceData   = std::weak_ptr < MaterialResourceData >;
-		using MaterialResourceDataVector = std::vector < std::weak_ptr<MaterialResourceData> >;
-		using MaterialResourceDataList   = std::list < std::weak_ptr<MaterialResourceData> >;
+		using SharedMaterialResourceData       = std::shared_ptr < MaterialResourceData >;
+		using WeakMaterialResourceData	       = std::weak_ptr < MaterialResourceData >;
+		using SharedMaterialResourceDataVector = std::vector < std::shared_ptr<MaterialResourceData> >;
+		using WeakMaterialResourceDataVector   = std::vector < std::weak_ptr<MaterialResourceData> >;
+		using SharedkMaterialResourceDataList  = std::list < std::shared_ptr<MaterialResourceData> >;
+		using WeakMaterialResourceDataList     = std::list < std::weak_ptr<MaterialResourceData> >;
 	};
 };
 
