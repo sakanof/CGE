@@ -16,8 +16,9 @@ namespace ResourceEngine
 		ExplicitExportDataContainers(MeshNodeResourceData)
 
 		using SharedMeshNodeResourceData = std::shared_ptr < MeshNodeResourceData >;
-		using MeshNodeResourceDataVector = std::vector < std::shared_ptr<MeshNodeResourceData> >;
-		using MeshNodeResourceDataList   = std::list < std::shared_ptr<MeshNodeResourceData> >;
+		using WeakMeshNodeResourceData   = std::weak_ptr < MeshNodeResourceData >;
+		using MeshNodeResourceDataVector = std::vector < std::weak_ptr<MeshNodeResourceData> >;
+		using MeshNodeResourceDataList   = std::list < std::weak_ptr<MeshNodeResourceData> >;
 
 		class RESOURCE_ENGINE_API MeshNodeResourceData : public IResourceData
 		{
@@ -26,7 +27,7 @@ namespace ResourceEngine
 			
 			MeshResourceDataVector		m_meshList;
 			
-			SharedMeshNodeResourceData	m_parent;
+			WeakMeshNodeResourceData	m_parent;
 			
 			MeshNodeResourceDataVector	m_children;
 
@@ -44,11 +45,11 @@ namespace ResourceEngine
 			
 			MeshResourceDataVector GetMeshList() const;
 			
-			SharedMeshNodeResourceData GetParent() const;
+			WeakMeshNodeResourceData GetParent() const;
 			
 			MeshNodeResourceDataVector GetChildren() const;
 			
-			SharedMeshNodeResourceData GetNodeByName(const std::string& childName) const;
+			WeakMeshNodeResourceData GetNodeByName(const std::string& childName) const;
 
 			WeakMeshResourceData GetMeshByName(const std::string& meshName) const;
 
@@ -56,8 +57,8 @@ namespace ResourceEngine
 
 			void SetName(std::string name);
 			void AddMesh(WeakMeshResourceData mesh);
-			void SetParent(SharedMeshNodeResourceData parent);
-			void AddChild(SharedMeshNodeResourceData child);
+			void SetParent(WeakMeshNodeResourceData parent);
+			void AddChild(WeakMeshNodeResourceData child);
 			void SetTransformation(SME::Mat4 transformation);
 		};
 	};

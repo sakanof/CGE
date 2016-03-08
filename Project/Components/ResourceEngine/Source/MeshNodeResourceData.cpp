@@ -17,7 +17,11 @@ namespace ResourceEngine
 
 			unsigned int index;
 			for (index = 0; index < this->m_children.size(); ++index)
-				mySize += this->m_children[index]->Size();
+			{
+				auto currentMesh = this->m_children[index];
+				if (!currentMesh.expired())
+					mySize += currentMesh.lock()->Size();
+			}
 
 			for (index = 0; index < this->m_meshList.size(); ++index)
 			{
@@ -32,27 +36,36 @@ namespace ResourceEngine
 		
 		MeshResourceDataVector MeshNodeResourceData::GetMeshList() const { return this->m_meshList; }
 		
-		SharedMeshNodeResourceData MeshNodeResourceData::GetParent() const { return this->m_parent; }
+		WeakMeshNodeResourceData MeshNodeResourceData::GetParent() const { return this->m_parent; }
 		
 		MeshNodeResourceDataVector MeshNodeResourceData::GetChildren() const { return this->m_children; }
 
-		SharedMeshNodeResourceData MeshNodeResourceData::GetNodeByName(const std::string& childName) const
+		WeakMeshNodeResourceData MeshNodeResourceData::GetNodeByName(const std::string& childName) const
 		{
-			SharedMeshNodeResourceData child(nullptr);
+			WeakMeshNodeResourceData child;
 
-			auto myChildIterator = this->m_children.begin();
-			auto myChildEnd      = this->m_children.begin();
-			for (; myChildIterator != myChildEnd && !child; ++myChildIterator)
+			unsigned int childIndex;
+			for (childIndex = 0; childIndex < this->m_children.size(); ++childIndex)
 			{
-				if ((*myChildIterator)->GetName() == childName)
-					child = (*myChildIterator);
+				auto currentChild = this->m_children[childIndex];
+
+				if (!currentChild.expired())
+				{
+					if (currentChild.lock()->GetName() == childName)
+						child = currentChild;
+				}
 			}
 
-			if (!child)
+			if (child.expired())
 			{
-				myChildIterator = this->m_children.begin();
-				for (; myChildIterator != myChildEnd && !child; ++myChildIterator)
-					child = (*myChildIterator)->GetNodeByName(childName);
+				
+				for (childIndex = 0; childIndex < this->m_children.size(); ++childIndex)
+				{
+					auto currentChild = this->m_children[childIndex];
+
+					if (!currentChild.expired())
+						child = currentChild.lock()->GetNodeByName(childName);
+				}
 			}
 
 			return child;
@@ -74,13 +87,15 @@ namespace ResourceEngine
 				}
 			}
 
-			if (!mesh.expired())
+			if (mesh.expired())
 			{
-				auto myChildIterator = this->m_children.begin();
-				auto myChildEnd = this->m_children.begin();
-				for (; myChildIterator != myChildEnd; ++myChildIterator)
+
+				for (meshIndex = 0; meshIndex < this->m_children.size(); ++meshIndex)
 				{
-					mesh = (*myChildIterator)->GetMeshByName(meshName);
+					auto currentChild = this->m_children[meshIndex];
+
+					if (!currentChild.expired())
+						mesh = currentChild.lock()->GetMeshByName(meshName);
 				}
 			}
 
@@ -91,8 +106,8 @@ namespace ResourceEngine
 
 		void MeshNodeResourceData::SetName(std::string name) { this->m_name = name; }
 		void MeshNodeResourceData::AddMesh(WeakMeshResourceData mesh) { this->m_meshList.push_back(mesh); }
-		void MeshNodeResourceData::SetParent(SharedMeshNodeResourceData parent) { this->m_parent = parent; }
-		void MeshNodeResourceData::AddChild(SharedMeshNodeResourceData child) { this->m_children.push_back(child); }
+		void MeshNodeResourceData::SetParent(WeakMeshNodeResourceData parent) { this->m_parent = parent; }
+		void MeshNodeResourceData::AddChild(WeakMeshNodeResourceData child) { this->m_children.push_back(child); }
 		void MeshNodeResourceData::SetTransformation(SME::Mat4 transformation) { this->m_transformation = transformation; }
 	};
 };
