@@ -34,8 +34,9 @@ namespace ResourceEngine
 		ExplicitExportDataContainers(GraphicModelResourceData)
 
 		using SharedGraphicModelResourceData = std::shared_ptr < GraphicModelResourceData >;
-		using GraphicModelResourceDataVector = std::vector < std::shared_ptr<GraphicModelResourceData> >;
-		using GraphicModelResourceDataList   = std::list < std::shared_ptr<GraphicModelResourceData> >;
+		using WeakGraphicModelResourceData   = std::weak_ptr < GraphicModelResourceData >;
+		using GraphicModelResourceDataVector = std::vector < std::weak_ptr<GraphicModelResourceData> >;
+		using GraphicModelResourceDataList   = std::list < std::weak_ptr<GraphicModelResourceData> >;
 	}; 
 }; 
 
