@@ -17,9 +17,9 @@ namespace ResourceEngine
 			using MeshResourceData = ResourceEngine::Data::MeshResourceData;
 			using MeshNodeResourceData = ResourceEngine::Data::MeshNodeResourceData;
 			using SharedGraphicModelResourceData = ResourceEngine::Data::SharedGraphicModelResourceData;
-			using SharedMaterialResourceData = ResourceEngine::Data::SharedMaterialResourceData;
+			using WeakMaterialResourceData = ResourceEngine::Data::WeakMaterialResourceData;
 			using WeakImageResourceData = ResourceEngine::Data::WeakImageResourceData;
-			using SharedMeshResourceData = ResourceEngine::Data::SharedMeshResourceData;
+			using WeakMeshResourceData = ResourceEngine::Data::WeakMeshResourceData;
 			using SharedMeshNodeResourceData = ResourceEngine::Data::SharedMeshNodeResourceData;
 			using WeakGraphicModelResourceDataVector = ResourceEngine::Data::WeakGraphicModelResourceDataVector;
 			using WeakMaterialResourceDataVector = ResourceEngine::Data::WeakMaterialResourceDataVector;
@@ -30,21 +30,21 @@ namespace ResourceEngine
 			GraphicModelResourceLoader::GraphicModelResourceLoader(IResourceObserver* resourceObserver) : IResourceLoader(resourceObserver) {}
 			GraphicModelResourceLoader::~GraphicModelResourceLoader(void) {}
 
-			void GraphicModelResourceLoader::ProcessoObjects(aiNode* node, const aiScene* assimpScene, unsigned int* index, SharedMeshNodeResourceData myRootNode, WeakMaterialResourceDataVector materialList) const
+			void GraphicModelResourceLoader::ProcessoObjects(aiNode* node, const aiScene* assimpScene, unsigned int* index, WeakMeshNodeResourceData myRootNode, WeakMaterialResourceDataVector materialList) const
 			{
-				SharedMeshNodeResourceData myNode = std::make_shared<MeshNodeResourceData>(MeshNodeResourceData(this->m_resourceObserver));
+				WeakMeshNodeResourceData myNode(std::make_shared<MeshNodeResourceData>(MeshNodeResourceData(this->m_resourceObserver)));
 
-				myNode->SetTransformation(GetAssimNodeTransformation(node));
+				myNode.lock()->SetTransformation(GetAssimNodeTransformation(node));
 
 				unsigned int meshIndex;
 				for (meshIndex = 0; meshIndex < node->mNumMeshes; meshIndex++)
-					myNode->AddMesh(ExtracMesh(assimpScene->mMeshes[*index + meshIndex], node->mName.C_Str(), assimpScene, materialList));
+					myNode.lock()->AddMesh(ExtracMesh(assimpScene->mMeshes[*index + meshIndex], node->mName.C_Str(), assimpScene, materialList));
 
 				*index += meshIndex;
 				for (unsigned int childIndex = 0; childIndex < node->mNumChildren; childIndex++)
 					ProcessoObjects(node->mChildren[childIndex], assimpScene, index, myNode, materialList);
 
-				myRootNode->AddChild(myNode);
+				myRootNode.lock()->AddChild(myNode);
 			}
 			
 			void GraphicModelResourceLoader::ProcessMaterials(const aiScene* assimpScene, WeakMaterialResourceDataVector materialList) const
@@ -54,11 +54,11 @@ namespace ResourceEngine
 					materialList.push_back(ExtractMaterialFrom(assimpScene->mMaterials[materialIndex]));
 			}
 			
-			SharedMeshResourceData GraphicModelResourceLoader::ExtracMesh(aiMesh* assimpMesh, const std::string& name, const aiScene* assimpScene, WeakMaterialResourceDataVector materialList) const
+			WeakMeshResourceData GraphicModelResourceLoader::ExtracMesh(aiMesh* assimpMesh, const std::string& name, const aiScene* assimpScene, WeakMaterialResourceDataVector materialList) const
 			{
 				try
 				{
-					SharedMeshResourceData  myMesh = std::make_shared<MeshResourceData>(MeshResourceData(this->m_resourceObserver));
+					WeakMeshResourceData myMesh(std::make_shared<MeshResourceData>(MeshResourceData(this->m_resourceObserver)));
 					
 					std::vector<float>				vertices;
 					std::vector<float>				normals;
@@ -140,14 +140,14 @@ namespace ResourceEngine
 							indices.push_back(assimpFace.mIndices[j]);
 					}
 
-					myMesh->SetVertices(vertices);
-					myMesh->SetColors(colors);
-					myMesh->SetNormals(normals);
-					myMesh->SetUVs(uvs);
-					myMesh->SetTangents(tangents);
-					myMesh->SetBitangents(bitangents);
-					myMesh->SetIndices(indices);
-					myMesh->SetMaterial(materialList[assimpMesh->mMaterialIndex]);
+					myMesh.lock()->SetVertices(vertices);
+					myMesh.lock()->SetColors(colors);
+					myMesh.lock()->SetNormals(normals);
+					myMesh.lock()->SetUVs(uvs);
+					myMesh.lock()->SetTangents(tangents);
+					myMesh.lock()->SetBitangents(bitangents);
+					myMesh.lock()->SetIndices(indices);
+					myMesh.lock()->SetMaterial(materialList[assimpMesh->mMaterialIndex]);
 
 					return myMesh;
 				}
@@ -161,7 +161,7 @@ namespace ResourceEngine
 				}
 			}
 			
-			SharedMaterialResourceData GraphicModelResourceLoader::ExtractMaterialFrom(aiMaterial* material) const
+			WeakMaterialResourceData GraphicModelResourceLoader::ExtractMaterialFrom(aiMaterial* material) const
 			{
 				try
 				{
@@ -172,40 +172,40 @@ namespace ResourceEngine
 					unsigned short				textureIndex = 0;
 					aiString					texturePath = aiString("");
 					aiString					myMaterialName = aiString("");;
-					SharedMaterialResourceData	myResultMaterial = std::make_shared<MaterialResourceData>(MaterialResourceData(this->m_resourceObserver));
+					WeakMaterialResourceData	myResultMaterial(std::make_shared<MaterialResourceData>(MaterialResourceData(this->m_resourceObserver)));
 					aiColor4D					ambientColor;
 					aiColor4D					difuseColor;
 					aiColor4D					specularColor;
 
 					if (aiGetMaterialString(material, AI_MATKEY_NAME, &myMaterialName) == AI_SUCCESS)
-						myResultMaterial->SetName(myMaterialName.C_Str());
+						myResultMaterial.lock()->SetName(myMaterialName.C_Str());
 
 					if (aiGetMaterialColor(material, AI_MATKEY_COLOR_AMBIENT, &ambientColor) == AI_SUCCESS)
-						myResultMaterial->SetAmbientColor(Color3(ambientColor.r, ambientColor.g, ambientColor.b));
+						myResultMaterial.lock()->SetAmbientColor(Color3(ambientColor.r, ambientColor.g, ambientColor.b));
 
 					if (aiGetMaterialColor(material, AI_MATKEY_COLOR_DIFFUSE, &difuseColor) == AI_SUCCESS)
-						myResultMaterial->SetDifuseColor(Color3(difuseColor.r, difuseColor.g, difuseColor.b));
+						myResultMaterial.lock()->SetDifuseColor(Color3(difuseColor.r, difuseColor.g, difuseColor.b));
 
 					if (aiGetMaterialColor(material, AI_MATKEY_COLOR_SPECULAR, &specularColor) == AI_SUCCESS)
-						myResultMaterial->SetSpecularColor(Color3(specularColor.r, specularColor.g, specularColor.b));
+						myResultMaterial.lock()->SetSpecularColor(Color3(specularColor.r, specularColor.g, specularColor.b));
 
 					if (aiGetMaterialFloat(material, AI_MATKEY_SHININESS, &shininess) == AI_SUCCESS)
-						myResultMaterial->SetShininess(shininess / 4.0f);
+						myResultMaterial.lock()->SetShininess(shininess / 4.0f);
 
 					if (aiGetMaterialFloat(material, AI_MATKEY_OPACITY, &opacity) == AI_SUCCESS)
-						myResultMaterial->SetOpacity(opacity);
+						myResultMaterial.lock()->SetOpacity(opacity);
 
 					if (aiGetMaterialFloat(material, AI_MATKEY_REFRACTI, &indexOfRefraction) == AI_SUCCESS)
-						myResultMaterial->SetIndexOfRefraction(indexOfRefraction);
+						myResultMaterial.lock()->SetIndexOfRefraction(indexOfRefraction);
 
-					myResultMaterial->AddAmbientTexture(ExtractMaterialTextures(material, aiTextureType_AMBIENT));
-					myResultMaterial->AddDifuseTexture(ExtractMaterialTextures(material, aiTextureType_DIFFUSE));
-					myResultMaterial->AddSpecularTexture(ExtractMaterialTextures(material, aiTextureType_SPECULAR));
-					myResultMaterial->AddDisplacementMapTexture(ExtractMaterialTextures(material, aiTextureType_DISPLACEMENT));
-					myResultMaterial->AddNormalTexture(ExtractMaterialTextures(material, aiTextureType_NORMALS));
-					myResultMaterial->AddOpacityTexture(ExtractMaterialTextures(material, aiTextureType_OPACITY));
-					myResultMaterial->AddHeightMapTexture(ExtractMaterialTextures(material, aiTextureType_HEIGHT));
-					myResultMaterial->AddShininessTexture(ExtractMaterialTextures(material, aiTextureType_SHININESS));
+					myResultMaterial.lock()->AddAmbientTexture(ExtractMaterialTextures(material, aiTextureType_AMBIENT));
+					myResultMaterial.lock()->AddDifuseTexture(ExtractMaterialTextures(material, aiTextureType_DIFFUSE));
+					myResultMaterial.lock()->AddSpecularTexture(ExtractMaterialTextures(material, aiTextureType_SPECULAR));
+					myResultMaterial.lock()->AddDisplacementMapTexture(ExtractMaterialTextures(material, aiTextureType_DISPLACEMENT));
+					myResultMaterial.lock()->AddNormalTexture(ExtractMaterialTextures(material, aiTextureType_NORMALS));
+					myResultMaterial.lock()->AddOpacityTexture(ExtractMaterialTextures(material, aiTextureType_OPACITY));
+					myResultMaterial.lock()->AddHeightMapTexture(ExtractMaterialTextures(material, aiTextureType_HEIGHT));
+					myResultMaterial.lock()->AddShininessTexture(ExtractMaterialTextures(material, aiTextureType_SHININESS));
 
 					return myResultMaterial;
 				}
@@ -290,7 +290,7 @@ namespace ResourceEngine
 				ProcessMaterials(assimpScene, materialList);
 
 				unsigned int index = 0;
-				SharedMeshNodeResourceData rootNode = std::make_shared<MeshNodeResourceData>(MeshNodeResourceData(this->m_resourceObserver));
+				WeakMeshNodeResourceData rootNode(std::make_shared<MeshNodeResourceData>(MeshNodeResourceData(this->m_resourceObserver)));
 				ProcessoObjects(assimpScene->mRootNode, assimpScene, &index, rootNode, materialList);
 
 				return new GraphicModelResourceData(this->m_resourceObserver, rootNode, materialList);

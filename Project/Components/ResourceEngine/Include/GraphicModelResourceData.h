@@ -16,18 +16,18 @@ namespace ResourceEngine
 		class RESOURCE_ENGINE_API GraphicModelResourceData : public IResourceData
 		{
 		private:
-			SharedMeshNodeResourceData m_meshNode;
+			WeakMeshNodeResourceData m_meshNode;
 			WeakMaterialResourceDataVector m_materialList;
 
 		public:
-			GraphicModelResourceData(IResourceObserver* observer, SharedMeshNodeResourceData m_meshNode, WeakMaterialResourceDataVector m_materialList);
+			GraphicModelResourceData(IResourceObserver* observer, WeakMeshNodeResourceData m_meshNode, WeakMaterialResourceDataVector m_materialList);
 			~GraphicModelResourceData();
 
 		public:
 			unsigned int Size() const;
 			std::string  Type() const;
 
-			SharedMeshNodeResourceData GetMeshNode(void) const;
+			WeakMeshNodeResourceData GetMeshNode(void) const;
 			WeakMaterialResourceDataVector GetMaterialList(void) const;
 			WeakMaterialResourceData GetMaterialByName(const std::string& materialName) const;
 		};

@@ -44,10 +44,10 @@ namespace ResourceEngine
 				using MeshResourceData = ResourceEngine::Data::MeshResourceData;
 				using MeshNodeResourceData = ResourceEngine::Data::MeshNodeResourceData;
 				using SharedGraphicModelResourceData = ResourceEngine::Data::SharedGraphicModelResourceData;
-				using SharedMaterialResourceData = ResourceEngine::Data::SharedMaterialResourceData;
+				using WeakMaterialResourceData = ResourceEngine::Data::WeakMaterialResourceData;
 				using WeakImageResourceData = ResourceEngine::Data::WeakImageResourceData;
-				using SharedMeshResourceData = ResourceEngine::Data::SharedMeshResourceData;
-				using SharedMeshNodeResourceData = ResourceEngine::Data::SharedMeshNodeResourceData;
+				using WeakMeshResourceData = ResourceEngine::Data::WeakMeshResourceData;
+				using WeakMeshNodeResourceData = ResourceEngine::Data::WeakMeshNodeResourceData;
 				using WeakGraphicModelResourceDataVector = ResourceEngine::Data::WeakGraphicModelResourceDataVector;
 				using WeakMaterialResourceDataVector = ResourceEngine::Data::WeakMaterialResourceDataVector;
 				using WeakImageResourceDataVector = ResourceEngine::Data::WeakImageResourceDataVector;
@@ -61,13 +61,13 @@ namespace ResourceEngine
 				~GraphicModelResourceLoader(void);
 
 			private:
-				void ProcessoObjects(aiNode* node, const aiScene* assimpScene, unsigned int* index, SharedMeshNodeResourceData myRootNode, WeakMaterialResourceDataVector materialList) const;
+				void ProcessoObjects(aiNode* node, const aiScene* assimpScene, unsigned int* index, WeakMeshNodeResourceData myRootNode, WeakMaterialResourceDataVector materialList) const;
 				
 				void ProcessMaterials(const aiScene* assimpScene, WeakMaterialResourceDataVector materialList) const;
 				
-				SharedMaterialResourceData ExtractMaterialFrom(aiMaterial* material) const;
+				WeakMaterialResourceData ExtractMaterialFrom(aiMaterial* material) const;
 				
-				SharedMeshResourceData ExtracMesh(aiMesh* assimpMesh, const std::string& name, const aiScene* assimpScene, WeakMaterialResourceDataVector materialList) const;
+				WeakMeshResourceData ExtracMesh(aiMesh* assimpMesh, const std::string& name, const aiScene* assimpScene, WeakMaterialResourceDataVector materialList) const;
 				
 				WeakImageResourceData GetImageResourceData(const std::string& path) const;
 				
