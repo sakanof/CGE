@@ -98,8 +98,9 @@ namespace ResourceEngine
 		ExplicitExportDataContainers(MeshResourceData)
 
 		using SharedMeshResourceData = std::shared_ptr < MeshResourceData >;
-		using MeshResourceDataVector = std::vector < std::shared_ptr<MeshResourceData> >;
-		using MeshResourceDataList   = std::list < std::shared_ptr<MeshResourceData> >;
+		using WeakMeshResourceData   = std::weak_ptr < MeshResourceData >;
+		using MeshResourceDataVector = std::vector < std::weak_ptr<MeshResourceData> >;
+		using MeshResourceDataList   = std::list < std::weak_ptr<MeshResourceData> >;
 	};
 };
 

@@ -50,12 +50,12 @@ namespace ResourceEngine
 			
 			SharedMeshNodeResourceData GetNodeByName(const std::string& childName) const;
 
-			SharedMeshResourceData GetMeshByName(const std::string& meshName) const;
+			WeakMeshResourceData GetMeshByName(const std::string& meshName) const;
 
 			SME::Mat4 GetTransformation() const;
 
 			void SetName(std::string name);
-			void AddMesh(SharedMeshResourceData mesh);
+			void AddMesh(WeakMeshResourceData mesh);
 			void SetParent(SharedMeshNodeResourceData parent);
 			void AddChild(SharedMeshNodeResourceData child);
 			void SetTransformation(SME::Mat4 transformation);

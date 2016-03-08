@@ -20,8 +20,10 @@ namespace ResourceEngine
 				mySize += this->m_children[index]->Size();
 
 			for (index = 0; index < this->m_meshList.size(); ++index)
-				mySize += this->m_meshList[index]->Size();
-
+			{
+				if (auto mesh = this->m_meshList[index].lock())
+					mySize += mesh->Size();
+			}
 			return mySize;
 		}
 		std::string	MeshNodeResourceData::Type() const { return std::string("MeshNodeResourceData"); }
@@ -56,20 +58,23 @@ namespace ResourceEngine
 			return child;
 		}
 
-		SharedMeshResourceData MeshNodeResourceData::GetMeshByName(const std::string& meshName) const
+		WeakMeshResourceData MeshNodeResourceData::GetMeshByName(const std::string& meshName) const
 		{
-			SharedMeshResourceData mesh(nullptr);
+			WeakMeshResourceData mesh;
 
-			auto myMeshListIterator = this->m_meshList.begin();
-			auto myMeshListEnd = this->m_meshList.end();
-
-			for (; myMeshListIterator != myMeshListEnd && !mesh; ++myMeshListIterator)
+			unsigned int meshIndex;
+			for (meshIndex = 0; meshIndex < this->m_meshList.size(); ++meshIndex)
 			{
-				if ((*myMeshListIterator)->GetName() == meshName)
-					mesh = (*myMeshListIterator);
+				auto currentMesh = this->m_meshList[meshIndex];
+
+				if (!currentMesh.expired())
+				{
+					if (currentMesh.lock()->GetName() == meshName)
+						mesh = currentMesh;
+				}
 			}
 
-			if (!mesh)
+			if (!mesh.expired())
 			{
 				auto myChildIterator = this->m_children.begin();
 				auto myChildEnd = this->m_children.begin();
@@ -85,7 +90,7 @@ namespace ResourceEngine
 		SME::Mat4 MeshNodeResourceData::GetTransformation() const { return this->m_transformation; }
 
 		void MeshNodeResourceData::SetName(std::string name) { this->m_name = name; }
-		void MeshNodeResourceData::AddMesh(SharedMeshResourceData mesh) { this->m_meshList.push_back(mesh); }
+		void MeshNodeResourceData::AddMesh(WeakMeshResourceData mesh) { this->m_meshList.push_back(mesh); }
 		void MeshNodeResourceData::SetParent(SharedMeshNodeResourceData parent) { this->m_parent = parent; }
 		void MeshNodeResourceData::AddChild(SharedMeshNodeResourceData child) { this->m_children.push_back(child); }
 		void MeshNodeResourceData::SetTransformation(SME::Mat4 transformation) { this->m_transformation = transformation; }
