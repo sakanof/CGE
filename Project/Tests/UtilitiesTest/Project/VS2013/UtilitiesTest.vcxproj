@@ -92,8 +92,6 @@
     <ClCompile Include="..\..\Source\StringTest.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Include\FileTest.h" />
-    <ClInclude Include="..\..\Include\StringTest.h" />
     <ClInclude Include="..\..\Source\FileTest.cpp" />
   </ItemGroup>
   <ItemGroup>

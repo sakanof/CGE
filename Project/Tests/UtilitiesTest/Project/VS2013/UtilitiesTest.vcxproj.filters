@@ -26,14 +26,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Include\FileTest.h">
-      <Filter>Source\Tests\File</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\FileTest.cpp">
       <Filter>Source\Tests\File</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Include\StringTest.h">
-      <Filter>Source\Tests\String</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
