@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Diagrams">
+      <UniqueIdentifier>{af46ae95-e4ad-4b4a-9c01-648fd3efa1c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{abd81267-090c-4ccf-8d3f-88d8612ae832}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Tests">
+      <UniqueIdentifier>{9b1d30f4-6636-49a2-99b3-935ed25bc4c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Tests\File">
+      <UniqueIdentifier>{fc060448-db0a-4a3d-873b-d18958f3f0b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Tests\String">
+      <UniqueIdentifier>{7704f105-4c10-4c4c-8563-e1474b3b5d06}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\Main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\StringTest.cpp">
+      <Filter>Source\Tests\String</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Include\FileTest.h">
+      <Filter>Source\Tests\File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\FileTest.cpp">
+      <Filter>Source\Tests\File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\StringTest.h">
+      <Filter>Source\Tests\String</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
