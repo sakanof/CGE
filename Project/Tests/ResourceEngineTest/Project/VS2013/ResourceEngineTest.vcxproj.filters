@@ -22,6 +22,18 @@
     <Filter Include="Classes\Render\Shader">
       <UniqueIdentifier>{c79f32c2-4c09-452b-9060-059441842ab0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Application">
+      <UniqueIdentifier>{d668b7ee-7a92-4cca-ba97-fe6567095f97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{0149f707-8c3c-4ce7-858f-0e7f17198f5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Shaders">
+      <UniqueIdentifier>{f50825e5-e622-441a-bb09-9812e5e0ded7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Adapters">
+      <UniqueIdentifier>{50fbbe51-e9e6-4132-ba90-29267db4ee1f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\Main.cpp" />
@@ -37,11 +49,14 @@
     <ClCompile Include="..\..\Source\ShaderProgram.cpp">
       <Filter>Classes\Render\Shader</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Application.cpp">
+      <Filter>Classes\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\LoadShaderTest.cpp">
+      <Filter>Classes\Adapters</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Include\Window.h">
-      <Filter>Classes</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Include\GLUtil.h">
       <Filter>Classes\Render\Util</Filter>
     </ClInclude>
@@ -51,5 +66,23 @@
     <ClInclude Include="..\..\Include\ShaderProgram.h">
       <Filter>Classes\Render\Shader</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Include\Window.h">
+      <Filter>Classes\WIndow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\Application.h">
+      <Filter>Classes\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\LoadShaderTest.h">
+      <Filter>Classes\Adapters</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Resources\Shaders\simpleFragmentShader.fs">
+      <Filter>Resources\Shaders</Filter>
+    </None>
+    <None Include="..\..\Resources\Shaders\simpleVertexShader.vs">
+      <Filter>Resources\Shaders</Filter>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

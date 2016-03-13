@@ -1,6 +1,6 @@
 #include "../Include/ShaderProgram.h"
 
-namespace ResouceEngineTest
+namespace ResourceEngineTest
 {
 	ShaderProgram::ShaderProgram(std::string vertexShaderCode, std::string fragmentShaderCode)
 		: m_vertexShaderCode(vertexShaderCode),

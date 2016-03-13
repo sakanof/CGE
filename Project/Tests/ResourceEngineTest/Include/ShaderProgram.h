@@ -1,13 +1,13 @@
-#ifndef ResouceEngineTest_ShaderProgram_H
-#define ResouceEngineTest_ShaderProgram_H
+#ifndef ResourceEngineTest_ShaderProgram_H
+#define ResourceEngineTest_ShaderProgram_H
 
 // Standard Includes
 #include <string>
 
-// ResouceEngineTest Includes
+// ResourceEngineTest Includes
 #include "GLUtil.h"
 
-namespace ResouceEngineTest
+namespace ResourceEngineTest
 {
 	class ShaderProgram
 	{
@@ -34,4 +34,4 @@ namespace ResouceEngineTest
 	};
 };
 
-#endif // ResouceEngineTest_ShaderProgram_H
+#endif // ResourceEngineTest_ShaderProgram_H

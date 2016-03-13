@@ -1,11 +1,11 @@
-#ifndef ResouceEngineTest_GLUtil_H
-#define ResouceEngineTest_GLUtil_H
+#ifndef ResourceEngineTest_GLUtil_H
+#define ResourceEngineTest_GLUtil_H
 
 // Third Party Include
 #include <Glew\include\glew.h>
 #include <GL\GL.h>
 
-namespace ResouceEngineTest
+namespace ResourceEngineTest
 {
 	class GLUtil
 	{
@@ -44,4 +44,4 @@ namespace ResouceEngineTest
 		static int GLType_UnsignedInt();
 	};
 };
-#endif // ResouceEngineTest_GLUtil_H
+#endif // ResourceEngineTest_GLUtil_H

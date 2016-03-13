@@ -1,7 +1,7 @@
 #include "..\Include\GLUtil.h"
 
 
-namespace ResouceEngineTest
+namespace ResourceEngineTest
 {
 	void GLUtil::GetActiveUniforms(size_t programHandle)
 	{

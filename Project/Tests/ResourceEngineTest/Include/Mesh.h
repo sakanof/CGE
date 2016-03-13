@@ -11,10 +11,10 @@
 #include <Glew\include\glew.h>
 #include <GL\GL.h>
 
-// ResouceEngineTest Includes
+// ResourceEngineTest Includes
 #include "GLUtil.h"
 
-namespace ResouceEngineTest
+namespace ResourceEngineTest
 {
 	using SME::Vec3;
 	using SME::Vec2;

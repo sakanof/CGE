@@ -1,18 +1,15 @@
 #include <iostream>
 
 // ResourceEngineTest Includes
-#include "../Include/Window.h"
+#include "../Include/Application.h"
 
-using ResourceEngineTest::Window;
+using ResourceEngineTest::Application;
 
 int main()
 {
-	Window myWindow(SME::Vec2(800, 800), "ResourceEngineTest Window");
+	Application app;
 
-	while (!myWindow.ShouldClose())
-	{
-		myWindow.Update();
-	}
+	app.Run();
 
 	return 0;
 }

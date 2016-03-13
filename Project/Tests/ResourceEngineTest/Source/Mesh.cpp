@@ -1,6 +1,6 @@
 #include "../Include/Mesh.h"
 
-namespace ResouceEngineTest
+namespace ResourceEngineTest
 {
 	Mesh::Mesh(VerticeList verticeList, ColorList colorList, UVList uvList)
 		: m_verticeList(verticeList), 
@@ -44,7 +44,7 @@ namespace ResouceEngineTest
 
 		bool hasColors = this->m_colorList.size() > 0;
 		bool hasUVs = this->m_uvList.size() > 0;
-		for (auto index = 0; index < this->m_verticeList.size(); index++)
+		for (unsigned int index = 0; index < this->m_verticeList.size(); index++)
 		{
 			vertexData.push_back(this->m_verticeList[index].x);
 			vertexData.push_back(this->m_verticeList[index].y);
