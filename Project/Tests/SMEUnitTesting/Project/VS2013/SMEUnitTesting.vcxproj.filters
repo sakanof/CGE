@@ -9,11 +9,14 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\Main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Vec2Tests.cpp">
       <Filter>Source\Vector</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\Main.cpp">
-      <Filter>Source</Filter>
+    <ClCompile Include="..\..\Source\Vec3Tests.cpp">
+      <Filter>Source\Vector</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
