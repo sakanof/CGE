@@ -45,8 +45,6 @@ namespace Utilities
 
 				if (index != string::npos)
 				{
-					// Verifica se existe mais de um delimitador em sequencia
-					// se sim, vai incrementando o offset ate terminar os delimitadores
 					string temp = localString;
 					temp.erase(0, offset);
 					bool notFound = false;
@@ -73,9 +71,6 @@ namespace Utilities
 			} while (index != string::npos);
 
 			localString.clear();
-
-			//if(elems.empty())
-			//	elems.push_back(string(s));
 
 			return elems;
 		}
