@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{fe8130d1-e7ef-4d50-9ad0-12f6d474f8c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Vector">
+      <UniqueIdentifier>{fedcacc0-f2f5-4a88-86cc-c7f838a34de8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\Main.cpp">
+      <Filter>Source\Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Vec2Tests.cpp">
+      <Filter>Source\Vector</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
