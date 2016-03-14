@@ -9,23 +9,25 @@ namespace Utilities
 		{
 			vector<string> elems;
 
-			const char* cstr = Trim(s).c_str();
+			auto localStr = Trim(s);
 			unsigned int strLength = (unsigned int)s.length();
 			unsigned int start = 0;
 			unsigned int end = 0;
 
 			while (end <= strLength)
 			{
-				while (end <= strLength)
+				bool foundDelimiter = false;
+				while (end <= strLength && !foundDelimiter)
 				{
-					if (cstr[end] == delim)
-						break;
+					if (localStr[end] == delim)
+						foundDelimiter = true;
+
 					end++;
 				}
 
-				elems.push_back(string(s.substr(start, end - start)));
-				start = end + 1;
-				end = start;
+				elems.push_back(s.substr(start, end - start - 1));
+				start = end;
+				end += 1;
 			}
 
 			return elems;
