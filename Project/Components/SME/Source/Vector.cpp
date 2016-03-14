@@ -50,12 +50,21 @@ namespace SME
 			return result;
 		}
 
-		Vec2&		 Vec2::operator+=(const Vec2& v) { this->x += v.x; this->y += v.y; return *this; }
-		Vec2&		 Vec2::operator-=(const Vec2& v) { this->x -= v.x; this->y -= v.y; return *this; }
+		Vec2&		 Vec2::operator+=(const Vec2& v) 
+		{ 
+			(*this) = (*this) + v; 
+			
+			return *this; 
+		}
+		Vec2&		 Vec2::operator-=(const Vec2& v) 
+		{ 
+			(*this) = (*this) - v; 
+			
+			return *this; 
+		}
 		Vec2&		 Vec2::operator*=(const float& scalar)
 		{
-			this->x *= scalar;
-			this->y *= scalar;
+			(*this) = (*this) * scalar;
 
 			return *this;
 		}
@@ -75,8 +84,7 @@ namespace SME
 		}
 		Vec2&		 Vec2::operator/=(const float& scalar)
 		{
-			this->x /= scalar;
-			this->y /= scalar;
+			(*this) = (*this) / scalar;
 
 			return *this;
 		}
@@ -116,9 +124,7 @@ namespace SME
 		Vec2		 Vec2::Normalize() const
 		{
 			Vec2 result(*this);
-			float tempV = result.x * result.x +
-				result.y * result.y;
-			float sqr = 1.0f / sqrt(tempV);
+			float sqr = 1.0f / result.Length();
 
 			result.x *= sqr;
 			result.y *= sqr;
