@@ -118,8 +118,8 @@ namespace Utilities
 				if (ret[i] != ' ')
 					isEmpty = false;
 			}
-			if (i - 1 > 0)
-				ret.erase(ret.length() - i + 1, i - 1);
+			if (i < ret.length()-1)
+				ret.erase(i + 2, ret.length() - i - 1);
 
 			return ret;
 		}
