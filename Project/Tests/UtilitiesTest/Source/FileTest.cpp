@@ -2,7 +2,6 @@
 #include <Utilities\Source\File.cpp>
 #include <Utilities\Source\BaseException.cpp>
 #include <Utilities\Source\FileNotFoundException.cpp>
-#include <Utilities\Source\File.cpp>
 
 // Google Test Includes
 #include <gtest\gtest.h>

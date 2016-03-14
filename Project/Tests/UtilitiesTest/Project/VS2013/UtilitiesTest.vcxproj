@@ -89,11 +89,9 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\FileTest.cpp" />
     <ClCompile Include="..\..\Source\Main.cpp" />
     <ClCompile Include="..\..\Source\StringTest.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Source\FileTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

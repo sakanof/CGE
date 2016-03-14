@@ -24,11 +24,9 @@
     <ClCompile Include="..\..\Source\StringTest.cpp">
       <Filter>Source\Tests\String</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Source\FileTest.cpp">
+    <ClCompile Include="..\..\Source\FileTest.cpp">
       <Filter>Source\Tests\File</Filter>
-    </ClInclude>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
