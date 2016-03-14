@@ -286,7 +286,7 @@ namespace SME
 		}
 		bool		 Vec3::operator==(const Vec3& v3) const
 		{
-			return this->x == v3.x && this->y == v3.y && this->z != v3.z;
+			return this->x == v3.x && this->y == v3.y && this->z == v3.z;
 		}
 
 		Vec3		 Vec3::Forward()  const { return Vec3(+0.0f, +0.0f, -1.0f); }
