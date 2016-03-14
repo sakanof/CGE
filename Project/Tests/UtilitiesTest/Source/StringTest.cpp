@@ -6,9 +6,9 @@
 
 TEST(Utilities_String, TrimBack)
 {
-	std::string multipleBlankSpacesString = "       My Test String";
+	std::string multipleBlankSpacesString         = "       My Test String";
 	std::string multipleBlankSpacesExpectedString = "My Test String";
-	std::string multipleBlankSpacesResultString = Utilities::String::TrimBack(multipleBlankSpacesString);
+	std::string multipleBlankSpacesResultString   = Utilities::String::TrimBack(multipleBlankSpacesString);
 
 	EXPECT_EQ(multipleBlankSpacesExpectedString, multipleBlankSpacesResultString);
 }
