@@ -152,3 +152,11 @@ TEST(SME_Vector2, Length)
 
 	EXPECT_FLOAT_EQ(length, v1.Length());
 }
+
+TEST(SME_Vector2, SubscriptingOperator)
+{
+	SME::Vec2 v1(-3517.554f, +62168.761f);
+	
+	EXPECT_FLOAT_EQ(v1[0], v1.x);
+	EXPECT_FLOAT_EQ(v1[1], v1.y);
+}
