@@ -9,14 +9,14 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Source\Main.cpp">
-      <Filter>Source\Vector</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\Vec2Tests.cpp">
       <Filter>Source\Vector</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
