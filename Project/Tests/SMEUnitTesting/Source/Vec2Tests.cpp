@@ -159,4 +159,5 @@ TEST(SME_Vector2, SubscriptingOperator)
 	
 	EXPECT_FLOAT_EQ(v1[0], v1.x);
 	EXPECT_FLOAT_EQ(v1[1], v1.y);
+	EXPECT_ANY_THROW(v1[3]);
 }
