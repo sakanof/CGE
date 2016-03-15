@@ -74,7 +74,7 @@ namespace ResourceEngineTest
 	void ShaderProgram::CompileShaders()
 	{
 		CompileShader(&this->m_vertexShaderHandle, this->m_vertexShaderCode, GL_VERTEX_SHADER);
-		CompileShader(&this->m_fragmentShaderHandle, this->m_vertexShaderCode, GL_FRAGMENT_SHADER);
+		CompileShader(&this->m_fragmentShaderHandle, this->m_fragmentShaderCode, GL_FRAGMENT_SHADER);
 	}
 	
 	void ShaderProgram::LinkShaders()
