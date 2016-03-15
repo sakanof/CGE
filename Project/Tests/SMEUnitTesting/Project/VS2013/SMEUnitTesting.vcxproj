@@ -90,6 +90,7 @@
     <ClCompile Include="..\..\Source\Main.cpp" />
     <ClCompile Include="..\..\Source\Vec3Tests.cpp" />
     <ClCompile Include="..\..\Source\Vec2Tests.cpp" />
+    <ClCompile Include="..\..\Source\Vec4Tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

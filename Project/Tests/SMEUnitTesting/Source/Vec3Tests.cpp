@@ -37,6 +37,7 @@ TEST(SME_Vector3, Subtraction)
 
 	EXPECT_FLOAT_EQ(v1.x - v3.x, result.x);
 	EXPECT_FLOAT_EQ(v1.y - v3.y, result.y);
+	EXPECT_FLOAT_EQ(v1.z - v3.z, result.z);
 }
 
 TEST(SME_Vector3, SubtractionEquals)
@@ -99,6 +100,7 @@ TEST(SME_Vector3, MultiplicationEquals)
 
 	EXPECT_FLOAT_EQ(v1.x * v3.x, result.x);
 	EXPECT_FLOAT_EQ(v1.y * v3.y, result.y);
+	EXPECT_FLOAT_EQ(v1.z * v3.z, result.z);
 }
 
 TEST(SME_Vector3, Divition)
