@@ -7,6 +7,9 @@
     <Filter Include="Source\Vector">
       <UniqueIdentifier>{fedcacc0-f2f5-4a88-86cc-c7f838a34de8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Matrix">
+      <UniqueIdentifier>{24c9f769-2748-4081-8f7f-316144e1a0fd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\Main.cpp">
@@ -20,6 +23,9 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\Vec4Tests.cpp">
       <Filter>Source\Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Matrix2Tests.cpp">
+      <Filter>Source\Matrix</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
