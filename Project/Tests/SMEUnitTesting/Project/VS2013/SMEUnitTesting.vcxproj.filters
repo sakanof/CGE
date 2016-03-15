@@ -30,6 +30,9 @@
     <ClCompile Include="..\..\Source\Matrix3Tests.cpp">
       <Filter>Source\Matrix</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Matrix4Tests.cpp">
+      <Filter>Source\Matrix</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
