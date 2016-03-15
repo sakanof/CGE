@@ -72,6 +72,8 @@ namespace Utilities
 				fileBuffer = std::string(data.str());
 			}
 
+			Memory::SafeDelete(file);
+
 			return fileBuffer;
 		}
 	};

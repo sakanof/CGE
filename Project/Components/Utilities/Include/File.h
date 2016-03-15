@@ -8,6 +8,7 @@
 
 // Utilities Includes
 #include "String.h"
+#include "Memory.hpp"
 #include "FileNotFoundException.h"
 
 namespace Utilities
