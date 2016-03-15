@@ -58,7 +58,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(ProjectDir)\..\..\..\..\Components\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>RESOURCE_ENGINE_API_EXPORT;UTILITIES_API_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>UTILITIES_API_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -78,7 +78,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(ProjectDir)\..\..\..\..\Components\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>UTILITIES_API_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
