@@ -27,14 +27,16 @@ namespace ResourceEngine
 	{
 		IResourceLoader* loader	= nullptr;
 
-		auto currentLoader    = this->m_resourceLoaders.begin();
-		auto endOfLoadersfMap = this->m_resourceLoaders.end();
-		auto pattern		  = resource.GetFileExtension();
-		for (; currentLoader != endOfLoadersfMap && loader != nullptr; ++currentLoader)
+		bool foundLoader = false;
+		for (unsigned int index = 0; index < this->m_resourceLoaders.size() && !foundLoader; ++index)
 		{
-			if ((*currentLoader)->IsPatternAccepted(pattern))
-				loader = *currentLoader;
+			if (this->m_resourceLoaders[index]->IsPatternAccepted(resource.GetFileExtension()))
+			{	
+				foundLoader = true;
+				loader      = this->m_resourceLoaders[index];
+			}
 		}
+
 
 		if (loader == nullptr)
 			ThrowResourceLoaderNotFoundException(resource.GetFileExtension())
