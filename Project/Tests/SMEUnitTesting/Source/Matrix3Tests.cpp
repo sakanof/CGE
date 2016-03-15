@@ -163,7 +163,6 @@ TEST(SME_Matrix3, MultiplicationScalarEquals)
 		316.013f, 16.136f, 167.316f
 	);
 
-
 	float scalar = 178.031f;
 
 	auto result = mat1;
@@ -191,7 +190,6 @@ TEST(SME_Matrix3, MultiplicationVector)
 		316.013f, 16.136f, 167.316f
 	);
 
-
 	SME::Vec3 vec(187.021f, 654.038f, 219.156f);
 
 	auto result = mat1 * vec;
@@ -213,7 +211,6 @@ TEST(SME_Matrix3, Multiplication)
 		351.384f, 38.517f, 136.031f,
 		316.013f, 16.136f, 167.316f
 	);
-
 
 	SME::Mat3 mat3
 	(
@@ -302,7 +299,6 @@ TEST(SME_Matrix3, Division)
 		316.013f, 16.136f, 167.316f
 	);
 
-
 	float scalar = 178.031f;
 
 	auto result = mat1 / scalar;
@@ -328,7 +324,6 @@ TEST(SME_Matrix3, DivisionEquals)
 		351.384f, 38.517f, 136.031f,
 		316.013f, 16.136f, 167.316f
 	);
-
 
 	float scalar = 178.031f;
 
@@ -356,7 +351,6 @@ TEST(SME_Matrix3, Transpose)
 		351.384f, 38.517f, 136.031f,
 		316.013f, 16.136f, 167.316f
 	);
-
 
 	auto result = mat1.Transpose();
 
