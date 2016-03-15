@@ -511,7 +511,7 @@ namespace SME
 		}
 		bool		 Vec4::operator==(const Vec4& v4) const
 		{
-			return this->x == v4.x && this->y == v4.y && this->z != v4.z && this->w != v4.w;
+			return this->x == v4.x && this->y == v4.y && this->z == v4.z && this->w == v4.w;
 		}
 
 		Vec4		 Vec4::Normalize() const
