@@ -56,7 +56,7 @@ namespace Utilities
 		}
 		std::string		LoadFile(const std::string& path)
 		{
-			std::string fileBuffer = nullptr;
+			std::string fileBuffer;
 			std::ifstream* file = OpenFile(path);
 			
 			if(file->good())
