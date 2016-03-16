@@ -34,6 +34,9 @@
     <Filter Include="Classes\Adapters">
       <UniqueIdentifier>{50fbbe51-e9e6-4132-ba90-29267db4ee1f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Render\Objects">
+      <UniqueIdentifier>{923250be-bb6e-4fd3-9378-9898b745871a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\Main.cpp" />
@@ -55,6 +58,9 @@
     <ClCompile Include="..\..\Source\LoadShaderTest.cpp">
       <Filter>Classes\Adapters</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Triangle.cpp">
+      <Filter>Classes\Render\Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Include\GLUtil.h">
@@ -74,6 +80,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Include\LoadShaderTest.h">
       <Filter>Classes\Adapters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\Triangle.h">
+      <Filter>Classes\Render\Objects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

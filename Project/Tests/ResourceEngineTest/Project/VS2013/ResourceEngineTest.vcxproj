@@ -103,6 +103,7 @@ If Not Exist "$(ProjectDir)\$(Configuration)\Assimp32.dll" copy "$(ProjectDir)\.
     <ClCompile Include="..\..\Source\Main.cpp" />
     <ClCompile Include="..\..\Source\Mesh.cpp" />
     <ClCompile Include="..\..\Source\ShaderProgram.cpp" />
+    <ClCompile Include="..\..\Source\Triangle.cpp" />
     <ClCompile Include="..\..\Source\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -111,6 +112,7 @@ If Not Exist "$(ProjectDir)\$(Configuration)\Assimp32.dll" copy "$(ProjectDir)\.
     <ClInclude Include="..\..\Include\LoadShaderTest.h" />
     <ClInclude Include="..\..\Include\Mesh.h" />
     <ClInclude Include="..\..\Include\ShaderProgram.h" />
+    <ClInclude Include="..\..\Include\Triangle.h" />
     <ClInclude Include="..\..\Include\Window.h" />
   </ItemGroup>
   <ItemGroup>
