@@ -11,6 +11,7 @@
 #include "Window.h"
 #include "ShaderProgram.h"
 #include "LoadShaderTest.h"
+#include "Triangle.h"
 
 namespace ResourceEngineTest
 {
@@ -20,6 +21,7 @@ namespace ResourceEngineTest
 			bool		   m_isStartUp;
 			Window*		   m_window;
 			ShaderProgram* m_shaderProgram;
+			Triangle*      m_triangle;
 		
 		public:
 			Application();

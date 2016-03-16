@@ -5,7 +5,7 @@ namespace ResourceEngineTest
 	Application::Application() 
 		: m_isStartUp(false) 
 	{
-		ResourceCache::Initialize(2048 * 1024 * 1024, true);
+		ResourceCache::Initialize(2097152, true);
 	}
 	Application::~Application()
 	{
@@ -16,8 +16,11 @@ namespace ResourceEngineTest
 		this->m_window = new Window(SME::Vec2(800, 800), "ResourceEngineTest Window");
 		this->m_window->Hide();
 
-		this->m_shaderProgram = new ShaderProgram(ShaderLoader::LoadShader("Resources\\Shaders\\simpleVertexShader.vs"), ShaderLoader::LoadShader("Resources\\Shaders\\simpleFragmentShader.fs"));
-	
+		this->m_shaderProgram = new ShaderProgram(ShaderLoader::LoadShader("Resources\\Shaders\\simpleVertexShader.vs"), 
+												  ShaderLoader::LoadShader("Resources\\Shaders\\simpleFragmentShader.fs"));
+
+		this->m_triangle = new Triangle();
+
 		this->m_isStartUp = true;
 	}
 	void Application::ShutDown()
@@ -30,11 +33,17 @@ namespace ResourceEngineTest
 			delete this->m_shaderProgram;
 			this->m_shaderProgram = nullptr;
 
+			delete this->m_triangle;
+			this->m_triangle = nullptr;
+
 			this->m_isStartUp = false;
 		}
 	}
 	void Application::Update()
 	{
+		this->m_window->Clear();
+		this->m_shaderProgram->Use();
+		this->m_triangle->Draw();
 		this->m_window->Update();
 	}
 	void Application::Run()
