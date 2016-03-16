@@ -70,8 +70,6 @@ namespace ResourceEngineTest
 	void Window::Update()
 	{
 		glfwPollEvents();
-
-		Clear();
 		glfwSwapBuffers(this->m_glfwWindow);
 	}
 
