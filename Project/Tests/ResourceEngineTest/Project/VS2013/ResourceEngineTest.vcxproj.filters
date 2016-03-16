@@ -61,6 +61,9 @@
     <ClCompile Include="..\..\Source\Triangle.cpp">
       <Filter>Classes\Render\Objects</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\GraphicsResourceAdapter.cpp">
+      <Filter>Classes\Adapters</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Include\GLUtil.h">
@@ -83,6 +86,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Include\Triangle.h">
       <Filter>Classes\Render\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\GraphicsResourceAdapter.h">
+      <Filter>Classes\Adapters</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -115,6 +115,7 @@ If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Shaders\simpleVertexShader.v
   <ItemGroup>
     <ClCompile Include="..\..\Source\Application.cpp" />
     <ClCompile Include="..\..\Source\GLUtil.cpp" />
+    <ClCompile Include="..\..\Source\GraphicsResourceAdapter.cpp" />
     <ClCompile Include="..\..\Source\LoadShaderTest.cpp" />
     <ClCompile Include="..\..\Source\Main.cpp" />
     <ClCompile Include="..\..\Source\Mesh.cpp" />
@@ -125,6 +126,7 @@ If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Shaders\simpleVertexShader.v
   <ItemGroup>
     <ClInclude Include="..\..\Include\Application.h" />
     <ClInclude Include="..\..\Include\GLUtil.h" />
+    <ClInclude Include="..\..\Include\GraphicsResourceAdapter.h" />
     <ClInclude Include="..\..\Include\LoadShaderTest.h" />
     <ClInclude Include="..\..\Include\Mesh.h" />
     <ClInclude Include="..\..\Include\ShaderProgram.h" />
