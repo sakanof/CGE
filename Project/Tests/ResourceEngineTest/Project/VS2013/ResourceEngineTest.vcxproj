@@ -67,7 +67,15 @@
 If Not Exist "$(ProjectDir)\$(Configuration)\glew32.dll" copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\Glew\bin\Release\Win32\glew32.dll" "$(ProjectDir)\$(Configuration)\"
 If Not Exist "$(ProjectDir)\$(Configuration)\glfw3.dll" copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\glfw-3.0.4.bin.WIN32\lib-msvc120\glfw3.dll" "$(ProjectDir)\$(Configuration)\"
 If Not Exist "$(ProjectDir)\$(Configuration)\FreeImage.dll" copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\FreeImage\Bin\Win32\FreeImage.dll" "$(ProjectDir)\$(Configuration)\"
-If Not Exist "$(ProjectDir)\$(Configuration)\Assimp32.dll" copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\AssimpSDK\Bin\Win32\Assimp32.dll" "$(ProjectDir)\$(Configuration)\"</Command>
+If Not Exist "$(ProjectDir)\$(Configuration)\Assimp32.dll" copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\AssimpSDK\Bin\Win32\Assimp32.dll" "$(ProjectDir)\$(Configuration)\"
+
+If Not Exist "$(ProjectDir)\Resources\Shaders\" mkdir ""$(ProjectDir)\Resources\Shaders\"
+
+fc "$(ProjectDir)\Resources\Shaders\simpleFragmentShader.fs" "$(ProjectDir)\..\..\Resources\Shaders\simpleFragmentShader.fs" &gt; nul
+If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Shaders\simpleFragmentShader.fs" "$(ProjectDir)\Resources\Shaders\"
+
+fc "$(ProjectDir)\Resources\Shaders\simpleVertexShader.vs" "$(ProjectDir)\..\..\Resources\Shaders\simpleVertexShader.vs" &gt; nul
+If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Shaders\simpleVertexShader.vs" "$(ProjectDir)\Resources\Shaders\"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -93,7 +101,15 @@ If Not Exist "$(ProjectDir)\$(Configuration)\Assimp32.dll" copy "$(ProjectDir)\.
 If Not Exist "$(ProjectDir)\$(Configuration)\glew32.dll" copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\Glew\bin\Release\Win32\glew32.dll" "$(ProjectDir)\$(Configuration)\"
 If Not Exist "$(ProjectDir)\$(Configuration)\glfw3.dll" copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\glfw-3.0.4.bin.WIN32\lib-msvc120\glfw3.dll" "$(ProjectDir)\$(Configuration)\"
 If Not Exist "$(ProjectDir)\$(Configuration)\FreeImage.dll" copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\FreeImage\Bin\Win32\FreeImage.dll" "$(ProjectDir)\$(Configuration)\"
-If Not Exist "$(ProjectDir)\$(Configuration)\Assimp32.dll" copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\AssimpSDK\Bin\Win32\Assimp32.dll" "$(ProjectDir)\$(Configuration)\"</Command>
+If Not Exist "$(ProjectDir)\$(Configuration)\Assimp32.dll" copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\AssimpSDK\Bin\Win32\Assimp32.dll" "$(ProjectDir)\$(Configuration)\"
+
+If Not Exist "$(ProjectDir)\Resources\Shaders\" mkdir ""$(ProjectDir)\Resources\Shaders\"
+
+fc "$(ProjectDir)\Resources\Shaders\simpleFragmentShader.fs" "$(ProjectDir)\..\..\Resources\Shaders\simpleFragmentShader.fs" &gt; nul
+If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Shaders\simpleFragmentShader.fs" "$(ProjectDir)\Resources\Shaders\"
+
+fc "$(ProjectDir)\Resources\Shaders\simpleVertexShader.vs" "$(ProjectDir)\..\..\Resources\Shaders\simpleVertexShader.vs" &gt; nul
+If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Shaders\simpleVertexShader.vs" "$(ProjectDir)\Resources\Shaders\"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
