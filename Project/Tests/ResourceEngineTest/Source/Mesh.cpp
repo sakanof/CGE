@@ -2,8 +2,9 @@
 
 namespace ResourceEngineTest
 {
-	Mesh::Mesh(VerticeList verticeList, ColorList colorList, UVList uvList)
-		: m_verticeList(verticeList), 
+	Mesh::Mesh(unsigned int vertexCount, VerticeList verticeList, ColorList colorList, UVList uvList)
+		: m_vertexCount(vertexCount),
+		  m_verticeList(verticeList), 
 		  m_colorList(colorList),
 		  m_uvList(uvList) 
 	{
@@ -44,23 +45,23 @@ namespace ResourceEngineTest
 
 		bool hasColors = this->m_colorList.size() > 0;
 		bool hasUVs = this->m_uvList.size() > 0;
-		for (unsigned int index = 0; index < this->m_verticeList.size(); index++)
+		for (unsigned int index = 0; index < this->m_verticeList.size(); index += 3)
 		{
-			vertexData.push_back(this->m_verticeList[index].x);
-			vertexData.push_back(this->m_verticeList[index].y);
-			vertexData.push_back(this->m_verticeList[index].z);
+			vertexData.push_back(this->m_verticeList[index] + 0);
+			vertexData.push_back(this->m_verticeList[index] + 1);
+			vertexData.push_back(this->m_verticeList[index] + 2);
 
 			if (hasColors)
 			{
-				vertexData.push_back(this->m_colorList[index].r);
-				vertexData.push_back(this->m_colorList[index].g);
-				vertexData.push_back(this->m_colorList[index].b);
+				vertexData.push_back(this->m_colorList[index] + 0);
+				vertexData.push_back(this->m_colorList[index] + 1);
+				vertexData.push_back(this->m_colorList[index] + 2);
 			}
 
 			if (hasUVs)
 			{
-				vertexData.push_back(this->m_uvList[index].s);
-				vertexData.push_back(this->m_uvList[index].t);
+				vertexData.push_back(this->m_uvList[index] + 0);
+				vertexData.push_back(this->m_uvList[index] + 1);
 			}
 		}
 
@@ -100,7 +101,7 @@ namespace ResourceEngineTest
 	{
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 		Bind();
-		glDrawArrays(GL_TRIANGLES, 0, this->m_verticeList.size());
+		glDrawArrays(GL_TRIANGLES, 0, this->m_vertexCount);
 		Unbind();
 	}
 };
