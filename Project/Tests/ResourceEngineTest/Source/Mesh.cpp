@@ -47,21 +47,21 @@ namespace ResourceEngineTest
 		bool hasUVs = this->m_uvList.size() > 0;
 		for (unsigned int index = 0; index < this->m_verticeList.size(); index += 3)
 		{
-			vertexData.push_back(this->m_verticeList[index] + 0);
-			vertexData.push_back(this->m_verticeList[index] + 1);
-			vertexData.push_back(this->m_verticeList[index] + 2);
+			vertexData.push_back(this->m_verticeList[index + 0]);
+			vertexData.push_back(this->m_verticeList[index + 1]);
+			vertexData.push_back(this->m_verticeList[index + 2]);
 
 			if (hasColors)
 			{
-				vertexData.push_back(this->m_colorList[index] + 0);
-				vertexData.push_back(this->m_colorList[index] + 1);
-				vertexData.push_back(this->m_colorList[index] + 2);
+				vertexData.push_back(this->m_colorList[index + 0]);
+				vertexData.push_back(this->m_colorList[index + 1]);
+				vertexData.push_back(this->m_colorList[index + 2]);
 			}
 
 			if (hasUVs)
 			{
-				vertexData.push_back(this->m_uvList[index] + 0);
-				vertexData.push_back(this->m_uvList[index] + 1);
+				vertexData.push_back(this->m_uvList[index + 0]);
+				vertexData.push_back(this->m_uvList[index + 1]);
 			}
 		}
 
