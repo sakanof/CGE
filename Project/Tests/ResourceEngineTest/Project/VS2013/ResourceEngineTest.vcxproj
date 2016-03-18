@@ -70,12 +70,18 @@ If Not Exist "$(ProjectDir)\$(Configuration)\FreeImage.dll" copy "$(ProjectDir)\
 If Not Exist "$(ProjectDir)\$(Configuration)\Assimp32.dll" copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\AssimpSDK\Bin\Win32\Assimp32.dll" "$(ProjectDir)\$(Configuration)\"
 
 If Not Exist "$(ProjectDir)\Resources\Shaders\" mkdir ""$(ProjectDir)\Resources\Shaders\"
+If Not Exist "$(ProjectDir)\Resources\Models\Primitives\" mkdir ""$(ProjectDir)\Resources\Models\Primitives\"
+
 
 fc "$(ProjectDir)\Resources\Shaders\simpleFragmentShader.fs" "$(ProjectDir)\..\..\Resources\Shaders\simpleFragmentShader.fs" &gt; nul
 If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Shaders\simpleFragmentShader.fs" "$(ProjectDir)\Resources\Shaders\"
 
 fc "$(ProjectDir)\Resources\Shaders\simpleVertexShader.vs" "$(ProjectDir)\..\..\Resources\Shaders\simpleVertexShader.vs" &gt; nul
-If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Shaders\simpleVertexShader.vs" "$(ProjectDir)\Resources\Shaders\"</Command>
+If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Shaders\simpleVertexShader.vs" "$(ProjectDir)\Resources\Shaders\"
+
+fc "$(ProjectDir)\Resources\Models\Primitives\Plane.obj" "$(ProjectDir)\..\..\Resources\Models\Primitives\Plane.obj" &gt; nul
+If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Models\Primitives\Plane.obj" "$(ProjectDir)\Resources\Models\Primitives\"
+</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -104,12 +110,18 @@ If Not Exist "$(ProjectDir)\$(Configuration)\FreeImage.dll" copy "$(ProjectDir)\
 If Not Exist "$(ProjectDir)\$(Configuration)\Assimp32.dll" copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\AssimpSDK\Bin\Win32\Assimp32.dll" "$(ProjectDir)\$(Configuration)\"
 
 If Not Exist "$(ProjectDir)\Resources\Shaders\" mkdir ""$(ProjectDir)\Resources\Shaders\"
+If Not Exist "$(ProjectDir)\Resources\Models\Primitives\" mkdir ""$(ProjectDir)\Resources\Models\Primitives\"
+
 
 fc "$(ProjectDir)\Resources\Shaders\simpleFragmentShader.fs" "$(ProjectDir)\..\..\Resources\Shaders\simpleFragmentShader.fs" &gt; nul
 If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Shaders\simpleFragmentShader.fs" "$(ProjectDir)\Resources\Shaders\"
 
 fc "$(ProjectDir)\Resources\Shaders\simpleVertexShader.vs" "$(ProjectDir)\..\..\Resources\Shaders\simpleVertexShader.vs" &gt; nul
-If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Shaders\simpleVertexShader.vs" "$(ProjectDir)\Resources\Shaders\"</Command>
+If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Shaders\simpleVertexShader.vs" "$(ProjectDir)\Resources\Shaders\"
+
+fc "$(ProjectDir)\Resources\Models\Primitives\Plane.obj" "$(ProjectDir)\..\..\Resources\Models\Primitives\Plane.obj" &gt; nul
+If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Models\Primitives\Plane.obj" "$(ProjectDir)\Resources\Models\Primitives\"
+</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
