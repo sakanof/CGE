@@ -18,27 +18,41 @@ namespace ResourceEngine
 			unsigned int index;
 			for (index = 0; index < this->m_children.size(); ++index)
 			{
-				auto currentMesh = this->m_children[index];
-				if (!currentMesh.expired())
-					mySize += currentMesh.lock()->Size();
+				mySize += this->m_children[index]->Size();
 			}
 
 			for (index = 0; index < this->m_meshList.size(); ++index)
 			{
-				if (auto mesh = this->m_meshList[index].lock())
-					mySize += mesh->Size();
+				mySize += this->m_meshList[index]->Size();
 			}
+
 			return mySize;
 		}
 		std::string	MeshNodeResourceData::Type() const { return std::string("MeshNodeResourceData"); }
 
 		std::string MeshNodeResourceData::GetName() const { return this->m_name; }
 		
-		WeakMeshResourceDataVector MeshNodeResourceData::GetMeshList() const { return this->m_meshList; }
+		WeakMeshResourceDataVector MeshNodeResourceData::GetMeshList() const 
+		{
+			WeakMeshResourceDataVector result;
+
+			for (unsigned int index = 0; index < this->m_meshList.size(); ++index)
+				result.push_back(std::dynamic_pointer_cast<MeshResourceData>(this->m_meshList[index]));
+	
+			return result;
+		}
 		
 		WeakMeshNodeResourceData MeshNodeResourceData::GetParent() const { return this->m_parent; }
 		
-		WeakMeshNodeResourceDataVector MeshNodeResourceData::GetChildren() const { return this->m_children; }
+		WeakMeshNodeResourceDataVector MeshNodeResourceData::GetChildren() const 
+		{ 
+			WeakMeshNodeResourceDataVector result; 
+
+			for (unsigned int index = 0; index < this->m_children.size(); ++index)
+				result.push_back(std::dynamic_pointer_cast<MeshNodeResourceData>(this->m_children[index]));
+
+			return result;
+		}
 
 		WeakMeshNodeResourceData MeshNodeResourceData::GetNodeByName(const std::string& childName) const
 		{
@@ -49,11 +63,9 @@ namespace ResourceEngine
 			{
 				auto currentChild = this->m_children[childIndex];
 
-				if (!currentChild.expired())
-				{
-					if (currentChild.lock()->GetName() == childName)
-						child = currentChild;
-				}
+				if (currentChild->GetName() == childName)
+					child = std::dynamic_pointer_cast<MeshNodeResourceData>(currentChild);
+				
 			}
 
 			if (child.expired())
@@ -63,8 +75,7 @@ namespace ResourceEngine
 				{
 					auto currentChild = this->m_children[childIndex];
 
-					if (!currentChild.expired())
-						child = currentChild.lock()->GetNodeByName(childName);
+						child = currentChild->GetNodeByName(childName);
 				}
 			}
 
@@ -80,11 +91,8 @@ namespace ResourceEngine
 			{
 				auto currentMesh = this->m_meshList[meshIndex];
 
-				if (!currentMesh.expired())
-				{
-					if (currentMesh.lock()->GetName() == meshName)
-						mesh = currentMesh;
-				}
+				if (currentMesh->GetName() == meshName)
+					mesh = std::dynamic_pointer_cast<MeshResourceData>(currentMesh);
 			}
 
 			if (mesh.expired())
@@ -94,8 +102,7 @@ namespace ResourceEngine
 				{
 					auto currentChild = this->m_children[meshIndex];
 
-					if (!currentChild.expired())
-						mesh = currentChild.lock()->GetMeshByName(meshName);
+					mesh = currentChild->GetMeshByName(meshName);
 				}
 			}
 
@@ -105,9 +112,18 @@ namespace ResourceEngine
 		SME::Mat4 MeshNodeResourceData::GetTransformation() const { return this->m_transformation; }
 
 		void MeshNodeResourceData::SetName(std::string name) { this->m_name = name; }
-		void MeshNodeResourceData::AddMesh(WeakMeshResourceData mesh) { this->m_meshList.push_back(mesh); }
-		void MeshNodeResourceData::SetParent(WeakMeshNodeResourceData parent) { this->m_parent = parent; }
-		void MeshNodeResourceData::AddChild(WeakMeshNodeResourceData child) { this->m_children.push_back(child); }
+		void MeshNodeResourceData::AddMesh(SharedMeshResourceData mesh) 
+		{
+			this->m_meshList.push_back(mesh);
+		}
+		void MeshNodeResourceData::SetParent(SharedMeshNodeResourceData parent) 
+		{
+			this->m_parent = parent;
+		}
+		void MeshNodeResourceData::AddChild(SharedMeshNodeResourceData child) 
+		{
+			this->m_children.push_back(child);
+		}
 		void MeshNodeResourceData::SetTransformation(SME::Mat4 transformation) { this->m_transformation = transformation; }
 	};
 };

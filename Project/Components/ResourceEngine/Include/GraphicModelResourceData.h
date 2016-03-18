@@ -16,11 +16,11 @@ namespace ResourceEngine
 		class RESOURCE_ENGINE_API GraphicModelResourceData : public IResourceData
 		{
 		private:
-			WeakMeshNodeResourceData m_meshNode;
-			WeakMaterialResourceDataVector m_materialList;
+			SharedMeshNodeResourceData       m_meshNode;
+			SharedMaterialResourceDataVector m_materialList;
 
 		public:
-			GraphicModelResourceData(IResourceObserver* observer, WeakMeshNodeResourceData m_meshNode, WeakMaterialResourceDataVector m_materialList);
+			GraphicModelResourceData(IResourceObserver* observer, SharedMeshNodeResourceData m_meshNode, SharedMaterialResourceDataVector m_materialList);
 			~GraphicModelResourceData();
 
 		public:
