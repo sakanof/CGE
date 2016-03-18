@@ -13,6 +13,7 @@
 
 // ResourceEngineTest Includes
 #include "GLUtil.h"
+#include "IRenderable.h"
 
 namespace ResourceEngineTest
 {
@@ -23,7 +24,7 @@ namespace ResourceEngineTest
 	using ColorList = std::vector < float >;
 	using UVList = std::vector < float >;
 
-	class Mesh
+	class Mesh : public IRenderable
 	{
 	private:
 		unsigned int m_vertexCount;

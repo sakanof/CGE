@@ -13,9 +13,6 @@
     <Filter Include="Classes\Render">
       <UniqueIdentifier>{1161a043-dbb4-4d13-9259-b0d9306721c4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\Render\Mesh">
-      <UniqueIdentifier>{3dee831f-aac8-452d-a719-0e602ebfb6d9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Classes\Render\Util">
       <UniqueIdentifier>{46d9f90c-227c-4575-8f6f-e5d1e99ce327}</UniqueIdentifier>
     </Filter>
@@ -34,8 +31,14 @@
     <Filter Include="Classes\Adapters">
       <UniqueIdentifier>{50fbbe51-e9e6-4132-ba90-29267db4ee1f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\Render\Objects">
+    <Filter Include="Classes\Render\Renderable">
+      <UniqueIdentifier>{06d1975b-0524-488a-98b0-79a0cdb957af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Render\Renderable\Objects">
       <UniqueIdentifier>{923250be-bb6e-4fd3-9378-9898b745871a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Render\Renderable\Mesh">
+      <UniqueIdentifier>{3dee831f-aac8-452d-a719-0e602ebfb6d9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -47,7 +50,7 @@
       <Filter>Classes\Render\Util</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Mesh.cpp">
-      <Filter>Classes\Render\Mesh</Filter>
+      <Filter>Classes\Render\Renderable\Mesh</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\ShaderProgram.cpp">
       <Filter>Classes\Render\Shader</Filter>
@@ -59,7 +62,7 @@
       <Filter>Classes\Adapters</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Triangle.cpp">
-      <Filter>Classes\Render\Objects</Filter>
+      <Filter>Classes\Render\Renderable\Objects</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\GraphicsResourceAdapter.cpp">
       <Filter>Classes\Adapters</Filter>
@@ -70,7 +73,7 @@
       <Filter>Classes\Render\Util</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Include\Mesh.h">
-      <Filter>Classes\Render\Mesh</Filter>
+      <Filter>Classes\Render\Renderable\Mesh</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Include\ShaderProgram.h">
       <Filter>Classes\Render\Shader</Filter>
@@ -85,10 +88,13 @@
       <Filter>Classes\Adapters</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Include\Triangle.h">
-      <Filter>Classes\Render\Objects</Filter>
+      <Filter>Classes\Render\Renderable\Objects</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Include\GraphicsResourceAdapter.h">
       <Filter>Classes\Adapters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\IRenderable.h">
+      <Filter>Classes\Render\Renderable</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

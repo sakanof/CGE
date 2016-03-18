@@ -139,6 +139,7 @@ If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Models\Primitives\Plane.obj"
     <ClInclude Include="..\..\Include\Application.h" />
     <ClInclude Include="..\..\Include\GLUtil.h" />
     <ClInclude Include="..\..\Include\GraphicsResourceAdapter.h" />
+    <ClInclude Include="..\..\Include\IRenderable.h" />
     <ClInclude Include="..\..\Include\LoadShaderTest.h" />
     <ClInclude Include="..\..\Include\Mesh.h" />
     <ClInclude Include="..\..\Include\ShaderProgram.h" />
