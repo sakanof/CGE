@@ -67,6 +67,9 @@
     <ClCompile Include="..\..\Source\GraphicsResourceAdapter.cpp">
       <Filter>Classes\Adapters</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\IndexedMesh.cpp">
+      <Filter>Classes\Render\Renderable\Mesh</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Include\GLUtil.h">
@@ -95,6 +98,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Include\IRenderable.h">
       <Filter>Classes\Render\Renderable</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\IndexedMesh.h">
+      <Filter>Classes\Render\Renderable\Mesh</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

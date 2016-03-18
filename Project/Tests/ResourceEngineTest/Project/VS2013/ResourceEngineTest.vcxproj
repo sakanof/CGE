@@ -128,6 +128,7 @@ If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Models\Primitives\Plane.obj"
     <ClCompile Include="..\..\Source\Application.cpp" />
     <ClCompile Include="..\..\Source\GLUtil.cpp" />
     <ClCompile Include="..\..\Source\GraphicsResourceAdapter.cpp" />
+    <ClCompile Include="..\..\Source\IndexedMesh.cpp" />
     <ClCompile Include="..\..\Source\LoadShaderTest.cpp" />
     <ClCompile Include="..\..\Source\Main.cpp" />
     <ClCompile Include="..\..\Source\Mesh.cpp" />
@@ -139,6 +140,7 @@ If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Models\Primitives\Plane.obj"
     <ClInclude Include="..\..\Include\Application.h" />
     <ClInclude Include="..\..\Include\GLUtil.h" />
     <ClInclude Include="..\..\Include\GraphicsResourceAdapter.h" />
+    <ClInclude Include="..\..\Include\IndexedMesh.h" />
     <ClInclude Include="..\..\Include\IRenderable.h" />
     <ClInclude Include="..\..\Include\LoadShaderTest.h" />
     <ClInclude Include="..\..\Include\Mesh.h" />
