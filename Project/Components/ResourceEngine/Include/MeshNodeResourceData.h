@@ -25,15 +25,15 @@ namespace ResourceEngine
 		class RESOURCE_ENGINE_API MeshNodeResourceData : public IResourceData
 		{
 		private:
-			std::string					m_name;
+			std::string                      m_name;
 			
-			WeakMeshResourceDataVector		m_meshList;
+			SharedMeshResourceDataVector     m_meshList;
 			
-			WeakMeshNodeResourceData	m_parent;
+			WeakMeshNodeResourceData         m_parent;
 			
-			WeakMeshNodeResourceDataVector	m_children;
+			SharedMeshNodeResourceDataVector m_children;
 
-			SME::Mat4					m_transformation;
+			SME::Mat4					     m_transformation;
 
 		public:
 			MeshNodeResourceData(IResourceObserver* observer);
@@ -58,9 +58,9 @@ namespace ResourceEngine
 			SME::Mat4 GetTransformation() const;
 
 			void SetName(std::string name);
-			void AddMesh(WeakMeshResourceData mesh);
-			void SetParent(WeakMeshNodeResourceData parent);
-			void AddChild(WeakMeshNodeResourceData child);
+			void AddMesh(SharedMeshResourceData mesh);
+			void SetParent(SharedMeshNodeResourceData parent);
+			void AddChild(SharedMeshNodeResourceData child);
 			void SetTransformation(SME::Mat4 transformation);
 		};
 	};
