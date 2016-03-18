@@ -9,6 +9,7 @@ namespace ResourceEngineTest
 	}
 	Application::~Application()
 	{
+		ResourceCache::Finalize();
 	}
 
 	void Application::StartUp()
