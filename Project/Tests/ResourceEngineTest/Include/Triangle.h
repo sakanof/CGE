@@ -2,14 +2,14 @@
 #define ResourceEngineTest_Triangle_H
 
 // ResourceEngineTest Includes
-#include "Mesh.h"
+#include "IndexedMesh.h"
 
 namespace ResourceEngineTest
 {
 	class Triangle
 	{
 	private:
-		Mesh* m_mesh;
+		IRenderable* m_mesh;
 
 	public:
 		Triangle();

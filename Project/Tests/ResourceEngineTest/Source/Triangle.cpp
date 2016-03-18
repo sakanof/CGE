@@ -1,10 +1,12 @@
 #include "../Include/Triangle.h"
 
+#include "../Include/GraphicsResourceAdapter.h"
+
 namespace ResourceEngineTest
 {
 	Triangle::Triangle()
 	{
-		std::vector<float> vertices = 
+		std::vector<float> vertices =
 		{
 			+1.0f, -1.0f, +0.0f,
 			+0.0f, +1.0f, +0.0f,
@@ -18,7 +20,13 @@ namespace ResourceEngineTest
 			+0.0f, +0.0f, +1.0f
 		};
 
-		this->m_mesh = new Mesh(3, vertices, colors);
+		std::vector<unsigned int> indices =
+		{
+			0, 1, 2
+		};
+
+		//this->m_mesh = new Mesh(3, vertices, colors);
+		this->m_mesh = new IndexedMesh(vertices, indices, colors);
 	}
 	Triangle::~Triangle()
 	{
