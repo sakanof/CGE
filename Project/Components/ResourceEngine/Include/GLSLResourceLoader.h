@@ -28,7 +28,7 @@ namespace ResourceEngine
 				std::string		Pattern() const;
 				bool			IsPatternAccepted(const std::string pattern) const;
 				__int64			GetRawResourceSize(const Resource& resource) const;
-				IResourceData*	Load(const Resource& resource) const;
+				IResourceData*	Load(const Resource& resource);
 			};
 		}
 	};

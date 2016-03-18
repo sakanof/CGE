@@ -13,9 +13,10 @@ namespace ResourceEngine
 {
 	namespace Loader
 	{
+		using IResourceData = Data::IResourceData;
+
 		class RESOURCE_ENGINE_API IResourceLoader
 		{
-			using IResourceData = Data::IResourceData;
 		protected:
 			IResourceObserver* m_resourceObserver;
 		public:
@@ -55,7 +56,7 @@ namespace ResourceEngine
 			*
 			*	\return A IResourceData object containing the loaded content.
 			**/
-			virtual IResourceData* Load(const Resource& resource) const = 0;
+			virtual IResourceData* Load(const Resource& resource) = 0;
 		};
 		ExplicitExportVector(IResourceLoader*)
 		ExplicitExportList(IResourceLoader*)

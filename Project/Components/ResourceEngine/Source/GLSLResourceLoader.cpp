@@ -19,7 +19,7 @@ namespace ResourceEngine
 				return Pattern().find(temp) != std::string::npos;
 			}
 			__int64			GLSLResourceLoader::GetRawResourceSize(const Resource& resource) const { return Utilities::File::GetFileSize(resource.GetFilePath()); }
-			IResourceData*	GLSLResourceLoader::Load(const Resource& resource) const
+			IResourceData*	GLSLResourceLoader::Load(const Resource& resource)
 			{
 				std::string GLSLData = Utilities::File::LoadFile(resource.GetFilePath());
 				bool stop = false;
