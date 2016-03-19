@@ -6,7 +6,8 @@
 #include <ResourceEngine\Include\GraphicModelResourceData.h>
 
 // ResourceEngineTest Includes
-#include "Mesh.h"
+#include "IRenderable.h"
+#include "IndexedMesh.h"
 
 namespace ResourceEngineTest
 {
@@ -19,7 +20,7 @@ namespace ResourceEngineTest
 	class GraphicsResourceAdapter
 	{
 	public:
-		static Mesh* LoadMesh(const std::string& filepath);
+		static IRenderable* LoadMesh(const std::string& filepath);
 	};
 };
 
