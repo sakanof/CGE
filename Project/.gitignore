@@ -196,3 +196,6 @@ FakesAssemblies/
 *.opt
 
 /**/Project/VS2013/Resources/
+
+# not ignoring .obj files that reside in any 'Resource' directory
+!**/Resources/**/*.obj
