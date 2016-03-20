@@ -64,14 +64,20 @@
     <PostBuildEvent>
       <Command>copy "$(ProjectDir)\..\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\*.dll" "$(ProjectDir)\$(Configuration)\"
 
-If Not Exist "$(ProjectDir)\$(Configuration)\glew32.dll" copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\Glew\bin\Release\Win32\glew32.dll" "$(ProjectDir)\$(Configuration)\"
-If Not Exist "$(ProjectDir)\$(Configuration)\glfw3.dll" copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\glfw-3.0.4.bin.WIN32\lib-msvc120\glfw3.dll" "$(ProjectDir)\$(Configuration)\"
-If Not Exist "$(ProjectDir)\$(Configuration)\FreeImage.dll" copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\FreeImage\Bin\Win32\FreeImage.dll" "$(ProjectDir)\$(Configuration)\"
-If Not Exist "$(ProjectDir)\$(Configuration)\Assimp32.dll" copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\AssimpSDK\Bin\Win32\Assimp32.dll" "$(ProjectDir)\$(Configuration)\"
-
 If Not Exist "$(ProjectDir)\Resources\Shaders\" mkdir ""$(ProjectDir)\Resources\Shaders\"
 If Not Exist "$(ProjectDir)\Resources\Models\Primitives\" mkdir ""$(ProjectDir)\Resources\Models\Primitives\"
 
+fc "$(ProjectDir)\$(Configuration)\glew32.dll" "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\Glew\bin\Release\Win32\glew32.dll" &gt; nul
+If errorlevel 1 copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\Glew\bin\Release\Win32\glew32.dll" "$(ProjectDir)\$(Configuration)\"
+
+fc "$(ProjectDir)\$(Configuration)\glfw3.dll" "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\glfw-3.0.4.bin.WIN32\lib-msvc120\glfw3.dll" &gt; nul
+If errorlevel 1 copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\glfw-3.0.4.bin.WIN32\lib-msvc120\glfw3.dll" "$(ProjectDir)\$(Configuration)\"
+
+fc "$(ProjectDir)\$(Configuration)\FreeImage.dll" "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\FreeImage\Bin\Win32\FreeImage.dll"
+If errorlevel 1 copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\FreeImage\Bin\Win32\FreeImage.dll" "$(ProjectDir)\$(Configuration)\"
+
+fc "$(ProjectDir)\$(Configuration)\Assimp32.dll" "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\AssimpSDK\Bin\Win32\Assimp32.dll"
+If errorlevel 1 copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\AssimpSDK\Bin\Win32\Assimp32.dll" "$(ProjectDir)\$(Configuration)\"
 
 fc "$(ProjectDir)\Resources\Shaders\simpleFragmentShader.fs" "$(ProjectDir)\..\..\Resources\Shaders\simpleFragmentShader.fs" &gt; nul
 If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Shaders\simpleFragmentShader.fs" "$(ProjectDir)\Resources\Shaders\"
@@ -80,8 +86,7 @@ fc "$(ProjectDir)\Resources\Shaders\simpleVertexShader.vs" "$(ProjectDir)\..\..\
 If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Shaders\simpleVertexShader.vs" "$(ProjectDir)\Resources\Shaders\"
 
 fc "$(ProjectDir)\Resources\Models\Primitives\Plane.obj" "$(ProjectDir)\..\..\Resources\Models\Primitives\Plane.obj" &gt; nul
-If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Models\Primitives\Plane.obj" "$(ProjectDir)\Resources\Models\Primitives\"
-</Command>
+If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Models\Primitives\Plane.obj" "$(ProjectDir)\Resources\Models\Primitives\"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -104,14 +109,20 @@ If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Models\Primitives\Plane.obj"
     <PostBuildEvent>
       <Command>copy "$(ProjectDir)\..\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\*.dll" "$(ProjectDir)\$(Configuration)\"
 
-If Not Exist "$(ProjectDir)\$(Configuration)\glew32.dll" copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\Glew\bin\Release\Win32\glew32.dll" "$(ProjectDir)\$(Configuration)\"
-If Not Exist "$(ProjectDir)\$(Configuration)\glfw3.dll" copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\glfw-3.0.4.bin.WIN32\lib-msvc120\glfw3.dll" "$(ProjectDir)\$(Configuration)\"
-If Not Exist "$(ProjectDir)\$(Configuration)\FreeImage.dll" copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\FreeImage\Bin\Win32\FreeImage.dll" "$(ProjectDir)\$(Configuration)\"
-If Not Exist "$(ProjectDir)\$(Configuration)\Assimp32.dll" copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\AssimpSDK\Bin\Win32\Assimp32.dll" "$(ProjectDir)\$(Configuration)\"
-
 If Not Exist "$(ProjectDir)\Resources\Shaders\" mkdir ""$(ProjectDir)\Resources\Shaders\"
 If Not Exist "$(ProjectDir)\Resources\Models\Primitives\" mkdir ""$(ProjectDir)\Resources\Models\Primitives\"
 
+fc "$(ProjectDir)\$(Configuration)\glew32.dll" "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\Glew\bin\Release\Win32\glew32.dll" &gt; nul
+If errorlevel 1 copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\Glew\bin\Release\Win32\glew32.dll" "$(ProjectDir)\$(Configuration)\"
+
+fc "$(ProjectDir)\$(Configuration)\glfw3.dll" "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\glfw-3.0.4.bin.WIN32\lib-msvc120\glfw3.dll" &gt; nul
+If errorlevel 1 copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\glfw-3.0.4.bin.WIN32\lib-msvc120\glfw3.dll" "$(ProjectDir)\$(Configuration)\"
+
+fc "$(ProjectDir)\$(Configuration)\FreeImage.dll" "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\FreeImage\Bin\Win32\FreeImage.dll"
+If errorlevel 1 copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\FreeImage\Bin\Win32\FreeImage.dll" "$(ProjectDir)\$(Configuration)\"
+
+fc "$(ProjectDir)\$(Configuration)\Assimp32.dll" "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\AssimpSDK\Bin\Win32\Assimp32.dll"
+If errorlevel 1 copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\AssimpSDK\Bin\Win32\Assimp32.dll" "$(ProjectDir)\$(Configuration)\"
 
 fc "$(ProjectDir)\Resources\Shaders\simpleFragmentShader.fs" "$(ProjectDir)\..\..\Resources\Shaders\simpleFragmentShader.fs" &gt; nul
 If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Shaders\simpleFragmentShader.fs" "$(ProjectDir)\Resources\Shaders\"
@@ -120,8 +131,7 @@ fc "$(ProjectDir)\Resources\Shaders\simpleVertexShader.vs" "$(ProjectDir)\..\..\
 If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Shaders\simpleVertexShader.vs" "$(ProjectDir)\Resources\Shaders\"
 
 fc "$(ProjectDir)\Resources\Models\Primitives\Plane.obj" "$(ProjectDir)\..\..\Resources\Models\Primitives\Plane.obj" &gt; nul
-If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Models\Primitives\Plane.obj" "$(ProjectDir)\Resources\Models\Primitives\"
-</Command>
+If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Models\Primitives\Plane.obj" "$(ProjectDir)\Resources\Models\Primitives\"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -152,6 +162,9 @@ If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Models\Primitives\Plane.obj"
     <None Include="..\..\Resources\Shaders\simpleFragmentShader.fs" />
     <None Include="..\..\Resources\Shaders\simpleVertexShader.vs" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="..\..\Resources\Models\Primitives\Plane.obj" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
