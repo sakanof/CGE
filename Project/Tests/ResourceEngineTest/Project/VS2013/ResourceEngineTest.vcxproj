@@ -161,10 +161,9 @@ If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Models\Primitives\Plane.obj"
   <ItemGroup>
     <None Include="..\..\Resources\Shaders\simpleFragmentShader.fs" />
     <None Include="..\..\Resources\Shaders\simpleVertexShader.vs" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Object Include="..\..\Resources\Models\Primitives\Plane.obj" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -118,9 +118,4 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Object Include="..\..\Resources\Models\Primitives\Plane.obj">
-      <Filter>Resources\Model\Primitives</Filter>
-    </Object>
-  </ItemGroup>
 </Project>
