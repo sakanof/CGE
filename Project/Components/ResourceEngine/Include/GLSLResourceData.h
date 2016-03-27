@@ -10,6 +10,10 @@ namespace ResourceEngine
 	{
 		class RESOURCE_ENGINE_API GLSLResourceData : public IResourceData
 		{
+		public:
+			typedef std::weak_ptr<IResourceData> WeakPointer;
+			typedef std::shared_ptr<IResourceData> StrongPointer;
+
 		private:
 			std::string m_code;
 
@@ -23,12 +27,12 @@ namespace ResourceEngine
 		};
 		ExplicitExportDataContainers(GLSLResourceData)
 
-		using SharedGLSLResourceData       = std::shared_ptr < GLSLResourceData >;
-		using WeakGLSLResourceData         = std::weak_ptr < GLSLResourceData >;
-		using SharedGLSLResourceDataVector = std::vector < std::shared_ptr<GLSLResourceData> >;
-		using WeakGLSLResourceDataVector   = std::vector < std::weak_ptr<GLSLResourceData> >;
-		using SharedGLSLResourceDataList   = std::list < std::shared_ptr<GLSLResourceData> >;
-		using WeakGLSLResourceDataList     = std::list < std::weak_ptr<GLSLResourceData> >;
+		using SharedGLSLResourceData       = GLSLResourceData::StrongPointer;
+		using WeakGLSLResourceData         = GLSLResourceData::WeakPointer;
+		using SharedGLSLResourceDataVector = std::vector < SharedGLSLResourceData >;
+		using WeakGLSLResourceDataVector   = std::vector < WeakGLSLResourceData >;
+		using SharedGLSLResourceDataList   = std::list < SharedGLSLResourceData >;
+		using WeakGLSLResourceDataList     = std::list < WeakGLSLResourceData >;
 	};
 }; 
 

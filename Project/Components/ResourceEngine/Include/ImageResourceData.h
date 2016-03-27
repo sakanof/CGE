@@ -36,6 +36,10 @@ namespace ResourceEngine
 		
 		class RESOURCE_ENGINE_API ImageResourceData : public IResourceData
 		{
+		public:
+			typedef std::weak_ptr<ImageResourceData> WeakPointer;
+			typedef std::shared_ptr<ImageResourceData> StrongPointer;
+
 		private:
 			ImageData m_imageData;
 
@@ -51,12 +55,12 @@ namespace ResourceEngine
 		};
 		ExplicitExportDataContainers(ImageResourceData)
 
-		using SharedImageResourceData       = std::shared_ptr < ImageResourceData >;
-		using WeakImageResourceData         = std::weak_ptr < ImageResourceData >;
-		using SharedImageResourceDataVector = std::vector < std::shared_ptr<ImageResourceData> >;
-		using WeakImageResourceDataVector   = std::vector < std::weak_ptr<ImageResourceData> >;
-		using SharedImageResourceDataList   = std::list < std::shared_ptr<ImageResourceData> >;
-		using WeakImageResourceDataList     = std::list < std::weak_ptr<ImageResourceData> >;
+		using SharedImageResourceData       = ImageResourceData::StrongPointer;
+		using WeakImageResourceData         = ImageResourceData::WeakPointer;
+		using SharedImageResourceDataVector = std::vector < SharedImageResourceData >;
+		using WeakImageResourceDataVector   = std::vector < WeakImageResourceData >;
+		using SharedImageResourceDataList   = std::list < SharedImageResourceData >;
+		using WeakImageResourceDataList     = std::list < WeakImageResourceData >;
 	};
 }; 
 

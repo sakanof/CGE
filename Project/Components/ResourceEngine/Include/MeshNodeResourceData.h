@@ -24,6 +24,10 @@ namespace ResourceEngine
 
 		class RESOURCE_ENGINE_API MeshNodeResourceData : public IResourceData
 		{
+		public:
+			typedef std::weak_ptr<MeshNodeResourceData> WeakPointer;
+			typedef std::shared_ptr<MeshNodeResourceData> StrongPointer;
+
 		private:
 			std::string                      m_name;
 			

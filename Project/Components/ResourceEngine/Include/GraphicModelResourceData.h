@@ -15,6 +15,10 @@ namespace ResourceEngine
 	{
 		class RESOURCE_ENGINE_API GraphicModelResourceData : public IResourceData
 		{
+		public:
+			typedef std::weak_ptr<GraphicModelResourceData> WeakPointer;
+			typedef std::shared_ptr<GraphicModelResourceData> StrongPointer;
+
 		private:
 			SharedMeshNodeResourceData       m_meshNode;
 			SharedMaterialResourceDataVector m_materialList;
@@ -33,12 +37,12 @@ namespace ResourceEngine
 		};
 		ExplicitExportDataContainers(GraphicModelResourceData)
 
-		using SharedGraphicModelResourceData       = std::shared_ptr < GraphicModelResourceData >;
-		using WeakGraphicModelResourceData         = std::weak_ptr < GraphicModelResourceData >;
-		using SharedGraphicModelResourceDataVector = std::vector < std::shared_ptr<GraphicModelResourceData> >;
-		using WeakGraphicModelResourceDataVector   = std::vector < std::weak_ptr<GraphicModelResourceData> >;
-		using SharedGraphicModelResourceDataList   = std::list < std::shared_ptr<GraphicModelResourceData> >;
-		using WeakGraphicModelResourceDataList     = std::list < std::weak_ptr<GraphicModelResourceData> >;
+		using SharedGraphicModelResourceData       = GraphicModelResourceData::WeakPointer;
+		using WeakGraphicModelResourceData         = GraphicModelResourceData::WeakPointer;
+		using SharedGraphicModelResourceDataVector = std::vector < SharedGraphicModelResourceData >;
+		using WeakGraphicModelResourceDataVector   = std::vector < WeakGraphicModelResourceData >;
+		using SharedGraphicModelResourceDataList   = std::list < SharedGraphicModelResourceData >;
+		using WeakGraphicModelResourceDataList     = std::list < WeakGraphicModelResourceData >;
 	};
 }; 
 

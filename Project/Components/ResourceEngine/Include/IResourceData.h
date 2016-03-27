@@ -26,6 +26,10 @@ namespace ResourceEngine
 
 		class RESOURCE_ENGINE_API IResourceData
 		{
+		public:
+			typedef std::weak_ptr<IResourceData> WeakPointer;
+			typedef std::shared_ptr<IResourceData> StrongPointer;
+
 		protected:
 			IResourceObserver* m_observer;
 		public:
@@ -52,12 +56,12 @@ namespace ResourceEngine
 		};
 		ExplicitExportDataContainers(IResourceData)
 
-		using SharedResourceData       = std::shared_ptr < IResourceData >;
-		using WeakResourceData         = std::weak_ptr < IResourceData >;
-		using SharedResourceDataVector = std::vector < std::shared_ptr<IResourceData> >;
-		using WeakResourceDataVector   = std::vector < std::weak_ptr<IResourceData> >;
-		using SharedResourceDataList   = std::list < std::shared_ptr<IResourceData> >;
-		using WeakResourceDataList     = std::list < std::weak_ptr<IResourceData> >;
+		using SharedResourceData       = IResourceData::StrongPointer;
+		using WeakResourceData         = IResourceData::WeakPointer;
+		using SharedResourceDataVector = std::vector < SharedResourceData >;
+		using WeakResourceDataVector   = std::vector < WeakResourceData >;
+		using SharedResourceDataList   = std::list < SharedResourceData >;
+		using WeakResourceDataList     = std::list < WeakResourceData >;
 	}
 };
 

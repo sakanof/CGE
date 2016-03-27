@@ -36,6 +36,10 @@ namespace ResourceEngine
 
 		class RESOURCE_ENGINE_API MeshResourceData : public IResourceData
 		{
+		public:
+			typedef std::weak_ptr<MeshResourceData> WeakPointer;
+			typedef std::shared_ptr<MeshResourceData> StrongPointer;
+
 		private:
 			std::string					m_name;
 
@@ -97,12 +101,12 @@ namespace ResourceEngine
 		};
 		ExplicitExportDataContainers(MeshResourceData)
 
-		using SharedMeshResourceData       = std::shared_ptr < MeshResourceData >;
-		using WeakMeshResourceData         = std::weak_ptr < MeshResourceData >;
-		using SharedMeshResourceDataVector = std::vector < std::shared_ptr<MeshResourceData> >;
-		using WeakMeshResourceDataVector   = std::vector < std::weak_ptr<MeshResourceData> >;
-		using SharedMeshResourceDataList   = std::list < std::shared_ptr<MeshResourceData> >;
-		using WeakMeshResourceDataList     = std::list < std::weak_ptr<MeshResourceData> >;
+		using SharedMeshResourceData       = MeshResourceData::StrongPointer;
+		using WeakMeshResourceData         = MeshResourceData::WeakPointer;
+		using SharedMeshResourceDataVector = std::vector < SharedMeshResourceData >;
+		using WeakMeshResourceDataVector   = std::vector < WeakMeshResourceData >;
+		using SharedMeshResourceDataList   = std::list < SharedMeshResourceData >;
+		using WeakMeshResourceDataList     = std::list < WeakMeshResourceData >;
 	};
 };
 

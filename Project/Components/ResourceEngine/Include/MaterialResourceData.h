@@ -16,9 +16,14 @@ namespace ResourceEngine
 {
 	namespace Data
 	{
+		using Color3 = SME::Color3;
+
 		class RESOURCE_ENGINE_API MaterialResourceData : public IResourceData
 		{
-			using Color3 = SME::Color3;
+		public:
+			typedef std::weak_ptr<MaterialResourceData> WeakPointer;
+			typedef std::shared_ptr<MaterialResourceData> StrongPointer;
+
 		private:
 			std::string m_name;
 
@@ -118,12 +123,12 @@ namespace ResourceEngine
 		};
 		ExplicitExportDataContainers(MaterialResourceData)
 
-		using SharedMaterialResourceData       = std::shared_ptr < MaterialResourceData >;
-		using WeakMaterialResourceData	       = std::weak_ptr < MaterialResourceData >;
-		using SharedMaterialResourceDataVector = std::vector < std::shared_ptr<MaterialResourceData> >;
-		using WeakMaterialResourceDataVector   = std::vector < std::weak_ptr<MaterialResourceData> >;
-		using SharedkMaterialResourceDataList  = std::list < std::shared_ptr<MaterialResourceData> >;
-		using WeakMaterialResourceDataList     = std::list < std::weak_ptr<MaterialResourceData> >;
+		using SharedMaterialResourceData       = MaterialResourceData::StrongPointer;
+		using WeakMaterialResourceData         = MaterialResourceData::WeakPointer;
+		using SharedMaterialResourceDataVector = std::vector < SharedMaterialResourceData >;
+		using WeakMaterialResourceDataVector   = std::vector < WeakMaterialResourceData >;
+		using SharedkMaterialResourceDataList  = std::list < SharedMaterialResourceData >;
+		using WeakMaterialResourceDataList     = std::list < WeakMaterialResourceData >;
 	};
 };
 
