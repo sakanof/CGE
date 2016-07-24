@@ -18,7 +18,7 @@ namespace Utilities
 	{
 		class UTILITIES_API Timer
 		{
-			using Time = std::chrono::time_point < std::chrono::system_clock > ;
+			using Time = std::chrono::time_point < std::chrono::high_resolution_clock > ;
 		private:
 			__int64 m_elapsedTime;		/** < Elapsed time since the start of the timer. */
 			Time	m_startTime;		/** < Keeps track of the time that the timer was started. */
