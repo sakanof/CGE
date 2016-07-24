@@ -20,7 +20,7 @@ namespace Utilities
 		public:
 			BaseException(std::string file, int line, std::string message);
 
-			const char* what();
+			const char* what() const noexcept;
 		};
 	};
 };

@@ -11,6 +11,6 @@ namespace Utilities
 			this->m_message += "File...: " + file + "\n";
 			this->m_message += "Line...: " + std::to_string(line);
 		}
-		const char* BaseException::what() { return this->m_message.c_str(); }
+		const char* BaseException::what() const noexcept { return this->m_message.c_str(); }
 	};
 };
