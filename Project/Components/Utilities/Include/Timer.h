@@ -16,9 +16,6 @@ namespace Utilities
 {
 	namespace Timer
 	{
-		UTILITIES_EXP_TEMPLATE template class UTILITIES_API std::chrono::duration < std::chrono::system_clock::rep, std::chrono::system_clock::period > ;
-		UTILITIES_EXP_TEMPLATE template class UTILITIES_API time_point < system_clock > ;
-
 		class UTILITIES_API Timer
 		{
 			using Time = std::chrono::time_point < std::chrono::system_clock > ;
