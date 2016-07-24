@@ -838,9 +838,6 @@ namespace SME
 		Mat4		Mat4::Perspective(float fov, float aspectRatio, float zNear, float zFar)
 		{
 			Mat4 result;
-			float zRange = zFar - zNear;
-			float tanHalfFOV = tanf(fov / 2.0f);
-
 			float tanHalfFovy = tan(fov / 2.0f);
 
 			result[0][0] = 1.0f / (aspectRatio * tanHalfFovy);
