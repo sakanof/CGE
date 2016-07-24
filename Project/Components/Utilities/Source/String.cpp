@@ -109,7 +109,7 @@ namespace Utilities
 			string ret = string(str);
 			bool isEmpty = true;
 
-			size_t i = 0;
+			int i = 0;
 			for (i = ret.length() - 1; i >= 0 && isEmpty; i--)
 			{
 				if (ret[i] != ' ')
