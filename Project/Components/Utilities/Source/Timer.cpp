@@ -5,9 +5,9 @@ namespace Utilities
 	namespace Timer
 	{
 		Timer::Timer(void)
-			: m_hasBeenStarted(false),
-			m_startTime(Time()),
-			m_lastTime(Time()) { }
+			: m_startTime(Time()),
+			m_lastTime(Time()),
+			m_hasBeenStarted(false) { }
 		Timer::~Timer(void) {}
 
 		void Timer::Start()
