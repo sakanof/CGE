@@ -70,7 +70,7 @@
     <PostBuildEvent>
       <Command>If Not Exist "$(ProjectDir)\..\lib\$(Configuration)\" mkdir "$(ProjectDir)\..\lib\$(Configuration)\"
 
-copy "$(ProjectDir)\$(Configuration)\gtest.lib" "$(ProjectDir)\..\lib\$(Configuration)\"</Command>
+copy "$(ProjectDir)\$(Configuration)\gtestd.lib" "$(ProjectDir)\..\lib\$(Configuration)\"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
