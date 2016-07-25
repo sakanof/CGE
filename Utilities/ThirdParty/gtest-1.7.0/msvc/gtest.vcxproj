@@ -65,12 +65,12 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Lib>
-      <OutputFile>$(OutDir)gtestd.lib</OutputFile>
+      <OutputFile>$(OutDir)gtest.lib</OutputFile>
     </Lib>
     <PostBuildEvent>
       <Command>If Not Exist "$(ProjectDir)\..\lib\$(Configuration)\" mkdir "$(ProjectDir)\..\lib\$(Configuration)\"
 
-copy "$(ProjectDir)\$(Configuration)\gtestd.lib" "$(ProjectDir)\..\lib\$(Configuration)\"</Command>
+copy "$(ProjectDir)\$(Configuration)\gtest.lib" "$(ProjectDir)\..\lib\$(Configuration)\"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

@@ -58,7 +58,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(ProjectDir)\..\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\;$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\gtest-1.7.0\lib\Debug\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SME.lib;gtestd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SME.lib;gtest.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy "$(ProjectDir)\..\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\SME.dll" "$(ProjectDir)\$(Configuration)\"</Command>
