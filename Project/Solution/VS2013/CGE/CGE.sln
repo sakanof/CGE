@@ -33,6 +33,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ResourceEngineTest", "..\..
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SMEUnitTesting", "..\..\..\Tests\SMEUnitTesting\Project\VS2013\SMEUnitTesting.vcxproj", "{D3D93424-6DC9-46DC-B76E-ECEA9AD7AC0A}"
 	ProjectSection(ProjectDependencies) = postProject
+		{C8F6C172-56F2-4E76-B5FA-C3B423B31BE7} = {C8F6C172-56F2-4E76-B5FA-C3B423B31BE7}
 		{D112E091-DA3D-49CA-8182-8B8241EB8A9F} = {D112E091-DA3D-49CA-8182-8B8241EB8A9F}
 	EndProjectSection
 EndProject
