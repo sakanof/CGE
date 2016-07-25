@@ -34,7 +34,4 @@
       <Filter>Source\Matrix</Filter>
     </ClCompile>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
 </Project>
