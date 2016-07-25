@@ -61,7 +61,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(ProjectDir)\..\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\;$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\gtest-1.7.0\lib\Debug\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>gtestd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Utilities.lib;gtestd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy "$(ProjectDir)\..\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\Utilities.dll" "$(ProjectDir)\$(Configuration)\"</Command>
@@ -83,7 +83,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>$(ProjectDir)\..\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\;$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\gtest-1.7.0\lib\Release\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>gtest.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Utilities.lib;gtest.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy "$(ProjectDir)\..\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\Utilities.dll" "$(ProjectDir)\$(Configuration)\"</Command>
