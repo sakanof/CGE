@@ -53,7 +53,6 @@ namespace ResourceEngine
 
 			ImageData GetImageData() const;
 		};
-		ExplicitExportDataContainers(ImageResourceData)
 
 		using SharedImageResourceData       = ImageResourceData::StrongPointer;
 		using WeakImageResourceData         = ImageResourceData::WeakPointer;

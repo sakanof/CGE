@@ -35,7 +35,6 @@ namespace ResourceEngine
 			WeakMaterialResourceDataVector GetMaterialList(void) const;
 			WeakMaterialResourceData GetMaterialByName(const std::string& materialName) const;
 		};
-		ExplicitExportDataContainers(GraphicModelResourceData)
 
 		using SharedGraphicModelResourceData       = GraphicModelResourceData::WeakPointer;
 		using WeakGraphicModelResourceData         = GraphicModelResourceData::WeakPointer;

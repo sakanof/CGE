@@ -99,7 +99,6 @@ namespace ResourceEngine
 			void SetIndices(UnsignedIntVector indices);
 			void SetMaterial(WeakMaterialResourceData material);
 		};
-		ExplicitExportDataContainers(MeshResourceData)
 
 		using SharedMeshResourceData       = MeshResourceData::StrongPointer;
 		using WeakMeshResourceData         = MeshResourceData::WeakPointer;

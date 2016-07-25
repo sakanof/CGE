@@ -13,8 +13,6 @@ namespace ResourceEngine
 	{
 		class RESOURCE_ENGINE_API MeshNodeResourceData;
 
-		ExplicitExportDataContainers(MeshNodeResourceData)
-
 		using SharedMeshNodeResourceData       = std::shared_ptr < MeshNodeResourceData >;
 		using WeakMeshNodeResourceData	       = std::weak_ptr < MeshNodeResourceData >;
 		using SharedMeshNodeResourceDataVector = std::vector < std::shared_ptr<MeshNodeResourceData> >;

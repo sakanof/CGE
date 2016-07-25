@@ -25,7 +25,6 @@ namespace ResourceEngine
 			unsigned int Size() const;
 			std::string  GetCode() const;
 		};
-		ExplicitExportDataContainers(GLSLResourceData)
 
 		using SharedGLSLResourceData       = GLSLResourceData::StrongPointer;
 		using WeakGLSLResourceData         = GLSLResourceData::WeakPointer;

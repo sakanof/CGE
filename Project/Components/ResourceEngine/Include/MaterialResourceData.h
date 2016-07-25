@@ -121,7 +121,6 @@ namespace ResourceEngine
 			void AddDisplacementMapTexture(WeakImageResourceDataVector displacementMapList);
 			void AddStencilDecalTexture(WeakImageResourceDataVector stencilDecalList);
 		};
-		ExplicitExportDataContainers(MaterialResourceData)
 
 		using SharedMaterialResourceData       = MaterialResourceData::StrongPointer;
 		using WeakMaterialResourceData         = MaterialResourceData::WeakPointer;

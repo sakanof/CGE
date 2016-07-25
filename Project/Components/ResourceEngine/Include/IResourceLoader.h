@@ -58,8 +58,6 @@ namespace ResourceEngine
 			**/
 			virtual IResourceData* Load(const Resource& resource) = 0;
 		};
-		ExplicitExportVector(IResourceLoader*)
-		ExplicitExportList(IResourceLoader*)
 
 		using ResourceLoaderVector = std::vector < IResourceLoader* >;
 		using ResourceLoaderList   = std::vector < IResourceLoader* >;

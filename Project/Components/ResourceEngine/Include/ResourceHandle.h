@@ -27,7 +27,6 @@ namespace ResourceEngine
 			return  std::weak_ptr<ResourceDataType>(std::dynamic_pointer_cast<ResourceDataType>(this->m_resourceData));
 		}
 	};
-	ExplicitExportDataContainers(ResourceHandle)
 
 	using SharedResourceHandle       = std::shared_ptr < ResourceHandle >;
 	using WeakResourceHandle         = std::weak_ptr < ResourceHandle >;
