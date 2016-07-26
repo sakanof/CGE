@@ -16,18 +16,18 @@ namespace ResourceEngine
 {
 	class RESOURCE_ENGINE_API ResourceCache : public IResourceObserver
 	{
-		using SharedResourceData = Data::SharedResourceData;
-		using IResourceLoader = Loader::IResourceLoader;
-		using ResourceLoaderVector = Loader::ResourceLoaderVector;
+		using SharedResourceData	= Data::SharedResourceData;
+		using IResourceLoader		= Loader::IResourceLoader;
+		using ResourceLoaderVector	= Loader::ResourceLoaderVector;
 	protected:
 		static ResourceCache* m_instance;
 
 	protected:
-		__int64		   	      m_cacheSize;			/** < The cache size in bytes. */
-		__int64			      m_allocatedSize;		/** < The amount of the cache that has been allocated. */
-		ResourceHandleStrongList    m_leastRecentlyUsed;	/** < Track which resources are less frequently used the others. */
-		ResourceHandleStrongMap 	  m_resourcesMap;		/** < Map used to quickly finds resources by their name. */
-		ResourceLoaderVector  m_resourceLoaders;	/** < List of the registered resource loaders. */
+		__int64						m_cacheSize;			/** < The cache size in bytes. */
+		__int64						m_allocatedSize;		/** < The amount of the cache that has been allocated. */
+		ResourceHandleStrongList	m_leastRecentlyUsed;	/** < Track which resources are less frequently used the others. */
+		ResourceHandleStrongMap		m_resourcesMap;			/** < Map used to quickly finds resources by their name. */
+		ResourceLoaderVector		m_resourceLoaders;		/** < List of the registered resource loaders. */
 
 	protected:
 		ResourceCache(__int64 sizeInBytes, bool initializeDefaultLoaders);
