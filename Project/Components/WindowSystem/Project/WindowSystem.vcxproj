@@ -55,13 +55,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\;$(ProjectDir)\..\..\..\..\Utilities\ThirdParty\glfw\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WINDOW_SYSTEM_API_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Utilities.lib;SME.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\;$(ProjectDir)\..\..\..\..\Utilities\ThirdParty\glfw\src\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Utilities.lib;SME.lib;glfw3dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>If Not Exist "$(ProjectDir)\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\" mkdir "$(ProjectDir)\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\"
@@ -77,15 +77,15 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\;$(ProjectDir)\..\..\..\..\Utilities\ThirdParty\glfw\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WINDOW_SYSTEM_API_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(ProjectDir)\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Utilities.lib;SME.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\;$(ProjectDir)\..\..\..\..\Utilities\ThirdParty\glfw\src\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Utilities.lib;SME.lib;glfw3dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>If Not Exist "$(ProjectDir)\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\" mkdir "$(ProjectDir)\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\"
