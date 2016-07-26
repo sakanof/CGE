@@ -16,6 +16,9 @@
     <Filter Include="Source\Window">
       <UniqueIdentifier>{c7734959-a29f-44b9-b339-6ec59e63ccc4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Window\Factory">
+      <UniqueIdentifier>{45fcc1b3-8420-4c9c-a747-c6306c35c4ec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\WindowSystemSetup.h" />
@@ -42,6 +45,9 @@
     </ClInclude>
     <ClInclude Include="..\Include\Window.hpp">
       <Filter>Source\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\IWindowFactory.h">
+      <Filter>Source\Window\Factory</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
