@@ -100,6 +100,7 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
     <ClInclude Include="..\Include\IInputEventArgument.h" />
     <ClInclude Include="..\Include\IInputListener.h" />
     <ClInclude Include="..\Include\IMouseInputDeviceImplementation.h" />
+    <ClInclude Include="..\Include\Window.hpp" />
     <ClInclude Include="..\Include\MouseButton.h" />
     <ClInclude Include="..\Include\MouseInputDevice.h" />
     <ClInclude Include="..\Include\WindowSystemSetup.h" />

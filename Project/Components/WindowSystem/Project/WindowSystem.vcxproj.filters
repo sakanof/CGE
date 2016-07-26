@@ -13,6 +13,9 @@
     <Filter Include="Source\Input\Mouse">
       <UniqueIdentifier>{15cc6bea-efa3-40d1-a631-8c482112a10e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Window">
+      <UniqueIdentifier>{c7734959-a29f-44b9-b339-6ec59e63ccc4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\WindowSystemSetup.h" />
@@ -36,6 +39,9 @@
     </ClInclude>
     <ClInclude Include="..\Include\MouseButton.h">
       <Filter>Source\Input\Mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Window.hpp">
+      <Filter>Source\Window</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
