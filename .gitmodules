@@ -4,3 +4,6 @@
 [submodule "Utilities/ThirdParty/googletest"]
 	path = Utilities/ThirdParty/googletest
 	url = https://github.com/google/googletest
+[submodule "Utilities/ThirdParty/glew"]
+	path = Utilities/ThirdParty/glew
+	url = https://github.com/nigels-com/glew
