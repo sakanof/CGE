@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-namespace WINDOW_SYSTEM
+namespace WindowSystem
 {
 #if defined(_WIN32) || defined(__WIN32__)
 	#ifdef _MSC_VER
