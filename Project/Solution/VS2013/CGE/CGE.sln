@@ -48,6 +48,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ThirdParty", "ThirdParty", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "glfw", "..\..\..\..\Utilities\ThirdParty\glfw\src\glfw.vcxproj", "{26FC12EC-243C-3301-AEF5-589B8AFD8E3A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gtest", "..\..\..\..\Utilities\ThirdParty\googletest\googletest\build\gtest.vcxproj", "{EB7D83D7-AF2E-34B5-8779-0EA100FF1792}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -124,6 +126,14 @@ Global
 		{26FC12EC-243C-3301-AEF5-589B8AFD8E3A}.Release|Win32.Build.0 = Release|Win32
 		{26FC12EC-243C-3301-AEF5-589B8AFD8E3A}.RelWithDebInfo|Win32.ActiveCfg = RelWithDebInfo|Win32
 		{26FC12EC-243C-3301-AEF5-589B8AFD8E3A}.RelWithDebInfo|Win32.Build.0 = RelWithDebInfo|Win32
+		{EB7D83D7-AF2E-34B5-8779-0EA100FF1792}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EB7D83D7-AF2E-34B5-8779-0EA100FF1792}.Debug|Win32.Build.0 = Debug|Win32
+		{EB7D83D7-AF2E-34B5-8779-0EA100FF1792}.MinSizeRel|Win32.ActiveCfg = MinSizeRel|Win32
+		{EB7D83D7-AF2E-34B5-8779-0EA100FF1792}.MinSizeRel|Win32.Build.0 = MinSizeRel|Win32
+		{EB7D83D7-AF2E-34B5-8779-0EA100FF1792}.Release|Win32.ActiveCfg = Release|Win32
+		{EB7D83D7-AF2E-34B5-8779-0EA100FF1792}.Release|Win32.Build.0 = Release|Win32
+		{EB7D83D7-AF2E-34B5-8779-0EA100FF1792}.RelWithDebInfo|Win32.ActiveCfg = RelWithDebInfo|Win32
+		{EB7D83D7-AF2E-34B5-8779-0EA100FF1792}.RelWithDebInfo|Win32.Build.0 = RelWithDebInfo|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -138,5 +148,6 @@ Global
 		{9B1B2BE2-9FF0-47FB-B97D-72E254D30F9A} = {0187015D-E1BA-43A5-B580-C17A04F76EDC}
 		{6AFA8397-6295-48C5-AFC9-7A5A71B5099F} = {2A63CBA1-45C8-4DC9-AE9A-95FBDC05434A}
 		{26FC12EC-243C-3301-AEF5-589B8AFD8E3A} = {A6627D60-643E-4219-8897-0EA74DA90247}
+		{EB7D83D7-AF2E-34B5-8779-0EA100FF1792} = {A6627D60-643E-4219-8897-0EA74DA90247}
 	EndGlobalSection
 EndGlobal
