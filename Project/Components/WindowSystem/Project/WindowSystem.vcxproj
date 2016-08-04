@@ -97,6 +97,9 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
   <ItemGroup>
     <ClInclude Include="..\Include\glfw\Window.h" />
     <ClInclude Include="..\Include\glfw\WindowFactory.h" />
+    <ClInclude Include="..\Include\IEvent.h" />
+    <ClInclude Include="..\Include\IEventDispatcher.h" />
+    <ClInclude Include="..\Include\IEventHandler.h" />
     <ClInclude Include="..\Include\IInputDevice.h" />
     <ClInclude Include="..\Include\IInputEvent.h" />
     <ClInclude Include="..\Include\IInputEventArgument.h" />

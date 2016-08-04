@@ -28,6 +28,9 @@
     <Filter Include="Source\GLFW\Window\Factory">
       <UniqueIdentifier>{55f80896-e836-41cd-8644-824694447fd2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Event">
+      <UniqueIdentifier>{ffb04bba-977e-4c29-9db1-69c4a105563f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\WindowSystemSetup.h" />
@@ -63,6 +66,15 @@
     </ClInclude>
     <ClInclude Include="..\Include\glfw\WindowFactory.h">
       <Filter>Source\GLFW\Window\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\IEvent.h">
+      <Filter>Source\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\IEventDispatcher.h">
+      <Filter>Source\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\IEventHandler.h">
+      <Filter>Source\Event</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
