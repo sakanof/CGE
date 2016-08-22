@@ -7,10 +7,6 @@
 // SME Includes
 #include <SME\Include\SME.h>
 
-// OpenGL Includes
-#include <Glew\include\glew.h>
-#include <GL\GL.h>
-
 // ResourceEngineTest Includes
 #include "GLUtil.h"
 #include "IRenderable.h"
