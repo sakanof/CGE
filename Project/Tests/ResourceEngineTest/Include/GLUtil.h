@@ -2,7 +2,7 @@
 #define ResourceEngineTest_GLUtil_H
 
 // Third Party Include
-#include <Glew\include\glew.h>
+#include <glew\include\GL\glew.h>
 #include <GL\GL.h>
 
 namespace ResourceEngineTest

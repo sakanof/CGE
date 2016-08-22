@@ -12,10 +12,10 @@
 #include <SME\Include\SME.h>
 
 // Glew Includes
-#include <Glew\include\glew.h>
+#include <glew\include\GL\glew.h>
 
 // GLFW Includes
-#include <glfw-3.0.4.bin.WIN32\include\glfw3.h>
+#include <glfw\include\GLFW\glfw3.h>
 
 namespace ResourceEngineTest
 {
