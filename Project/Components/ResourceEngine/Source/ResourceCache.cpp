@@ -2,7 +2,6 @@
 
 namespace ResourceEngine
 {
-	ResourceCache* ResourceCache::m_instance = nullptr;
 	ResourceCache::ResourceCache(__int64 sizeInBytes, bool initializeDefaultLoaders)
 		: m_cacheSize(sizeInBytes),
 		  m_allocatedSize(0)
@@ -10,7 +9,12 @@ namespace ResourceEngine
 		if (initializeDefaultLoaders)
 			InitializeDefaultLoaders();
 	}
-	ResourceCache::~ResourceCache(void) {}
+	ResourceCache::~ResourceCache(void)
+	{
+		this->Flush();
+		for (unsigned loaderIndex = 0; loaderIndex < this->m_resourceLoaders.size(); ++loaderIndex)
+			Utilities::Memory::SafeDelete(this->m_resourceLoaders.at(loaderIndex));
+	}
 
 	SharedResourceHandle ResourceCache::Find(const Resource& resource)
 	{
@@ -123,32 +127,11 @@ namespace ResourceEngine
 			throw Utilities::Exception::BaseException(__FILE__, __LINE__, "Error on ResourceCache::MemoryHasBeenFreed method, the freed size is greater then the cache's size.");
 	}
 	
-	ResourceCache* ResourceCache::GetInstance()
+	ResourceCache* ResourceCache::CreateNew(__int64 sizeInBytes, bool initializeDefaultLoaders)
 	{
-		if (nullptr == m_instance)
-			throw Utilities::Exception::BaseException(__FILE__, __LINE__, "Error on ResourceCache::GetInstance method, ResourceCache has not been initialized yet.");
-
-		return m_instance;
+		return new ResourceCache(sizeInBytes, initializeDefaultLoaders);
 	}
 
-	void ResourceCache::Initialize(__int64 sizeInBytes, bool initializeDefaultLoaders)
-	{
-		if (nullptr == m_instance)
-			m_instance = new ResourceCache(sizeInBytes, initializeDefaultLoaders);
-		else
-			throw Utilities::Exception::BaseException(__FILE__, __LINE__, "Error on ResourceCache::Initialize method, ResourceCache already initialized. Finalize the current instance and then iniatilize a new one.");
-	}
-	
-	void ResourceCache::Finalize()
-	{
-		m_instance->Flush();
-
-		for (unsigned loaderIndex = 0; loaderIndex < m_instance->m_resourceLoaders.size(); ++loaderIndex)
-			Utilities::Memory::SafeDelete(m_instance->m_resourceLoaders.at(loaderIndex));
-
-		Utilities::Memory::SafeDelete(m_instance);
-	}
-	
 	void ResourceCache::InitializeDefaultLoaders() 
 	{
 		this->m_resourceLoaders.push_back(new Loader::Offline::GLSLResourceLoader(this));

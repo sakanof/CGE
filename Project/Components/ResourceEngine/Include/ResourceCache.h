@@ -19,8 +19,6 @@ namespace ResourceEngine
 		using SharedResourceData	= Data::SharedResourceData;
 		using IResourceLoader		= Loader::IResourceLoader;
 		using ResourceLoaderVector	= Loader::ResourceLoaderVector;
-	protected:
-		static ResourceCache* m_instance;
 
 	protected:
 		__int64						m_cacheSize;			/** < The cache size in bytes. */
@@ -94,26 +92,14 @@ namespace ResourceEngine
 		void MemoryHasBeenFreed(__int64 size);
 
 		/**
-		*	\brief
+		*	\brief Create an instance of ResourceCache.
 		*
-		*	\param
+		*	\param sizeInBytes - size in bytes that the cache can allocate.
+		*	\param initializeDefaultLoaders - flag to indicate if the default loaders must be initialized automatically.
 		*
-		*	\return
+		*	\return instance of a ResourceCache object.
 		**/
-		static ResourceCache* GetInstance();
-
-		/**
-		*	\brief Initializes the ResourceCache.
-		*
-		*	\param sizeInBytes the size of the cache.
-		*	\param initializeDefaultLoaders if the default loaders must be inserted int the resource loader list.
-		**/
-		static void Initialize(__int64 sizeInBytes, bool initializeDefaultLoaders = true);
-
-		/**
-		*	\brief Finalizes the resource cache, delete all the allocated resources and delete the cache instance.
-		**/
-		static void	 Finalize();
+		static ResourceCache* CreateNew(__int64 sizeInBytes, bool initializeDefaultLoaders = true);
 
 		/**
 		*	\brief Insert the default loaders in the resouce loader list.
