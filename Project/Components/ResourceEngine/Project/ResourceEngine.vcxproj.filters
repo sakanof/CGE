@@ -96,14 +96,17 @@
     <ClInclude Include="..\Include\Resource.h">
       <Filter>Classes\Resource</Filter>
     </ClInclude>
-    <ClInclude Include="..\Include\ResourceCache.h">
-      <Filter>Classes\Cache</Filter>
-    </ClInclude>
     <ClInclude Include="..\Include\ResourceLoaderNotFoundException.h">
       <Filter>Classes\Exception</Filter>
     </ClInclude>
     <ClInclude Include="..\Include\ResourceCacheOutOfMemoryException.h">
       <Filter>Classes\Exception</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\IResourceCache.h">
+      <Filter>Classes\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\SimpleResourceCache.h">
+      <Filter>Classes\Cache</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -149,7 +152,7 @@
     <ClCompile Include="..\Source\ResourceCacheOutOfMemoryException.cpp">
       <Filter>Classes\Exception</Filter>
     </ClCompile>
-    <ClCompile Include="..\Source\ResourceCache.cpp">
+    <ClCompile Include="..\Source\SimpleResourceCache.cpp">
       <Filter>Classes\Cache</Filter>
     </ClCompile>
   </ItemGroup>

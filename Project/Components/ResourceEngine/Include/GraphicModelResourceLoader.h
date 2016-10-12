@@ -23,7 +23,7 @@
 #include "MaterialResourceData.h"
 #include "ImageResourceData.h"
 #include "MeshNodeResourceData.h"
-#include "ResourceCache.h"
+#include "SimpleResourceCache.h"
 
 namespace ResourceEngine
 {
@@ -54,11 +54,12 @@ namespace ResourceEngine
 			class RESOURCE_ENGINE_API GraphicModelResourceLoader : public IResourceLoader
 			{
 			private:
+				IResourceCache::SharedPtr		 m_resourceCache;
 				SharedMaterialResourceDataVector m_materialList;
 				SharedMeshNodeResourceData       m_rootNode;
 
 			public:
-				GraphicModelResourceLoader(IResourceObserver* resourceObserver);
+				GraphicModelResourceLoader(IResourceObserver* resourceObserver, IResourceCache::SharedPtr cache);
 				~GraphicModelResourceLoader(void);
 
 			private:

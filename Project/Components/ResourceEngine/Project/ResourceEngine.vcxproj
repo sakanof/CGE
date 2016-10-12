@@ -17,10 +17,13 @@
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140_clang_3_7</PlatformToolset>
+    <PlatformToolset>v140_clang_c2</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -106,13 +109,14 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
     <ClInclude Include="..\Include\GraphicModelResourceLoader.h" />
     <ClInclude Include="..\Include\ImageResourceData.h" />
     <ClInclude Include="..\Include\ImageResourceLoader.h" />
+    <ClInclude Include="..\Include\IResourceCache.h" />
     <ClInclude Include="..\Include\IResourceObserver.h" />
     <ClInclude Include="..\Include\MaterialResourceData.h" />
     <ClInclude Include="..\Include\MeshNodeResourceData.h" />
     <ClInclude Include="..\Include\MeshResourceData.h" />
     <ClInclude Include="..\Include\Resource.h" />
     <ClInclude Include="..\Include\IResourceData.h" />
-    <ClInclude Include="..\Include\ResourceCache.h" />
+    <ClInclude Include="..\Include\SimpleResourceCache.h" />
     <ClInclude Include="..\Include\ResourceEngineSetup.h" />
     <ClInclude Include="..\Include\ResourceHandle.h" />
     <ClInclude Include="..\Include\GLSLResourceData.h" />
@@ -131,7 +135,7 @@ copy "$(ProjectDir)\$(Configuration)\$(ProjectName).lib" "$(ProjectDir)\..\..\..
     <ClCompile Include="..\Source\MeshNodeResourceData.cpp" />
     <ClCompile Include="..\Source\MeshResourceData.cpp" />
     <ClCompile Include="..\Source\Resource.cpp" />
-    <ClCompile Include="..\Source\ResourceCache.cpp" />
+    <ClCompile Include="..\Source\SimpleResourceCache.cpp" />
     <ClCompile Include="..\Source\ResourceHandle.cpp" />
     <ClCompile Include="..\Source\GLSLResourceData.cpp" />
     <ClCompile Include="..\Source\GLSLResourceLoader.cpp" />

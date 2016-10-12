@@ -6,7 +6,9 @@ namespace ResourceEngine
 	{
 		namespace Offline
 		{
-			GraphicModelResourceLoader::GraphicModelResourceLoader(IResourceObserver* resourceObserver) : IResourceLoader(resourceObserver) {}
+			GraphicModelResourceLoader::GraphicModelResourceLoader(IResourceObserver* resourceObserver, IResourceCache::SharedPtr cache)
+				: IResourceLoader(resourceObserver),
+				  m_resourceCache(cache) {}
 			GraphicModelResourceLoader::~GraphicModelResourceLoader(void) {}
 
 			void GraphicModelResourceLoader::ProcessoObjects(aiNode* node, const aiScene* assimpScene, unsigned int* index)
@@ -210,7 +212,7 @@ namespace ResourceEngine
 			
 			WeakImageResourceData GraphicModelResourceLoader::GetImageResourceData(const std::string& path)
 			{
-				return ResourceCache::GetInstance()->GetHandle(Resource(path))->GetResourceData<ImageResourceData>();
+				return this->m_resourceCache->GetHandle(Resource(path))->GetResourceData<ImageResourceData>();
 			}
 			
 			WeakImageResourceDataVector GraphicModelResourceLoader::ExtractMaterialTextures(aiMaterial* material, aiTextureType textureType)

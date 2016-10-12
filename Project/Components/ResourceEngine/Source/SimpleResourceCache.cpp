@@ -1,22 +1,22 @@
-#include "../include/ResourceCache.h"
+#include "../include/SimpleResourceCache.h"
 
 namespace ResourceEngine
 {
-	ResourceCache::ResourceCache(__int64 sizeInBytes, bool initializeDefaultLoaders)
+	SimpleResourceCache::SimpleResourceCache(__int64 sizeInBytes, bool initializeDefaultLoaders)
 		: m_cacheSize(sizeInBytes),
 		  m_allocatedSize(0)
 	{
 		if (initializeDefaultLoaders)
 			InitializeDefaultLoaders();
 	}
-	ResourceCache::~ResourceCache(void)
+	SimpleResourceCache::~SimpleResourceCache(void)
 	{
 		this->Flush();
 		for (unsigned loaderIndex = 0; loaderIndex < this->m_resourceLoaders.size(); ++loaderIndex)
 			Utilities::Memory::SafeDelete(this->m_resourceLoaders.at(loaderIndex));
 	}
 
-	SharedResourceHandle ResourceCache::Find(const Resource& resource)
+	SharedResourceHandle SimpleResourceCache::Find(const Resource& resource)
 	{
 		SharedResourceHandle result(nullptr);
 
@@ -27,7 +27,7 @@ namespace ResourceEngine
 		return result;
 	}
 
-	SharedResourceHandle ResourceCache::Load(const Resource& resource)
+	SharedResourceHandle SimpleResourceCache::Load(const Resource& resource)
 	{
 		IResourceLoader* loader	= nullptr;
 
@@ -62,23 +62,23 @@ namespace ResourceEngine
 		return resourceHandle;
 	}
 
-	void ResourceCache::Update(SharedResourceHandle resourceHandle)
+	void SimpleResourceCache::Update(SharedResourceHandle resourceHandle)
 	{
 		this->m_leastRecentlyUsed.remove(resourceHandle);
 		this->m_leastRecentlyUsed.push_front(resourceHandle);
 	}
 
-	void ResourceCache::Free(SharedResourceHandle gonner)
+	void SimpleResourceCache::Free(SharedResourceHandle gonner)
 	{
 		this->m_leastRecentlyUsed.remove(gonner);
 		this->m_resourcesMap.erase(gonner->GetResource().GetFilePath());	
 	}
 
-	bool ResourceCache::MakeRoom(__int64 size)
+	bool SimpleResourceCache::MakeRoom(__int64 size)
 	{
 		if (size > this->m_cacheSize)
 		{
-			throw Utilities::Exception::BaseException(__FILE__, __LINE__, "Error on ResourceCache::MakeRoom method, trying make room for a resource that is greater then the cache's size.");
+			throw Utilities::Exception::BaseException(__FILE__, __LINE__, "Error on SimpleResourceCache::MakeRoom method, trying to make room for a resource that is greater then the cache's size.");
 		}
 		else
 		{
@@ -96,7 +96,7 @@ namespace ResourceEngine
 		}
 	}
 
-	void ResourceCache::FreeOneResource()
+	void SimpleResourceCache::FreeOneResource()
 	{
 		SharedResourceHandle resourceHandleToDelete = *(--this->m_leastRecentlyUsed.end());
 		bool foundResourceToBeFreed					= false;
@@ -119,29 +119,29 @@ namespace ResourceEngine
 		this->m_leastRecentlyUsed.remove(resourceHandleToDelete);
 	}
 
-	void ResourceCache::MemoryHasBeenFreed(__int64 size)
+	void SimpleResourceCache::MemoryHasBeenFreed(__int64 size)
 	{
 		if (m_allocatedSize >= size)
 			this->m_allocatedSize -= size;
 		else
-			throw Utilities::Exception::BaseException(__FILE__, __LINE__, "Error on ResourceCache::MemoryHasBeenFreed method, the freed size is greater then the cache's size.");
+			throw Utilities::Exception::BaseException(__FILE__, __LINE__, "Error on SimpleResourceCache::MemoryHasBeenFreed method, the freed size is greater then the cache's size.");
 	}
 	
-	ResourceCache* ResourceCache::CreateNew(__int64 sizeInBytes, bool initializeDefaultLoaders)
+	SimpleResourceCache* SimpleResourceCache::CreateNew(__int64 sizeInBytes, bool initializeDefaultLoaders)
 	{
-		return new ResourceCache(sizeInBytes, initializeDefaultLoaders);
+		return new SimpleResourceCache(sizeInBytes, initializeDefaultLoaders);
 	}
 
-	void ResourceCache::InitializeDefaultLoaders() 
+	void SimpleResourceCache::InitializeDefaultLoaders() 
 	{
 		this->m_resourceLoaders.push_back(new Loader::Offline::GLSLResourceLoader(this));
 		this->m_resourceLoaders.push_back(new Loader::Offline::ImageResourceLoader(this));
-		this->m_resourceLoaders.push_back(new Loader::Offline::GraphicModelResourceLoader(this));
+		this->m_resourceLoaders.push_back(new Loader::Offline::GraphicModelResourceLoader(this, IResourceCache::SharedPtr(this)));
 	}
 	
-	void ResourceCache::RegisterLoader(IResourceLoader* loader) { this->m_resourceLoaders.push_back(loader); }
+	void SimpleResourceCache::RegisterLoader(IResourceLoader* loader) { this->m_resourceLoaders.push_back(loader); }
 	
-	SharedResourceHandle ResourceCache::GetHandle(const Resource& resource)
+	SharedResourceHandle SimpleResourceCache::GetHandle(const Resource& resource)
 	{
 		SharedResourceHandle handle(Find(resource));
 
@@ -153,7 +153,7 @@ namespace ResourceEngine
 		return handle;
 	}
 
-	void ResourceCache::Flush()
+	void SimpleResourceCache::Flush()
 	{
 		while (!this->m_leastRecentlyUsed.empty())
 		{

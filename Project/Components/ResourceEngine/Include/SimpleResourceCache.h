@@ -1,11 +1,8 @@
-#ifndef ResourceEngine_ResourceCache_H
-#define ResourceEngine_ResourceCache_H
+#ifndef ResourceEngine_SimpleResourceCache_H
+#define ResourceEngine_SimpleResourceCache_H
 
 // ResourceEngine Includes
-#include "Resource.h"
-#include "IResourceData.h"
-#include "ResourceHandle.h"
-#include "IResourceLoader.h"
+#include "IResourceCache.h""
 #include "GraphicModelResourceLoader.h"
 #include "GLSLResourceLoader.h"
 #include "ImageResourceLoader.h"
@@ -14,7 +11,7 @@
 
 namespace ResourceEngine
 {
-	class RESOURCE_ENGINE_API ResourceCache : public IResourceObserver
+	class RESOURCE_ENGINE_API SimpleResourceCache : public IResourceCache, public IResourceObserver
 	{
 		using SharedResourceData	= Data::SharedResourceData;
 		using IResourceLoader		= Loader::IResourceLoader;
@@ -28,10 +25,10 @@ namespace ResourceEngine
 		ResourceLoaderVector		m_resourceLoaders;		/** < List of the registered resource loaders. */
 
 	protected:
-		ResourceCache(__int64 sizeInBytes, bool initializeDefaultLoaders);
+		SimpleResourceCache(__int64 sizeInBytes, bool initializeDefaultLoaders);
 
 	public:
-		~ResourceCache(void);
+		~SimpleResourceCache(void);
 
 	protected:
 		/**
@@ -92,14 +89,14 @@ namespace ResourceEngine
 		void MemoryHasBeenFreed(__int64 size);
 
 		/**
-		*	\brief Create an instance of ResourceCache.
+		*	\brief Create an instance of SimpleResourceCache.
 		*
 		*	\param sizeInBytes - size in bytes that the cache can allocate.
 		*	\param initializeDefaultLoaders - flag to indicate if the default loaders must be initialized automatically.
 		*
-		*	\return instance of a ResourceCache object.
+		*	\return instance of a SimpleResourceCache object.
 		**/
-		static ResourceCache* CreateNew(__int64 sizeInBytes, bool initializeDefaultLoaders = true);
+		static SimpleResourceCache* CreateNew(__int64 sizeInBytes, bool initializeDefaultLoaders = true);
 
 		/**
 		*	\brief Insert the default loaders in the resouce loader list.
@@ -124,10 +121,10 @@ namespace ResourceEngine
 		SharedResourceHandle GetHandle(const Resource& resource);
 
 		/**
-		*	\brief Frees all the allocated resources
+		*	\brief Frees all the allocated resources.
 		**/
 		void Flush();
 	};
 };
 
-#endif // ResourceEngine_ResourceCache_H
+#endif // ResourceEngine_SimpleResourceCache_H
