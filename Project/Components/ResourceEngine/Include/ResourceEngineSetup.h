@@ -1,31 +1,14 @@
 #ifndef ResourceEngineSetup_H
 #define ResourceEngineSetup_H
 
-namespace ResourceEngine
-{
 #if defined(_WIN32) || defined(__WIN32__)
-	#ifdef _MSC_VER
-		#ifdef RESOURCE_ENGINE_API_EXPORT
-			#define RESOURCE_ENGINE_API __declspec(dllexport)
-			#define RESOURCE_ENGINE_EXP_TEMPLATE
-		#else
-			#define RESOURCE_ENGINE_API __declspec(dllimport)
-			#define RESOURCE_ENGINE_EXP_TEMPLATE extern
-		#endif
+	#ifdef RESOURCE_ENGINE_API_EXPORT
+		#define RESOURCE_ENGINE_API __declspec(dllexport)
 	#else
-		#error Platform not supported...
-	#endif
-#elif defined(__APPLE__)
-	#define SIMPLE_MATH_ENGINE_API
-
-	#ifdef SIMPLE_MATH_ENGINE_API_EXPORT
-		#define SIMPLE_MATH_ENGINE_EXP_TEMPLATE
-	#else
-		#define SIMPLE_MATH_ENGINE_EXP_TEMPLATE extern
+		#define RESOURCE_ENGINE_API __declspec(dllimport)
 	#endif
 #else
-	#error Platform not supported...
+	#error platform not supported...
 #endif
-};
 
 #endif // ResourceEngineSetup_H
