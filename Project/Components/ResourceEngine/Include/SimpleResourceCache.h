@@ -2,7 +2,7 @@
 #define ResourceEngine_SimpleResourceCache_H
 
 // ResourceEngine Includes
-#include "IResourceCache.h""
+#include "IResourceCache.h"
 #include "GraphicModelResourceLoader.h"
 #include "GLSLResourceLoader.h"
 #include "ImageResourceLoader.h"

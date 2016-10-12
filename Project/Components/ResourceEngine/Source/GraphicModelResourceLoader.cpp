@@ -160,9 +160,6 @@ namespace ResourceEngine
 					float				  shininess = 0.0f;	// WavefrontMaterial token: Ns
 					float				  indexOfRefraction = 0.0f;	// WavefrontMaterial token: Ni
 					float				  opacity = 1.0f;	// WavefrontMaterial token: d
-					unsigned short		  textureCount = 0;
-					unsigned short		  textureIndex = 0;
-					aiString			  texturePath = aiString("");
 					aiString			  myMaterialName = aiString("");;
 					MaterialResourceData* myResultMaterial = new MaterialResourceData(this->m_resourceObserver);
 					aiColor4D			  ambientColor;
