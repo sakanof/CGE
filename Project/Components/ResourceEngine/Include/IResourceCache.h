@@ -13,10 +13,13 @@ namespace ResourceEngine
 	class RESOURCE_ENGINE_API IResourceCache
 	{
 	public:
+		using Ptr		= IResourceCache*;
 		using SharedPtr = std::shared_ptr<IResourceCache>;
 		using WeakPtr   = std::weak_ptr<IResourceCache>;
 
 	public:
+		virtual ~IResourceCache() {}
+
 		/**
 		*	\brief Register a new loader in the cache by inserting it into the resource loader list.
 		*

@@ -6,7 +6,7 @@ namespace ResourceEngine
 	{
 		namespace Offline
 		{
-			GraphicModelResourceLoader::GraphicModelResourceLoader(IResourceObserver* resourceObserver, IResourceCache::SharedPtr cache)
+			GraphicModelResourceLoader::GraphicModelResourceLoader(IResourceObserver* resourceObserver, IResourceCache::Ptr cache)
 				: IResourceLoader(resourceObserver),
 				  m_resourceCache(cache) {}
 			GraphicModelResourceLoader::~GraphicModelResourceLoader(void) {}

@@ -54,12 +54,12 @@ namespace ResourceEngine
 			class RESOURCE_ENGINE_API GraphicModelResourceLoader : public IResourceLoader
 			{
 			private:
-				IResourceCache::SharedPtr		 m_resourceCache;
+				IResourceCache::Ptr				 m_resourceCache;
 				SharedMaterialResourceDataVector m_materialList;
 				SharedMeshNodeResourceData       m_rootNode;
 
 			public:
-				GraphicModelResourceLoader(IResourceObserver* resourceObserver, IResourceCache::SharedPtr cache);
+				GraphicModelResourceLoader(IResourceObserver* resourceObserver, IResourceCache::Ptr cache);
 				~GraphicModelResourceLoader(void);
 
 			private:

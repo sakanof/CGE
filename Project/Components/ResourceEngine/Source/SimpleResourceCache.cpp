@@ -11,9 +11,15 @@ namespace ResourceEngine
 	}
 	SimpleResourceCache::~SimpleResourceCache(void)
 	{
+		while (!this->m_resourceLoaders.empty())
+		{
+			auto loader = this->m_resourceLoaders.back();
+			this->m_resourceLoaders.pop_back();
+			
+			Utilities::Memory::SafeDelete(loader);
+		}
+
 		this->Flush();
-		for (unsigned loaderIndex = 0; loaderIndex < this->m_resourceLoaders.size(); ++loaderIndex)
-			Utilities::Memory::SafeDelete(this->m_resourceLoaders.at(loaderIndex));
 	}
 
 	SharedResourceHandle SimpleResourceCache::Find(const Resource& resource)
@@ -136,7 +142,7 @@ namespace ResourceEngine
 	{
 		this->m_resourceLoaders.push_back(new Loader::Offline::GLSLResourceLoader(this));
 		this->m_resourceLoaders.push_back(new Loader::Offline::ImageResourceLoader(this));
-		this->m_resourceLoaders.push_back(new Loader::Offline::GraphicModelResourceLoader(this, IResourceCache::SharedPtr(this)));
+		this->m_resourceLoaders.push_back(new Loader::Offline::GraphicModelResourceLoader(this, this));
 	}
 	
 	void SimpleResourceCache::RegisterLoader(IResourceLoader* loader) { this->m_resourceLoaders.push_back(loader); }
