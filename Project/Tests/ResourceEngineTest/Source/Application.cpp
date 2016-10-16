@@ -3,22 +3,21 @@
 namespace ResourceEngineTest
 {
 	Application::Application() 
-		: m_isStartUp(false) 
-	{
-		ResourceCache::Initialize(2097152, true);
-	}
+		: m_isStartUp(false) {}
 	Application::~Application()
 	{
-		ResourceCache::Finalize();
+		this->m_resourceCache->Flush();
 	}
 
 	void Application::StartUp()
 	{
+		this->m_resourceCache = std::shared_ptr<ResourceEngine::IResourceCache>(ResourceEngine::SimpleResourceCache::CreateNew(512 * 1024));
+
 		this->m_window = new Window(SME::Vec2(800, 800), "ResourceEngineTest Window");
 		this->m_window->Hide();
 
-		this->m_shaderProgram = new ShaderProgram(ShaderLoader::LoadShader("Resources\\Shaders\\simpleVertexShader.vs"), 
-												  ShaderLoader::LoadShader("Resources\\Shaders\\simpleFragmentShader.fs"));
+		this->m_shaderProgram = new ShaderProgram(this->m_resourceCache->GetHandle(Resource("Resources\\Shaders\\simpleVertexShader.vs"))->GetResourceData<GLSLResourceData>().lock()->GetCode(),
+												  this->m_resourceCache->GetHandle(Resource("Resources\\Shaders\\simpleFragmentShader.fs"))->GetResourceData<GLSLResourceData>().lock()->GetCode());
 
 		this->m_triangle = new Triangle();
 

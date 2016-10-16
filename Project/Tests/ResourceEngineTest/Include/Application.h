@@ -5,7 +5,7 @@
 #include <string>
 
 // ResourceEngine Includes
-#include <ResourceEngine/Include/ResourceCache.h>
+#include <ResourceEngine/Include/SimpleResourceCache.h>
 
 // ResourceEngineTest Includes
 #include "Window.h"
@@ -15,11 +15,14 @@
 
 namespace ResourceEngineTest
 {
+	using ResourceCache = ResourceEngine::IResourceCache::SharedPtr;
+
 	class Application
 	{
 		private:
 			bool		   m_isStartUp;
 			Window*		   m_window;
+			ResourceCache  m_resourceCache;
 			ShaderProgram* m_shaderProgram;
 			Triangle*      m_triangle;
 		
