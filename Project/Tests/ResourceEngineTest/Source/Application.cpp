@@ -11,7 +11,12 @@ namespace ResourceEngineTest
 
 	void Application::StartUp()
 	{
-		this->m_resourceCache = std::shared_ptr<ResourceEngine::IResourceCache>(ResourceEngine::SimpleResourceCache::CreateNew(512 * 1024));
+		using ResourceEngine::Resource;
+		using ResourceEngine::IResourceCache;
+		using ResourceEngine::SimpleResourceCache;
+		using ResourceEngine::Data::GLSLResourceData;
+
+		this->m_resourceCache = std::shared_ptr<IResourceCache>(SimpleResourceCache::CreateNew(512 * 1024));
 
 		this->m_window = new Window(SME::Vec2(800, 800), "ResourceEngineTest Window");
 		this->m_window->Hide();

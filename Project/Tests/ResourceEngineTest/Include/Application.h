@@ -10,7 +10,6 @@
 // ResourceEngineTest Includes
 #include "Window.h"
 #include "ShaderProgram.h"
-#include "LoadShaderTest.h"
 #include "Triangle.h"
 
 namespace ResourceEngineTest

@@ -1,7 +1,5 @@
 #include "../Include/Triangle.h"
 
-#include "../Include/GraphicsResourceAdapter.h"
-
 namespace ResourceEngineTest
 {
 	Triangle::Triangle()

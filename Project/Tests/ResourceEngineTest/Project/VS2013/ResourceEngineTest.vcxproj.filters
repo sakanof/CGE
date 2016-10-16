@@ -64,14 +64,8 @@
     <ClCompile Include="..\..\Source\Application.cpp">
       <Filter>Classes\Application</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\LoadShaderTest.cpp">
-      <Filter>Classes\Adapters</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\Triangle.cpp">
       <Filter>Classes\Render\Renderable\Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\GraphicsResourceAdapter.cpp">
-      <Filter>Classes\Adapters</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\IndexedMesh.cpp">
       <Filter>Classes\Render\Renderable\Mesh</Filter>
@@ -93,14 +87,8 @@
     <ClInclude Include="..\..\Include\Application.h">
       <Filter>Classes\Application</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Include\LoadShaderTest.h">
-      <Filter>Classes\Adapters</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Include\Triangle.h">
       <Filter>Classes\Render\Renderable\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Include\GraphicsResourceAdapter.h">
-      <Filter>Classes\Adapters</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Include\IRenderable.h">
       <Filter>Classes\Render\Renderable</Filter>

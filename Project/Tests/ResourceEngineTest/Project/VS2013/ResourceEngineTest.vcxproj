@@ -68,10 +68,10 @@ If Not Exist "$(ProjectDir)\Resources\Shaders\" mkdir ""$(ProjectDir)\Resources\
 If Not Exist "$(ProjectDir)\Resources\Models\Primitives\" mkdir ""$(ProjectDir)\Resources\Models\Primitives\"
 
 fc "$(ProjectDir)\$(Configuration)\glew32.dll" "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\Glew\bin\Release\Win32\glew32.dll" &gt; nul
-If errorlevel 1 copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\Glew\bin\Release\Win32\glew32.dll" "$(ProjectDir)\$(Configuration)\"
+If errorlevel 1 copy "$(ProjectDir)..\..\..\..\..\Utilities\ThirdParty\glew\build\cmake\bin\$(Configuration)\glew32d.dll" "$(ProjectDir)\$(Configuration)\"
 
 fc "$(ProjectDir)\$(Configuration)\glfw3.dll" "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\glfw-3.0.4.bin.WIN32\lib-msvc120\glfw3.dll" &gt; nul
-If errorlevel 1 copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\glfw-3.0.4.bin.WIN32\lib-msvc120\glfw3.dll" "$(ProjectDir)\$(Configuration)\"
+If errorlevel 1 copy "$(ProjectDir)..\..\..\..\..\Utilities\ThirdParty\glfw\src\$(Configuration)\glfw3.dll" "$(ProjectDir)\$(Configuration)\"
 
 fc "$(ProjectDir)\$(Configuration)\FreeImage.dll" "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\FreeImage\Bin\Win32\FreeImage.dll"
 If errorlevel 1 copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\FreeImage\Bin\Win32\FreeImage.dll" "$(ProjectDir)\$(Configuration)\"
@@ -103,8 +103,8 @@ If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Models\Primitives\Plane.obj"
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(ProjectDir)\..\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\;$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\glfw\src\$(Configuration)\;$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\glew\build\cmake\lib\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glew32.lib;opengl32.lib;glfw3.lib;ResourceEngine.lib;SME.lib;Utilities.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)\..\..\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\;$(ProjectDir)\..\..\..\..\..\..\Utilities\ThirdParty\glfw\src\$(Configuration)\;$(ProjectDir)\..\..\..\..\..\..\Utilities\ThirdParty\glew\build\cmake\lib\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32.lib;opengl32.lib;glfw3dll.lib;ResourceEngine.lib;SME.lib;Utilities.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy "$(ProjectDir)\..\..\..\..\..\Bin\Libs\VS2013\$(Configuration)\*.dll" "$(ProjectDir)\$(Configuration)\"
@@ -113,10 +113,10 @@ If Not Exist "$(ProjectDir)\Resources\Shaders\" mkdir ""$(ProjectDir)\Resources\
 If Not Exist "$(ProjectDir)\Resources\Models\Primitives\" mkdir ""$(ProjectDir)\Resources\Models\Primitives\"
 
 fc "$(ProjectDir)\$(Configuration)\glew32.dll" "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\Glew\bin\Release\Win32\glew32.dll" &gt; nul
-If errorlevel 1 copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\Glew\bin\Release\Win32\glew32.dll" "$(ProjectDir)\$(Configuration)\"
+If errorlevel 1 copy "$(ProjectDir)..\..\..\..\..\Utilities\ThirdParty\glew\build\cmake\bin\$(Configuration)\glew32d.dll" "$(ProjectDir)\$(Configuration)\"
 
 fc "$(ProjectDir)\$(Configuration)\glfw3.dll" "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\glfw-3.0.4.bin.WIN32\lib-msvc120\glfw3.dll" &gt; nul
-If errorlevel 1 copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\glfw-3.0.4.bin.WIN32\lib-msvc120\glfw3.dll" "$(ProjectDir)\$(Configuration)\"
+If errorlevel 1 copy "$(ProjectDir)..\..\..\..\..\Utilities\ThirdParty\glfw\src\$(Configuration)\glfw3.dll" "$(ProjectDir)\$(Configuration)\"
 
 fc "$(ProjectDir)\$(Configuration)\FreeImage.dll" "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\FreeImage\Bin\Win32\FreeImage.dll"
 If errorlevel 1 copy "$(ProjectDir)\..\..\..\..\..\Utilities\ThirdParty\FreeImage\Bin\Win32\FreeImage.dll" "$(ProjectDir)\$(Configuration)\"
@@ -137,9 +137,7 @@ If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Models\Primitives\Plane.obj"
   <ItemGroup>
     <ClCompile Include="..\..\Source\Application.cpp" />
     <ClCompile Include="..\..\Source\GLUtil.cpp" />
-    <ClCompile Include="..\..\Source\GraphicsResourceAdapter.cpp" />
     <ClCompile Include="..\..\Source\IndexedMesh.cpp" />
-    <ClCompile Include="..\..\Source\LoadShaderTest.cpp" />
     <ClCompile Include="..\..\Source\Main.cpp" />
     <ClCompile Include="..\..\Source\Mesh.cpp" />
     <ClCompile Include="..\..\Source\ShaderProgram.cpp" />
@@ -149,10 +147,8 @@ If errorlevel 1 copy "$(ProjectDir)\..\..\Resources\Models\Primitives\Plane.obj"
   <ItemGroup>
     <ClInclude Include="..\..\Include\Application.h" />
     <ClInclude Include="..\..\Include\GLUtil.h" />
-    <ClInclude Include="..\..\Include\GraphicsResourceAdapter.h" />
     <ClInclude Include="..\..\Include\IndexedMesh.h" />
     <ClInclude Include="..\..\Include\IRenderable.h" />
-    <ClInclude Include="..\..\Include\LoadShaderTest.h" />
     <ClInclude Include="..\..\Include\Mesh.h" />
     <ClInclude Include="..\..\Include\ShaderProgram.h" />
     <ClInclude Include="..\..\Include\Triangle.h" />
