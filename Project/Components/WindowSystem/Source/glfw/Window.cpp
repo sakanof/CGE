@@ -12,7 +12,7 @@ namespace WindowSystem
 		}
 		Window::~Window()
 		{
-			Finalize();
+			Destroy();
 		}
 
 		void Window::Initialize()
@@ -59,17 +59,15 @@ namespace WindowSystem
 			glfwMakeContextCurrent(this->m_windowHandler);
 		}
 	
-		void Window::Finalize()
-		{
-			FinalizeGLFW();
-		}
-
 		void Window::FinalizeGLFW()
 		{
-			glfwDestroyWindow(this->m_windowHandler);
-			this->m_windowHandler = nullptr;
+			if(this->m_windowHandler != nullptr)
+			{
+				glfwDestroyWindow(this->m_windowHandler);
+				this->m_windowHandler = nullptr;
 
-			glfwTerminate();
+				glfwTerminate();
+			}
 		}
 
 		void Window::SetTitle(const std::string& title)
@@ -111,6 +109,7 @@ namespace WindowSystem
 		
 		void Window::Destroy()
 		{
+			FinalizeGLFW();
 		}
 	};
 };

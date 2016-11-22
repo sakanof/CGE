@@ -28,7 +28,6 @@ namespace WindowSystem
 			void InitializeGlew();
 			void InitializeGLFW();
 
-			void Finalize();
 			void FinalizeGLFW();
 
 		public:
