@@ -1,5 +1,5 @@
 // Utilities Includes
-#include <Utilities\Source\String.cpp>
+#include <Utilities\Include\String.h>
 
 // Google Test Includes
 #include <gtest\gtest.h>

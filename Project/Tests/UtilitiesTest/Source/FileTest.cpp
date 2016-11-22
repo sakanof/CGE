@@ -1,7 +1,7 @@
 // Utilities Includes
-#include <Utilities\Source\File.cpp>
-#include <Utilities\Source\BaseException.cpp>
-#include <Utilities\Source\FileNotFoundException.cpp>
+#include <Utilities\Include\File.h>
+#include <Utilities\Include\BaseException.h>
+#include <Utilities\Include\FileNotFoundException.h>
 
 // Google Test Includes
 #include <gtest\gtest.h>
