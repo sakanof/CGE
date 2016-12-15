@@ -7,8 +7,10 @@
 	#else
 		#define WINDOW_SYSTEM_API __declspec(dllimport)
 	#endif
+#elif defined(__linux__)
+	#define WINDOW_SYSTEM_API
 #else
-	#error platform not supported...
+	#error Platform not supported...
 #endif
 
 #endif // WindowSystemSetup_H

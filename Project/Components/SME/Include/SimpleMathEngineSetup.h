@@ -8,8 +8,10 @@
 	#else
 		#define SIMPLE_MATH_ENGINE_API __declspec(dllimport)
 	#endif
+#elif defined(__linux__)
+	#define SIMPLE_MATH_ENGINE_API
 #else
-	#error platform not supported...
+	#error Platform not supported...
 #endif
 
 #endif // SME_SimpleMathEngineSetup_H

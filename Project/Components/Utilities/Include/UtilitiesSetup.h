@@ -7,8 +7,10 @@
 	#else
 		#define UTILITIES_API __declspec(dllimport)
 	#endif
+#elif defined(__linux__)
+	#define UTILITIES_API
 #else
-	#error platform not supported...
+	#error Platform not supported...
 #endif
 
 #endif // UtilitiesSetup_H

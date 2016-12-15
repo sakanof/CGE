@@ -7,8 +7,10 @@
 	#else
 		#define RENDER_ENGINE_API __declspec(dllimport)
 	#endif
+#elif defined(__linux__)
+	#define RENDER_ENGINE_API
 #else
-	#error platform not supported...
+	#error Platform not supported...
 #endif
 
 #endif // RenderEngineSetup_H

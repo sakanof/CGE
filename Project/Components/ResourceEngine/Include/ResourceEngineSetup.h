@@ -7,8 +7,10 @@
 	#else
 		#define RESOURCE_ENGINE_API __declspec(dllimport)
 	#endif
+#elif defined(__linux__)
+	#define RESOURCE_ENGINE_API
 #else
-	#error platform not supported...
+	#error Platform not supported...
 #endif
 
 #endif // ResourceEngineSetup_H
