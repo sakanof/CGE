@@ -18,14 +18,14 @@ namespace ResourceEngine
 		using ResourceLoaderVector	= Loader::ResourceLoaderVector;
 
 	protected:
-		__int64						m_cacheSize;			/** < The cache size in bytes. */
-		__int64						m_allocatedSize;		/** < The amount of the cache that has been allocated. */
+		int64_t						m_cacheSize;			/** < The cache size in bytes. */
+		int64_t						m_allocatedSize;		/** < The amount of the cache that has been allocated. */
 		ResourceHandleStrongList	m_leastRecentlyUsed;	/** < Track which resources are less frequently used the others. */
 		ResourceHandleStrongMap		m_resourcesMap;			/** < Map used to quickly finds resources by their name. */
 		ResourceLoaderVector		m_resourceLoaders;		/** < List of the registered resource loaders. */
 
 	protected:
-		SimpleResourceCache(__int64 sizeInBytes, bool initializeDefaultLoaders);
+		SimpleResourceCache(int64_t sizeInBytes, bool initializeDefaultLoaders);
 
 	public:
 		~SimpleResourceCache(void);
@@ -72,7 +72,7 @@ namespace ResourceEngine
 		*
 		*	\return True if it succeeded making room to the new resource or false if it did not succeed.
 		**/
-		bool MakeRoom(__int64 size);
+		bool MakeRoom(int64_t size);
 		
 		/**
 		*	\brief Frees the least recently used resource.
@@ -86,7 +86,7 @@ namespace ResourceEngine
 		*
 		*	\param size The size that must be decremented from the cache allocated size.
 		**/
-		void MemoryHasBeenFreed(__int64 size);
+		void MemoryHasBeenFreed(int64_t size);
 
 		/**
 		*	\brief Create an instance of SimpleResourceCache.
@@ -96,7 +96,7 @@ namespace ResourceEngine
 		*
 		*	\return instance of a SimpleResourceCache object.
 		**/
-		static SimpleResourceCache* CreateNew(__int64 sizeInBytes, bool initializeDefaultLoaders = true);
+		static SimpleResourceCache* CreateNew(int64_t sizeInBytes, bool initializeDefaultLoaders = true);
 
 		/**
 		*	\brief Insert the default loaders in the resouce loader list.

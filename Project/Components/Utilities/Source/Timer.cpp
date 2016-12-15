@@ -1,4 +1,4 @@
-#include "..\include\Timer.h"
+#include "../Include/Timer.h"
 
 namespace Utilities
 {
@@ -35,15 +35,15 @@ namespace Utilities
 			this->m_lastTime = this->m_startTime;
 		}
 
-		__int64 Timer::GetElapsedTimeInNanoSeconds() const { return this->m_elapsedTime; }
+		int64_t Timer::GetElapsedTimeInNanoSeconds() const { return this->m_elapsedTime; }
 
-		__int64 Timer::GetElapsedTimeInMicroSeconds() const { return (__int64)(this->m_elapsedTime*0.001f); }
+		int64_t Timer::GetElapsedTimeInMicroSeconds() const { return (int64_t)(this->m_elapsedTime*0.001f); }
 
-		__int64 Timer::GetElapsedTimeInMilliSeconds() const { return (__int64)(this->m_elapsedTime*0.000001f); }
+		int64_t Timer::GetElapsedTimeInMilliSeconds() const { return (int64_t)(this->m_elapsedTime*0.000001f); }
 
 		float Timer::GetElapsedTimeInSeconds() const { return (float)this->m_elapsedTime*0.000000001f; }
 
-		__int64 Timer::GetElapsedTimeFromStart()
+		int64_t Timer::GetElapsedTimeFromStart()
 		{
 			return std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::high_resolution_clock::now() - this->m_startTime).count() / 1000000;
 		}

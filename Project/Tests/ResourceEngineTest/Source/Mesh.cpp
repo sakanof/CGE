@@ -18,18 +18,18 @@ namespace ResourceEngineTest
 
 	void Mesh::Generate()
 	{
-		GLUtil::GLGenVertexArrays(1, &this->m_vao);
-		GLUtil::GLGenBuffers(1, &this->m_vbo);
+		GLUtil::GLGenVertexArrays(1, (size_t*)&this->m_vao);
+		GLUtil::GLGenBuffers(1, (size_t*)&this->m_vbo);
 	}
 	void Mesh::Delete()
 	{
-		GLUtil::GLDeleteVertexArrays(1, &this->m_vao);
-		GLUtil::GLDeleteBuffers(1, &this->m_vbo);
+		GLUtil::GLDeleteVertexArrays(1, (size_t*)&this->m_vao);
+		GLUtil::GLDeleteBuffers(1, (size_t*)&this->m_vbo);
 	}
 	void Mesh::Bind()
 	{
-		GLUtil::GLBindVertexArray(this->m_vao);
-		GLUtil::GLBindBuffer(GL_ARRAY_BUFFER, this->m_vbo);
+		GLUtil::GLBindVertexArray((size_t)this->m_vao);
+		GLUtil::GLBindBuffer(GL_ARRAY_BUFFER, (size_t)this->m_vbo);
 	}
 	void Mesh::Unbind()
 	{

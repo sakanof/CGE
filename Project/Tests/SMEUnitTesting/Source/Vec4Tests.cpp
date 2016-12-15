@@ -1,7 +1,9 @@
-#include <SME\Include\Vector.h>
+#include <SME/Include/Vector.h>
 
 // Google Test Includes
-#include <gtest\gtest.h>
+#include <gtest/gtest.h>
+
+#include <math.h>
 
 TEST(SME_Vector4, Addition)
 {

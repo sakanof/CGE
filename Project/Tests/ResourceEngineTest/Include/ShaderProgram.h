@@ -4,6 +4,8 @@
 // Standard Includes
 #include <string>
 
+#include <Utilities/Include/BaseException.h>
+
 // ResourceEngineTest Includes
 #include "GLUtil.h"
 

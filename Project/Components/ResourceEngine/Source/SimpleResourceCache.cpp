@@ -1,8 +1,8 @@
-#include "../include/SimpleResourceCache.h"
+#include "../Include/SimpleResourceCache.h"
 
 namespace ResourceEngine
 {
-	SimpleResourceCache::SimpleResourceCache(__int64 sizeInBytes, bool initializeDefaultLoaders)
+	SimpleResourceCache::SimpleResourceCache(int64_t sizeInBytes, bool initializeDefaultLoaders)
 		: m_cacheSize(sizeInBytes),
 		  m_allocatedSize(0)
 	{
@@ -80,7 +80,7 @@ namespace ResourceEngine
 		this->m_resourcesMap.erase(gonner->GetResource().GetFilePath());	
 	}
 
-	bool SimpleResourceCache::MakeRoom(__int64 size)
+	bool SimpleResourceCache::MakeRoom(int64_t size)
 	{
 		if (size > this->m_cacheSize)
 		{
@@ -125,7 +125,7 @@ namespace ResourceEngine
 		this->m_leastRecentlyUsed.remove(resourceHandleToDelete);
 	}
 
-	void SimpleResourceCache::MemoryHasBeenFreed(__int64 size)
+	void SimpleResourceCache::MemoryHasBeenFreed(int64_t size)
 	{
 		if (m_allocatedSize >= size)
 			this->m_allocatedSize -= size;
@@ -133,7 +133,7 @@ namespace ResourceEngine
 			throw Utilities::Exception::BaseException(__FILE__, __LINE__, "Error on SimpleResourceCache::MemoryHasBeenFreed method, the freed size is greater then the cache's size.");
 	}
 	
-	SimpleResourceCache* SimpleResourceCache::CreateNew(__int64 sizeInBytes, bool initializeDefaultLoaders)
+	SimpleResourceCache* SimpleResourceCache::CreateNew(int64_t sizeInBytes, bool initializeDefaultLoaders)
 	{
 		return new SimpleResourceCache(sizeInBytes, initializeDefaultLoaders);
 	}

@@ -1,4 +1,4 @@
-#include "../include/MeshResourceData.h"
+#include "../Include/MeshResourceData.h"
 
 namespace ResourceEngine
 {

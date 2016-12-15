@@ -1,4 +1,4 @@
-#include "../include/MeshNodeResourceData.h"
+#include "../Include/MeshNodeResourceData.h"
 
 namespace ResourceEngine
 {
@@ -11,7 +11,7 @@ namespace ResourceEngine
 			this->m_children.clear();
 		}
 
-		size_t	MeshNodeResourceData::Size() const
+		unsigned int MeshNodeResourceData::Size() const
 		{
 			unsigned int mySize = 0;
 

@@ -1,4 +1,4 @@
-#include "../include/ImageResourceLoader.h"
+#include "../Include/ImageResourceLoader.h"
 
 namespace ResourceEngine
 {
@@ -20,7 +20,7 @@ namespace ResourceEngine
 
 				return Pattern().find(temp) != std::string::npos;
 			}
-			__int64 ImageResourceLoader::GetRawResourceSize(const Resource& resource) const { return Utilities::File::GetFileSize(resource.GetFilePath()); }
+			int64_t ImageResourceLoader::GetRawResourceSize(const Resource& resource) const { return Utilities::File::GetFileSize(resource.GetFilePath()); }
 			IResourceData* ImageResourceLoader::Load(const Resource& resource)
 			{
 				const char* path = resource.GetFilePath().c_str();

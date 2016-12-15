@@ -35,7 +35,7 @@ namespace ResourceEngineTest
 		*handle = glCreateShader(type);
 
 		if (*handle == 0)
-			throw std::exception("Error compiling the shader");
+			throw Utilities::Exception::BaseException(__FILE__, __LINE__, "Error compiling the shader");
 
 
 		const GLchar *codeArray[] = { code.c_str() };
@@ -67,7 +67,7 @@ namespace ResourceEngineTest
 			std::string logString = std::string(log);
 			free(log);
 
-			throw new std::exception(logString.c_str());
+			throw Utilities::Exception::BaseException(__FILE__, __LINE__, logString.c_str());
 		}
 	}
 
@@ -82,7 +82,7 @@ namespace ResourceEngineTest
 		this->m_programHandle = GLUtil::CreateProgram();
 
 		if (this->m_programHandle == 0)
-			throw new std::exception(GetGLInfoLog());
+			throw Utilities::Exception::BaseException(__FILE__, __LINE__, GetGLInfoLog());
 
 		glAttachShader(this->m_programHandle, this->m_vertexShaderHandle);
 		glAttachShader(this->m_programHandle, this->m_fragmentShaderHandle);
@@ -93,7 +93,7 @@ namespace ResourceEngineTest
 		glGetProgramiv(this->m_programHandle, GL_LINK_STATUS, &status);
 
 		if (status == GL_FALSE)
-			throw new std::exception(GetGLInfoLog());
+			throw Utilities::Exception::BaseException(__FILE__, __LINE__, GetGLInfoLog());
 		else 
 			glUseProgram(this->m_programHandle);
 	}

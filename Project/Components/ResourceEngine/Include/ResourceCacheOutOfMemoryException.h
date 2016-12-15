@@ -2,7 +2,7 @@
 #define ResourceEngine_ResourceCacheOutOfMemoryException_H
 
 // Utilities Includes
-#include <Utilities\Include\BaseException.h>
+#include <Utilities/Include/BaseException.h>
 
 // ResourceEngine Includes
 #include "ResourceEngineSetup.h"
@@ -13,7 +13,7 @@ namespace ResourceEngine
 	{
 	public:
 		ResourceCacheOutOfMemoryException(std::string file, int line);
-		ResourceCacheOutOfMemoryException(std::string file, int line, std::string resourcePath, __int64 missingCacheSize);
+		ResourceCacheOutOfMemoryException(std::string file, int line, std::string resourcePath, int64_t missingCacheSize);
 	};
 	#define ThrowResourceCacheOutOfMemoryException(resourcePath, missingCacheSize) throw ResourceCacheOutOfMemoryException(__FILE__, __LINE__, resourcePath, missingCacheSize);
 };

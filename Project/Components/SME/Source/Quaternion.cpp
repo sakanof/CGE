@@ -1,4 +1,4 @@
-#include "../include/Quaternion.h"
+#include "../Include/Quaternion.h"
 
 namespace SME
 {

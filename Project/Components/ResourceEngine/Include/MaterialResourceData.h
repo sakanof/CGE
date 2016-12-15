@@ -6,7 +6,7 @@
 #include <initializer_list>
 
 // Math Includes
-#include <SME\Include\SME.h>
+#include <SME/Include/SME.h>
 
 // GameEngine Includes
 #include "IResourceData.h"
@@ -56,8 +56,8 @@ namespace ResourceEngine
 			unsigned int GetImageResourceDataSizeInBytes(WeakImageResourceDataVector list) const;
 
 		public:
-			unsigned int Size() const;
-			std::string	 Type() const;
+			unsigned int	Size() const;
+			std::string	Type() const;
 
 			std::string GetName(void) const;
 

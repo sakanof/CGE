@@ -1,7 +1,7 @@
-#include <SME\Include\Matrix.h>
+#include <SME/Include/Matrix.h>
 
 // Google Test Includes
-#include <gtest\gtest.h>
+#include <gtest/gtest.h>
 
 TEST(SME_Matrix2, Addition)
 {

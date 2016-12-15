@@ -47,7 +47,7 @@ namespace ResourceEngine
 			*
 			*	\return The size of the raw content of the resource.
 			**/
-			virtual __int64 GetRawResourceSize(const Resource& resource) const = 0;
+			virtual int64_t GetRawResourceSize(const Resource& resource) const = 0;
 			
 			/**
 			*	\brief Loads that resource content into a IResourceData object.

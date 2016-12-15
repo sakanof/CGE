@@ -18,18 +18,18 @@ namespace ResourceEngineTest
 
 	void IndexedMesh::Generate()
 	{
-		GLUtil::GLGenBuffers(1, &this->m_vao);
-		GLUtil::GLGenBuffers(1, &this->m_ibo);
+		GLUtil::GLGenBuffers(1, (size_t*)&this->m_vao);
+		GLUtil::GLGenBuffers(1, (size_t*)&this->m_ibo);
 	}
 	void IndexedMesh::Delete()
 	{
-		GLUtil::GLDeleteBuffers(1, &this->m_vao);
-		GLUtil::GLDeleteBuffers(1, &this->m_ibo);
+		GLUtil::GLDeleteBuffers(1, (size_t*)&this->m_vao);
+		GLUtil::GLDeleteBuffers(1, (size_t*)&this->m_ibo);
 	}
 	void IndexedMesh::Bind()
 	{
-		GLUtil::GLBindBuffer(GL_ARRAY_BUFFER, this->m_vao);
-		GLUtil::GLBindBuffer(GL_ELEMENT_ARRAY_BUFFER, this->m_ibo);
+		GLUtil::GLBindBuffer(GL_ARRAY_BUFFER, (size_t)this->m_vao);
+		GLUtil::GLBindBuffer(GL_ELEMENT_ARRAY_BUFFER, (size_t)this->m_ibo);
 	}
 	void IndexedMesh::Unbind()
 	{

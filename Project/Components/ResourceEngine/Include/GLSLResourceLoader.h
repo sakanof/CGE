@@ -6,7 +6,7 @@
 #include <algorithm>
 
 // Util Includes
-#include <Utilities\Include\File.h>
+#include <Utilities/Include/File.h>
 
 // GameEngine Includes
 #include "GLSLResourceData.h"
@@ -27,7 +27,7 @@ namespace ResourceEngine
 
 				std::string		Pattern() const;
 				bool			IsPatternAccepted(const std::string pattern) const;
-				__int64			GetRawResourceSize(const Resource& resource) const;
+				int64_t			GetRawResourceSize(const Resource& resource) const;
 				IResourceData*	Load(const Resource& resource);
 			};
 		}

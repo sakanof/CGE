@@ -1,6 +1,6 @@
-#include "../include/Vector.h"
-#include "../include/Matrix.h"
-#include "../include/Quaternion.h"
+#include "../Include/Vector.h"
+#include "../Include/Matrix.h"
+#include "../Include/Quaternion.h"
 
 namespace SME
 {

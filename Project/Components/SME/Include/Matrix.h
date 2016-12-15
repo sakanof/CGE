@@ -4,6 +4,8 @@
 #include <vector>
 #include <list>
 #include <string>
+#include <stdexcept>
+#include <cmath>
 
 // Math Engine Includes
 #include "Vector.h"

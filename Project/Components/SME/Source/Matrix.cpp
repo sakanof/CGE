@@ -1,4 +1,4 @@
-#include "..\include\Matrix.h"
+#include "../Include/Matrix.h"
 
 
 namespace SME

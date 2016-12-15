@@ -1,4 +1,4 @@
-#include "../include/GraphicModelResourceData.h"
+#include "../Include/GraphicModelResourceData.h"
 
 namespace ResourceEngine
 {

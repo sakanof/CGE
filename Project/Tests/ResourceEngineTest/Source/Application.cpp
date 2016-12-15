@@ -21,8 +21,8 @@ namespace ResourceEngineTest
 		this->m_window = new Window(SME::Vec2(800, 800), "ResourceEngineTest Window");
 		this->m_window->Hide();
 
-		this->m_shaderProgram = new ShaderProgram(this->m_resourceCache->GetHandle(Resource("Resources\\Shaders\\simpleVertexShader.vs"))->GetResourceData<GLSLResourceData>().lock()->GetCode(),
-												  this->m_resourceCache->GetHandle(Resource("Resources\\Shaders\\simpleFragmentShader.fs"))->GetResourceData<GLSLResourceData>().lock()->GetCode());
+		this->m_shaderProgram = new ShaderProgram(this->m_resourceCache->GetHandle(Resource("./Resources//Shaders//simpleVertexShader.vs"))->GetResourceData<GLSLResourceData>().lock()->GetCode(),
+							  this->m_resourceCache->GetHandle(Resource("./Resources//Shaders//simpleFragmentShader.fs"))->GetResourceData<GLSLResourceData>().lock()->GetCode());
 
 		this->m_triangle = new Triangle();
 

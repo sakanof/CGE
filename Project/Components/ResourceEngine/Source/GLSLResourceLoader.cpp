@@ -1,4 +1,4 @@
-#include "../include/GLSLResourceLoader.h"
+#include "../Include/GLSLResourceLoader.h"
 
 using ResourceEngine::Data::IResourceData;
 
@@ -18,7 +18,7 @@ namespace ResourceEngine
 				std::transform(temp.begin(), temp.end(), temp.begin(), ::tolower);
 				return Pattern().find(temp) != std::string::npos;
 			}
-			__int64			GLSLResourceLoader::GetRawResourceSize(const Resource& resource) const { return Utilities::File::GetFileSize(resource.GetFilePath()); }
+			int64_t			GLSLResourceLoader::GetRawResourceSize(const Resource& resource) const { return Utilities::File::GetFileSize(resource.GetFilePath()); }
 			IResourceData*	GLSLResourceLoader::Load(const Resource& resource)
 			{
 				std::string GLSLData = Utilities::File::LoadFile(resource.GetFilePath());

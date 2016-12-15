@@ -6,16 +6,16 @@
 #include <string>
 
 // Utilities Includes
-#include <Utilities\Include\BaseException.h>
+#include <Utilities/Include/BaseException.h>
 
 // SME Includes
-#include <SME\Include\SME.h>
+#include <SME/Include/SME.h>
 
 // Glew Includes
-#include <glew\include\GL\glew.h>
+#include <glew/include/GL/glew.h>
 
 // GLFW Includes
-#include <glfw\include\GLFW\glfw3.h>
+#include <glfw/include/GLFW/glfw3.h>
 
 namespace ResourceEngineTest
 {

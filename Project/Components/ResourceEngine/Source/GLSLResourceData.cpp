@@ -1,4 +1,4 @@
-#include "../include/GLSLResourceData.h"
+#include "../Include/GLSLResourceData.h"
 
 
 namespace ResourceEngine
@@ -12,4 +12,4 @@ namespace ResourceEngine
 		std::string  GLSLResourceData::Type() const { return std::string("GLSLResourceData"); }
 		std::string  GLSLResourceData::GetCode() const { return this->m_code; }
 	}; 
-}; 
+};

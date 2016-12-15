@@ -1,4 +1,4 @@
-#include "..\Include\GLUtil.h"
+#include "../Include/GLUtil.h"
 
 
 namespace ResourceEngineTest
@@ -19,12 +19,12 @@ namespace ResourceEngineTest
 
 	void GLUtil::GLDeleteVertexArrays(size_t count, size_t* vao)
 	{
-		glDeleteVertexArrays(count, vao);
+		glDeleteVertexArrays(count, (GLuint*)vao);
 	}
 
 	void GLUtil::GLDeleteBuffers(size_t count, size_t* vbo)
 	{
-		glDeleteBuffers(count, vbo);
+		glDeleteBuffers(count, (GLuint*)vbo);
 	}
 
 	void GLUtil::GLBufferData(size_t target, size_t size, const void* data, size_t usage)

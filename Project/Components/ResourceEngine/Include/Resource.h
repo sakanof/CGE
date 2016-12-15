@@ -5,7 +5,7 @@
 #include <string>
 
 // Utilities Includes
-#include <Utilities\Include\File.h>
+#include <Utilities/Include/File.h>
 
 // ResourceEngine Includes
 #include "ResourceEngineSetup.h"

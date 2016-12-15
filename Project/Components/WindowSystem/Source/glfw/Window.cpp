@@ -1,4 +1,4 @@
-#include "../../include/glfw/Window.h"
+#include "../../Include/glfw/Window.h"
 
 namespace WindowSystem
 {

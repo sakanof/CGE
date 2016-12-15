@@ -2,7 +2,7 @@
 #define ResourceEngine_Data_MeshNodeResourceData_H
 
 // SME Includes
-#include <SME\Include\SME.h>
+#include <SME/Include/SME.h>
 
 // GameEngine Includes
 #include "MeshResourceData.h"

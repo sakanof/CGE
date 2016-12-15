@@ -1,4 +1,4 @@
-#include "../include/GraphicModelResourceLoader.h"
+#include "../Include/GraphicModelResourceLoader.h"
 
 namespace ResourceEngine
 {
@@ -145,11 +145,13 @@ namespace ResourceEngine
 				}
 				catch (std::out_of_range e)
 				{
-					throw std::exception("Error during model information extraction. Index out of range.");
+					//throw std::exception("Error during model information extraction. Index out of range.");
+					throw std::exception(e);
 				}
 				catch (std::exception e)
 				{
-					throw std::exception(e.what());
+					//throw std::exception(e.what());
+					throw std::exception(e);
 				}
 			}
 			
@@ -264,7 +266,7 @@ namespace ResourceEngine
 				std::transform(temp.begin(), temp.end(), temp.begin(), ::tolower);
 				return Pattern().find(temp) != std::string::npos;
 			}
-			__int64 GraphicModelResourceLoader::GetRawResourceSize(const Resource& resource) const { return Utilities::File::GetFileSize(resource.GetFilePath()); }
+			int64_t GraphicModelResourceLoader::GetRawResourceSize(const Resource& resource) const { return Utilities::File::GetFileSize(resource.GetFilePath()); }
 			IResourceData* GraphicModelResourceLoader::Load(const Resource& resource)
 			{
 				this->m_rootNode = std::make_shared<MeshNodeResourceData>(this->m_resourceObserver);

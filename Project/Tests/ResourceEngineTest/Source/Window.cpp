@@ -2,6 +2,15 @@
 
 namespace ResourceEngineTest
 {
+	class BasicException : public std::exception
+	{
+	private:
+		std::string m_message;
+
+	public:
+		BasicException(std::string message) : m_message(message) {}
+		const char* what() const noexcept { return m_message.c_str(); ;}
+	};
 	bool Window::m_isGLInitialized = false;
 	Window::Window(Vec2 size, std::string title)
 		: m_size(size), 
@@ -24,7 +33,7 @@ namespace ResourceEngineTest
 
 			std::cout << msg<<std::endl;
 
-			throw std::exception(msg.c_str());
+			throw BasicException(msg);
 		}
 
 		glEnable(GL_DEPTH_TEST);
@@ -33,15 +42,14 @@ namespace ResourceEngineTest
 		// counterclockwise
 		glFrontFace(GL_CCW);
 	}
-
 	void Window::InitializeGLFW()
 	{
 		if (!glfwInit())
-			std::exception("Error on the glfw initialization...");
+			throw BasicException("Error on the glfw initialization...");
 
 		this->m_glfwWindow = glfwCreateWindow((int)this->m_size.x, (int)this->m_size.y, this->m_title.c_str(), NULL, NULL);
 		if (!this->m_glfwWindow)
-			std::exception("Error on the window creation....");
+			throw BasicException("Error on the window creation....");
 
 		int majorVersion = 4;
 		int minorVersion = 2;

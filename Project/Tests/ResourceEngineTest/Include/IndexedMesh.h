@@ -5,7 +5,7 @@
 #include <vector>
 
 // SME Includes
-#include <SME\Include\SME.h>
+#include <SME/Include/SME.h>
 
 // ResourceEngineTest Includes
 #include "GLUtil.h"

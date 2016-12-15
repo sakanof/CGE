@@ -2,7 +2,7 @@
 #define WindowSystem_Input_Mouse_MouseInputDevice_H
 
 // Utilities Includes
-#include <Utilities\Include\Memory.hpp>
+#include <Utilities/Include/Memory.hpp>
 
 // WindowSystem Includes
 #include "WindowSystemSetup.h"

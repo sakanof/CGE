@@ -1,8 +1,8 @@
 // Utilities Includes
-#include <Utilities\Include\String.h>
+#include <Utilities/Include/String.h>
 
 // Google Test Includes
-#include <gtest\gtest.h>
+#include <gtest/gtest.h>
 
 TEST(Utilities_String, TrimBack)
 {

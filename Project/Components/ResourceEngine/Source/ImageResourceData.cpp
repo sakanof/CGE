@@ -1,4 +1,4 @@
-#include "../include/ImageResourceData.h"
+#include "../Include/ImageResourceData.h"
 
 namespace ResourceEngine
 {

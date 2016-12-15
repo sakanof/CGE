@@ -6,14 +6,14 @@
 #include <memory>
 
 // Third party Includes
-#include <AssimpSDK\Include\cimport.h>
-#include <AssimpSDK\Include\Importer.hpp>
-#include <AssimpSDK\Include\scene.h>
-#include <AssimpSDK\Include\postprocess.h>
+#include <assimp/cimport.h>
+#include <assimp/Importer.hpp>
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
 
 // Util Includes
-#include <Utilities\include\File.h>
-#include <Utilities\Include\BaseException.h>
+#include <Utilities/Include/File.h>
+#include <Utilities/Include/BaseException.h>
 
 // GameEngine Includes
 #include "Resource.h"
@@ -82,7 +82,7 @@ namespace ResourceEngine
 
 				bool IsPatternAccepted(const std::string pattern) const;
 
-				__int64 GetRawResourceSize(const Resource& resource) const;
+				int64_t GetRawResourceSize(const Resource& resource) const;
 
 				IResourceData* Load(const Resource& resource);
 			};

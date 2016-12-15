@@ -1,4 +1,4 @@
-#include "../include/MaterialResourceData.h"
+#include "../Include/MaterialResourceData.h"
 
 namespace ResourceEngine
 {
@@ -49,7 +49,7 @@ namespace ResourceEngine
 			return sizeInBytes;
 		}
 
-		size_t	MaterialResourceData::Size() const 
+		unsigned int MaterialResourceData::Size() const 
 		{
 			unsigned int sizeInBytes = 0;
 

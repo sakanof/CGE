@@ -4,6 +4,7 @@
 // standard Includes
 #include <chrono>
 #include <iostream>
+#include <cstdint>
 
 // Util Includes
 #include "UtilitiesSetup.h"
@@ -20,7 +21,7 @@ namespace Utilities
 		{
 			using Time = std::chrono::time_point < std::chrono::high_resolution_clock > ;
 		private:
-			__int64 m_elapsedTime;		/** < Elapsed time since the start of the timer. */
+			int64_t m_elapsedTime;		/** < Elapsed time since the start of the timer. */
 			Time	m_startTime;		/** < Keeps track of the time that the timer was started. */
 			Time	m_lastTime;			/** < Keeps track of the last time that the timer has been updated. */
 			bool	m_hasBeenStarted;	/** < Indicates if the timer has been initialized. */
@@ -52,17 +53,17 @@ namespace Utilities
 			/**
 			*	\brief Return the elapsed time since the last tick in nanoseconds.
 			**/
-			__int64 GetElapsedTimeInNanoSeconds() const;
+			int64_t GetElapsedTimeInNanoSeconds() const;
 
 			/**
 			*	\brief Return the elapsed time since the last tick in microseconds.
 			**/
-			__int64 GetElapsedTimeInMicroSeconds() const;
+			int64_t GetElapsedTimeInMicroSeconds() const;
 
 			/**
 			*	\brief Return the elapsed time since the last tick in milliseconds.
 			**/
-			__int64 GetElapsedTimeInMilliSeconds() const;
+			int64_t GetElapsedTimeInMilliSeconds() const;
 
 			/**
 			*	\brief Return the elapsed time since the last tick in seconds.
@@ -72,7 +73,7 @@ namespace Utilities
 			/**
 			 *	\brief Return the elapsed time, in milliseconds, from the start of the timer until now.
 			 **/
-			__int64 GetElapsedTimeFromStart();
+			int64_t GetElapsedTimeFromStart();
 		};
 	};
 };

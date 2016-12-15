@@ -5,7 +5,7 @@
 #include <vector>
 
 // Utilities Includes
-#include <Utilities\Include\Memory.hpp>
+#include <Utilities/Include/Memory.hpp>
 
 // GameEngine Includes
 #include "IResourceData.h"
