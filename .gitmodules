@@ -7,3 +7,6 @@
 [submodule "Utilities/ThirdParty/glew"]
 	path = Utilities/ThirdParty/glew
 	url = https://github.com/nigels-com/glew
+[submodule "Utilities/ThirdParty/assimp"]
+	path = Utilities/ThirdParty/assimp
+	url = https://github.com/assimp/assimp
