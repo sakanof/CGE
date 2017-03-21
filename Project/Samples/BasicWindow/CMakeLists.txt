@@ -1,29 +1,15 @@
-set(PROJECT_NAME "BasicWindow")
-project(${PROJECT_NAME})
-message(STATUS "Processing ${PROJECT_NAME}")
+cge_setup_build("BasicWindow")
 
 set (BASIC_WINDOW_HOME_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 
-# Utilities and SME components
-cge_setup_external_library("${CMAKE_CURRENT_SOURCE_DIR}/../../Components"
-			   "${BASIC_WINDOW_HOME_DIR}/../../../Bin/Libs/VS2013/Debug")
-# FreeImage
-cge_setup_external_library("${CGE_THIRD_PARTY_DIR}"
-			   "${CGE_THIRD_PARTY_DIR}/FreeImage/Lib/Win32")
-# Assimp
-cge_setup_external_library("${CGE_THIRD_PARTY_DIR}"
-			   "${CGE_THIRD_PARTY_DIR}/AssimpSDK/Lib/Win32")
-# Glew and OpenGL
-cge_setup_external_library("${CGE_THIRD_PARTY_DIR}/glew/include"
-			   "${CGE_THIRD_PARTY_DIR}/glew/build/cmake/lib")
-# GLFW
-cge_setup_external_library("${CGE_THIRD_PARTY_DIR}/glfw/include"
-			   "${CGE_THIRD_PARTY_DIR}/glfw/src")
+include_directories("${CGE_COMPONENTS_DIR}")
 
-cge_list_header_files("${BASIC_WINDOW_HOME_DIR}/${CGE_INCLUDE_DIR_NAME}" HEADER_FILES})
+cge_setup_external_libraries("assimp freeimage glew glfw")
+
+#cge_list_header_files("${BASIC_WINDOW_HOME_DIR}/${CGE_INCLUDE_DIR_NAME}" HEADER_FILES})
 cge_list_source_files("${BASIC_WINDOW_HOME_DIR}/${CGE_SOURCE_DIR_NAME}" SRC_FILES})
 
-add_executable(${PROJECT_NAME} ${HEADER_FILES} ${SRC_FILES})
-cge_setup_project_app(${PROJECT_NAME})
+add_executable(${PROJECT_NAME} ${SRC_FILES})
+cge_setup_sample_project(${PROJECT_NAME})
 add_dependencies(${PROJECT_NAME} SME Utilities ResourceEngine WindowSystem)
-target_link_libraries(${PROJECT_NAME} glew32d opengl32 glfw3dll FreeImage Utilities SME ResourceEngine WindowSystem)
+target_link_libraries(${PROJECT_NAME} ${THIRD_PARTY_GLEW_LIB} ${THIRD_PARTY_GLFW_LIB} ${THIRD_PARTY_FREEIMAGE_LIB} SME Utilities ResourceEngine WindowSystem)
